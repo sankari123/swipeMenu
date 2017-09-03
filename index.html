@@ -1,104 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-<title><center><font face=verdana size=12>Madras Music & Miscellany</font></center></title>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript" src="Calendar.js"></script>
+    <meta charset="utf-8">
+    <title>Swipe Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script type="text/javascript" src="cordova.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+    <style>
+        /*this block should go in the styles.css file*/
+        .ui-panel-inner {
+            padding:0px; /*make the buttons flush edge to edge*/
+        }
+        .ui-controlgroup {
+            margin:0; /*make the buttons flush to the top*/
+        }
+        #header {
+            height:54px;
+        }
+        #bars-button {
+            margin:7px;
+        }
+    </style>
+</head>
+<body>
 
-	<link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/slide-and-swipe-menu.css">
-       <!-- touchSwipe library -->
-        <script src="jquery.touchSwipe.min.js"></script>
-        <!-- Slider Javascript file -->
-        <script src="jquery.slideandswipe.min.js"></script>
+<div data-role="page" id="home" data-theme="b">
 
-     
+    <div data-role="panel" id="navpanel" data-theme="a"
+         data-display="overlay" data-position="right">
+        <div data-role="controlgroup" data-corners="false">
+            <a href="#" data-role="button">Business</a>
+            <a href="#" data-role="button">Numbers</a>
+            <a href="#" data-role="button">Money</a>
+            <a href="#" data-role="button">People</a>
+        </div>
+    </div>
 
-        <script>
-		function init()
-		{
-		document.addEventListener("deviceready", onDeviceReady, false);
-            
-		}
-		function onDeviceReady(){
-			$(document).ready(function() {
-                $('.nav').slideAndSwipe();
-            });
-	window.plugins.spinnerDialog.show(null, "Loading Events... Please wait!");
-	//document.getElementById("dl_btn").style.display="none";
-//	document.getElementById("dl_btn").style.visibility="false";
-	//checkConnection();
-	document.addEventListener("backbutton", function (e) {
-        e.preventDefault(); 
-	navigator.notification.confirm("Do you want to exit MMF?", onConfirmExit, "Madras Music & Miscellany", "Yes,No");    }, false );
-}
-
-
-		
-function onConfirmExit(button) {
-if(button==2){ //If User select a No, then return back;
-       	return; }
-else{
-   if (navigator.app) {
-     navigator.app.exitApp(); }
-   else if (navigator.device) {
-     navigator.device.exitApp(); } }	}
-	   	
-        </script>
-		<style>
-		 
-      .nav ul {
-          margin: 0;
-          padding: 0;
-          list-style: none;
-      }
-      .nav ul li {
-          margin: 0;
-      }
-      .nav ul li a {
-          padding: 15px 20px;
-          font-size: 16px;
-          font-weight: 100;
-          color: white;
-          text-decoration: none;
-          display: block;
-          border-bottom: 1px solid #C9223D;
-          -webkit-transition:  background 0.3s ease-in-out;
-          -moz-transition:  background 0.3s ease-in-out;
-          -ms-transition:  background 0.3s ease-in-out;
-          -o-transition:  background 0.3s ease-in-out;
-          transition:  background 0.3s ease-in-out;
-      } 	
-      .nav ul li:hover a {
-          background: #C9223D;
-      }
-	  </style>
-    </head>
-    <body onload='init();'>
-        <nav class="nav">
-           <!-- <img src="img/swipe.png" alt="swipe image" />-->
-			sdffsdfsdfsd
-            
-          <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Explore</a></li>
-              <li><a href="#">Users</a></li>
-                  <li><a href="#">Sign Out</a></li>
-          </ul>
-       
-        </nav>
-        <main>
-            <h1>Slide and Swipe Menu <br>(demo)</h1>
-            <a href="#" class="ssm-toggle-nav" title="open nav">&#9776;</a>
-        </main>
-
-        <!-- jQuery library (served from Google) -->
-       
-   <div class="ssm-overlay ssm-toggle-nav"></div>
-        
-
-    </body>
+    <div id="header" data-role="header" data-theme="b">
+        <a id="bars-button" data-icon="bars"  class="ui-btn-right" style="margin-top:10px;" href="#navpanel">Menu</a>
+    </div>
+</div>
+</body>
 </html>
