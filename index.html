@@ -28,14 +28,25 @@
                 $('.nav').slideAndSwipe();
             });
 	window.plugins.spinnerDialog.show(null, "Loading Events... Please wait!");
-	document.getElementById("dl_btn").style.display="none";
-	document.getElementById("dl_btn").style.visibility="false";
-	checkConnection();
+	//document.getElementById("dl_btn").style.display="none";
+//	document.getElementById("dl_btn").style.visibility="false";
+	//checkConnection();
 	document.addEventListener("backbutton", function (e) {
         e.preventDefault(); 
 	navigator.notification.confirm("Do you want to exit MMF?", onConfirmExit, "Madras Music & Miscellany", "Yes,No");    }, false );
 }
-	
+
+
+		
+function onConfirmExit(button) {
+if(button==2){ //If User select a No, then return back;
+       	return; }
+else{
+   if (navigator.app) {
+     navigator.app.exitApp(); }
+   else if (navigator.device) {
+     navigator.device.exitApp(); } }	}
+	   	
         </script>
 		<style>
 		 
