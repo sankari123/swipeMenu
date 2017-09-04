@@ -3,15 +3,15 @@
  */
 nav {
     height: 100%;
-    width: 280px;
-    background-color: #0a4a3c;
+    width: 100px;
+    background-color: #ffffff;
     left: 0;
     top: 0;
     z-index: 2;
     position: fixed;
     overflow-y: auto;
     overflow-x: visible;
-    transform: translate(-280px,0);
+    transform: translate(-100px,0);
 
 }
 .ssm-overlay {
