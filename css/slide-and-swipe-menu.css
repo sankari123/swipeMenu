@@ -3,7 +3,7 @@
  */
 nav {
     height: 100%;
-    width: 100px;
+    width: 160px;
     background-color: #ffffff;
     left: 0;
     top: 0;
@@ -11,7 +11,7 @@ nav {
     position: fixed;
     overflow-y: auto;
     overflow-x: visible;
-    transform: translate(-100px,0);
+    transform: translate(-160px,0);
 
 }
 .ssm-overlay {
