@@ -53,7 +53,7 @@ function myMap(position) {
  function home()
 			{
 			
-			alert('in');
+			checkConnection();
 			}
 			 
 function onDeviceReady(){
@@ -742,7 +742,14 @@ function ven_det(v)
 	
 function printData()
 {
-   var divToPrint=document.getElementById("xPort");
+   if(document.getElementById("dl_btn1").style.visibility=="false" )
+   {
+	   var divToPrint=document.getElementById("xPort");
+   }
+	else
+	{
+	   var divToPrint=document.getElementById("dl_btn1");
+   }	
 
    pdf.htmlToPDF({
             data: divToPrint.innerHTML,
@@ -973,7 +980,14 @@ function share()
 {
 	//printData();
 	//var shareCont=document.getElementById('xPort').innerHTML;
+	   if(document.getElementById("dl_btn1").style.visibility=="false" )
+	   {
 	var message= $("#xPort").html();
+	   }
+	else
+	{
+	var message= $("#dl_btn1").html();
+	}
 	var regex = /(<([^>]+)>)/ig;
 	  message = message.replace(regex, " ");
 
