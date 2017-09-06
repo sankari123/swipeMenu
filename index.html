@@ -50,15 +50,10 @@ function myMap(position) {
        x = position.coords.latitude;
         y = position.coords.longitude;
  }
-var hideNavigation = (function() {
-                nav.removeClass('ssm-nav-visible');
-                scrollNav(navWidth, settings.speed);
-                $('html').removeClass('is-navOpen');
-                $('.ssm-overlay').fadeOut();
-            });	
+ 
  function home()
 			{
-			hideNavigation;
+			 
 			category();
 			}
 			 
@@ -1406,7 +1401,7 @@ span {
        <nav class="nav">
                     
           <ul>
-              <li><a href="javascript: home();">Home</a></li>
+              <li><a href="javascript: home();" class="ssm-toggle-nav" >Home</a></li>
               <li><a href="#">Login</a></li>
               <li><a href="#">Archives</a></li>
                   <li><a href="#">Feedback</a></li>
