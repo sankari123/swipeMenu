@@ -50,6 +50,12 @@ function myMap(position) {
        x = position.coords.latitude;
         y = position.coords.longitude;
  }
+	var hideNavigation = (function() {
+                nav.removeClass('ssm-nav-visible');
+                scrollNav(navWidth, settings.speed);
+                $('html').removeClass('is-navOpen');
+                $('.ssm-overlay').fadeOut();
+            });
  function home()
 			{
 			 hideNavigation();
@@ -1444,8 +1450,9 @@ span {
 	
 	
 	<div id='category' class='category'>
-		<font size=1 face='arial'>Browse by Category</font><br><br>
-	   <table border=1 cellpadding=0 cellpadding=0  >
+		 
+	   <table border=0 cellpadding=0 cellpadding=0  >
+		   <tr height='30px'><td><font size=1 face='arial'>Browse by Category</font></td></tr>
 		   <tr><td><button onclick='eventList(1);' class='btn2'><img src='concert.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td></tr>
 		   <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
 		    <tr><td ><button onclick='eventList(2);' class='btn2' ><img src='dance.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Dance</span></button></td></tr>
