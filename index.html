@@ -50,10 +50,15 @@ function myMap(position) {
        x = position.coords.latitude;
         y = position.coords.longitude;
  }
-	
+var hideNavigation = (function() {
+                nav.removeClass('ssm-nav-visible');
+                scrollNav(navWidth, settings.speed);
+                $('html').removeClass('is-navOpen');
+                $('.ssm-overlay').fadeOut();
+            });	
  function home()
 			{
-			$('.ssm-overlay').fadeOut();
+			hideNavigation;
 			category();
 			}
 			 
