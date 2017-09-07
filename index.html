@@ -743,13 +743,14 @@ function ven_det(v)
 	
 function printData()
 {
-   if(document.getElementById("dl_btn1").style.visibility=="false" )
+	var divToPrint;
+   if(document.getElementById("dl_btn1").style.display=="block")
    {
-	   var divToPrint=document.getElementById("xPort");
+	     divToPrint=document.getElementById("dl_btn1");
    }
 	else
 	{
-	   var divToPrint=document.getElementById("dl_btn1");
+	 divToPrint=document.getElementById("xPort");
    }	
 
    pdf.htmlToPDF({
