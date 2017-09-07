@@ -351,6 +351,11 @@ function showevents(day,month,year,week,dayofweek) {
 	document.getElementById("dl_btn1").style.visibility="true";
 	document.getElementById("dl_btn").style.display="block";
 	document.getElementById("dl_btn").style.visibility="true";
+	document.getElementById("login").style.display="none";
+	document.getElementById("login").style.visibility="false";
+	document.getElementById("backmenu").style.display="none";
+	document.getElementById("backmenu").style.visibility="false";
+	 
 	window.plugins.spinnerDialog.hide();		
 var theevent = "";
 var floater = 0;
@@ -535,6 +540,11 @@ var lat2,long2;
 		document.getElementById("xPort1").style.display="none";
 		document.getElementById("xPort1").style.visibility="false";
 		
+		document.getElementById("login").style.display="none";
+	document.getElementById("login").style.visibility="false";
+	document.getElementById("backmenu").style.display="none";
+	document.getElementById("backmenu").style.visibility="false";
+	 
 		
 		
 		document.getElementById("xPort").style.display="none";
@@ -631,7 +641,12 @@ function calClick()
 		document.getElementById("route_canvas").style.visibility="false"
 		document.getElementById("panel").style.display="none";
 		document.getElementById("panel").style.visibility="false";
-	
+	        document.getElementById("login").style.display="none";
+		document.getElementById("login").style.visibility="false";
+		 
+	document.getElementById("backmenu").style.display="none";
+	document.getElementById("backmenu").style.visibility="false";
+	 
 		checkConnection();
 	}
 
@@ -643,6 +658,13 @@ function calClick()
 	document.getElementById("route_canvas").style.visibility="true";
 	document.getElementById("panel").style.display="block";
 	document.getElementById("panel").style.visibility="true";
+	
+	document.getElementById("login").style.display="none";
+	document.getElementById("login").style.visibility="false";
+	document.getElementById("backmenu").style.display="none";
+	document.getElementById("backmenu").style.visibility="false";
+	 
+		
 	document.getElementById('panel').innerHTML = "";
 	var directionsService = new google.maps.DirectionsService();
         var directionsDisplay = new google.maps.DirectionsRenderer();
@@ -689,6 +711,11 @@ function ven_det(v)
 	document.getElementById("dl_btn").style.display="block";
 	document.getElementById("dl_btn").style.visibility="true";
 	
+	document.getElementById("login").style.display="none";
+	document.getElementById("login").style.visibility="false";
+	document.getElementById("backmenu").style.display="none";
+	document.getElementById("backmenu").style.visibility="false";
+	 
 	document.getElementById('xPort').innerHTML='' ;
 	
 	calEvt ='';
@@ -828,7 +855,11 @@ function openCity(evt, cityName) {
 		document.getElementById("route_canvas").style.visibility="false"
 		document.getElementById("panel").style.display="none";
 		document.getElementById("panel").style.visibility="false";
-		 
+	document.getElementById("login").style.display="none";
+	document.getElementById("login").style.visibility="false";
+	document.getElementById("backmenu").style.display="none";
+	document.getElementById("backmenu").style.visibility="false";
+	 
 	
 		 
 		
@@ -853,6 +884,11 @@ document.getElementById("dl_btn").style.display="block";
 document.getElementById("dl_btn").style.visibility="true";
 document.getElementById("category").style.display="none";
 document.getElementById("category").style.visibility="false";
+document.getElementById("login").style.display="none";
+	document.getElementById("login").style.visibility="false";
+	document.getElementById("backmenu").style.display="none";
+	document.getElementById("backmenu").style.visibility="false";
+	 
 document.getElementById('xPort').innerHTML='' ;
 var catSel;
 
@@ -1033,6 +1069,12 @@ document.getElementById("xPort").style.display="none";
 document.getElementById("xPort").style.visibility="false";
 document.getElementById("xPort1").style.display="none";
 document.getElementById("xPort1").style.visibility="false";
+	
+	 
+	document.getElementById("backmenu").style.display="block";
+	document.getElementById("backmenu").style.visibility="true";
+	document.getElementById("main").style.display="none";
+	document.getElementById("main").style.visibility="false";
 	}
 			
 			</script>
@@ -1287,7 +1329,11 @@ display	: none;
    display:none;
    text-align:center;
 }
-		
+.backmenu
+{
+   display:none;
+    
+}		
 		#calEvent
 		{
 		
@@ -1434,12 +1480,18 @@ span {
           </ul>
        
         </nav>
+	    <div id='main' class='main'>
         <main>
             <table border=0 width='100%' bgcolor='#ffa1a1'><tr height='70px'><td>
-            <a href="#" class="ssm-toggle-nav" style='text-decoration: none;' title="open nav">&#9776;</a></td><td width=99% align='center'>Madras Music & Miscellany</td></tr></table>
+           <b><a href="#" class="ssm-toggle-nav" style='text-decoration: none;' title="open nav">&#9776;</a></b></td><td width=99% align='center'><b>Madras Music & Miscellany<b></td></tr></table>
      
         <!-- jQuery library (served from Google) -->
 	    </main>
+		</div>
+		<div id='backmenu' class='backmenu'>
+		      <table border=0 width='100%' bgcolor='#ffa1a1'><tr height='70px'><td>
+           <b><a href="#"  onclick="category();" style='text-decoration: none;' title="back">&#x003C;</a></b></td><td width=99% align='center'><b>Madras Music & Miscellany<b></td></tr></table>
+		</div>
         <div class="ssm-overlay ssm-toggle-nav"></div>
 
       <table border="0"  bordercolor='#003c67' cellpadding="0" cellspacing="0" width="100%">
