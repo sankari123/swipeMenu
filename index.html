@@ -829,6 +829,8 @@ function openCity(evt, cityName) {
 	//alert('in');
 	
 			checkConnection();
+		document.getElementById("backmenu").style.display="none";
+		document.getElementById("backmenu").style.visibility="false";
 		document.getElementById("category").style.display="block";
 		document.getElementById("category").style.visibility="true";
 		document.getElementById("main").style.display="block";
@@ -838,7 +840,8 @@ function openCity(evt, cityName) {
 		document.getElementById("det").style.display="block";
 		document.getElementById("det").style.visibility="true";
 		
-		
+		document.getElementById("login").style.display="none";
+		document.getElementById("login").style.visibility="false";
 		document.getElementById("calendar").style.display="none";
 		document.getElementById("calendar").style.visibility="false";
 		document.getElementById("lst_mnu").style.display="none";
@@ -858,10 +861,7 @@ function openCity(evt, cityName) {
 		document.getElementById("route_canvas").style.visibility="false";
 		document.getElementById("panel").style.display="none";
 		document.getElementById("panel").style.visibility="false";
-	document.getElementById("login").style.display="none";
-	document.getElementById("login").style.visibility="false";
-	document.getElementById("backmenu").style.display="none";
-	document.getElementById("backmenu").style.visibility="false";
+	
 	
 	
 		 
