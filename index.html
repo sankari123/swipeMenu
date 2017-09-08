@@ -830,8 +830,12 @@ function openCity(evt, cityName) {
 	//alert('in');
 	
 			checkConnection();
+		document.getElementById("login").style.display="none";
+		document.getElementById("login").style.visibility="false";
 		document.getElementById("backmenu").style.display="none";
 		document.getElementById("backmenu").style.visibility="false";
+		document.getElementById("lst_mnu").style.display="none";
+		document.getElementById("lst_mnu").style.visibility="false";
 		document.getElementById("category").style.display="block";
 		document.getElementById("category").style.visibility="true";
 		document.getElementById("main").style.display="block";
@@ -840,10 +844,8 @@ function openCity(evt, cityName) {
 		document.getElementById("nav").style.visibility="true";
 		document.getElementById("det").style.display="block";
 		document.getElementById("det").style.visibility="true";
-		document.getElementById("lst_mnu").style.display="none";
-		document.getElementById("lst_mnu").style.visibility="false";
-		document.getElementById("login").style.display="none";
-		document.getElementById("login").style.visibility="false";
+		
+		
 		document.getElementById("calendar").style.display="none";
 		document.getElementById("calendar").style.visibility="false";
 		
@@ -1199,7 +1201,6 @@ button:focus {outline:none;} ::-moz-focus-inner {border:0;}
 		
 		display:none;
 		text-align:center;
-		
     width: 100vw;
 		
 	}
@@ -1420,7 +1421,7 @@ display	: none;
 }
 .category
 		{
-		 
+		position: fixed; 
 		border-radius: 0px;
     border: 0px solid #FFFFFF;
     padding: 10px; 
@@ -1489,14 +1490,14 @@ span {
 	    <div id='main' class='main'>
         <main>
             <table border=0 width='100%' bgcolor='#ffa1a1'><tr height='70px'><td>
-           <font size=2><b><a href="#" class="ssm-toggle-nav" style='text-decoration: none;' title="open nav">&#9776;</a></b></td><td width=99% align='center'><b>Madras Music & Miscellany<b></font></td></tr></table>
+           <font size=4><b><a href="#" class="ssm-toggle-nav" style='text-decoration: none;' title="open nav">&#9776;</a></b></td><td width=99% align='center'><b>Madras Music & Miscellany<b></font></td></tr></table>
      
         <!-- jQuery library (served from Google) -->
 	    </main>
 		</div>
 		<div id='backmenu' class='backmenu'>
 		      <table border=0 width='100%' bgcolor='#ffa1a1'><tr height='70px'><td>
-           <font size=2><b><a href="#"  onclick="category();" style='text-decoration: none;' title="back">&#x003C;</a></b></td><td width=99% align='center'><b>Madras Music & Miscellany<b></font></td></tr></table>
+           <font size=4><b><a href="#"  onclick="category();" style='text-decoration: none;' title="back">&#x003C;</a></b></td><td width=99% align='center'><b>Madras Music & Miscellany<b></font></td></tr></table>
 		</div>
         <div class="ssm-overlay ssm-toggle-nav"></div>
 
@@ -1530,7 +1531,7 @@ span {
 	
 	<div id='category' class='category'>
 		 
-	   <table border=0 cellpadding=0 cellpadding=0  >
+	   <table border=0 cellpadding=0 cellpadding=0 bgcolor='FFFFFF'>
 		   <tr height='30px'><td><font size=2 face='arial'>Browse by Category</font></td></tr>
 		   <tr><td><button onclick='eventList(1);' class='btn2'><img src='concert.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td></tr>
 		   <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
