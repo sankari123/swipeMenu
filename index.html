@@ -1392,10 +1392,12 @@ span {
 	   
     </head>
     <body onload='init();'> 
-       <nav class="nav">
+	      <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Home</a></li>
+         <nav class="nav">
                     
           <ul>
-		  <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Home</a></li>
+		 <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
+     
               <li><a href="#">Login</a></li>
               <li><a href="#">Archives</a></li>
                   <li><a href="#">Feedback</a></li>
@@ -1414,7 +1416,8 @@ span {
 		      <table border=0 width='100%' bgcolor='#ffa1a1'><tr height='70px'><td>
            <font size=4><b><a href="#"  onclick="category();" style='text-decoration: none;' title="back">&#x003C;</a></b></td><td width=99% align='center'><b>Madras Music & Miscellany<b></font></td></tr></table>
 		</div>
-   
+    <div class="ssm-overlay ssm-toggle-nav"></div>
+
 <div class="tab">
       <table border="0"  bordercolor='#003c67' cellpadding="0" cellspacing="0" width="100%">
 	<tr height='25px'  bgcolor='#003c67'><td align=center>
