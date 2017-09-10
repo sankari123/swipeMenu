@@ -3,27 +3,25 @@
 <head>
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <title><center><font face=verdana size=12>Madras Music & Miscellany</font></center></title>
-<script type="text/javascript" src="cordova.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script type="text/javascript" src="html2canvas.js"></script>
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="tableExport.js"></script>
-<script type="text/javascript" src="jquery.base64.js"></script>
-<script type="text/javascript" charset="utf-8" src="Canvas2ImagePlugin.js"></script>
-<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script src="canvas2image.js"></script>
-<script type="text/javascript" src="Calendar.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/tableExport.js"></script>
-<script type="text/javascript" src="js/jquery.base64.js"></script>
+<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <!-- CSS stylesheet for example -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
 
-<script type="text/javascript" src="jspdf/libs/sprintf.js"></script>
-<script type="text/javascript" src="jspdf/jspdf.js"></script>
-<script type="text/javascript" src="jspdf/libs/base64.js"></script>
-<link rel="stylesheet" href="mocha.min.css">
-    <link rel="stylesheet" href="test.css">
-    <link rel="stylesheet" href="index.css">
-<!--<script language="JavaScript" type="text/javascript" src="events.js"></script>-->
+        <!-- CSS stylesheet for sliding-swipe-menu -->
+        <link rel="stylesheet" href="css/slide-and-swipe-menu.css">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+        <!-- touchSwipe library -->
+        <script src="http://labs.rampinteractive.co.uk/touchSwipe/jquery.touchSwipe.min.js"></script>
+
+        <!-- Slider Javascript file -->
+<script src="jquery.slideandswipe.min.js"></script>
+<!--<a href="javascript:home();">-->
+<script type="text/javascript" src="cordova.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="Calendar.js"></script>
 
 <script type="text/JavaScript" language="JavaScript">
   var optSel;
@@ -1342,16 +1340,25 @@ span {
 </head>
 
 <body style="background-color: transparent;" onload='init();'> 
- <table border="0" cellpadding="0" cellspacing="0" width="100%">
-	
-	
-	<tr height='70px' bgcolor="#ed7372"><td  align='center'><font face=arial><b>Madras Music & Miscellany</b></font></td></tr>
-<!--	<tr> <td><button onclick="eventChecking();" >Test Events</button></td></tr>-->
-	</table>
-	
-	
-	
-	
+<nav class="nav">
+                    
+          <ul>
+		 <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
+     
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Archives</a></li>
+                  <li><a href="#">Feedback</a></li>
+          </ul>
+       
+        </nav>
+        <main>
+            <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor='#ffa1a1'><tr><td>
+            <a href="#" class="ssm-toggle-nav" style='text-decoration: none;' title="open nav">&#9776;</a></td><td width=99% align='center'>Madras Music & Miscellany</td></tr></table>
+        </main>
+
+        <!-- jQuery library (served from Google) -->
+       
+        <div class="ssm-overlay ssm-toggle-nav"></div>
 	
 		
 	 
