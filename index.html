@@ -694,7 +694,7 @@ function ven_det(v)
 	calEvt ='';
 	calEvtDetails='';
 	var ev_lst="<table border='0' id='test' class='ven1' cellpadding='0' cellspacing='0'>";
-	//events.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);	
+	 
 	for (var i = 0, len = events.length; i < len; i++)
  {
 	if(events[i][5]==v)
@@ -721,22 +721,18 @@ function ven_det(v)
 	ev_lst+=events[i][7]+'<hr size=2></td></tr>';
 		
 		
-//	evt_lst+="<tr valign='top' height='100px'><td > "+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+"<br>"+timeString+"</td><td>&nbsp;&nbsp;"+events[i][6]+"&nbsp;&nbsp;&nbsp;<b>"+events[i][8]+"</b>&nbsp;&nbsp;"+events[i][7]+"</td></tr>";
-	
-	//	evt_lst+="<tr valign='top'><td bordercolor='black'> &nbsp;&nbsp;"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+"</td><td rowspan=2>"+events[i][6]+"</td><td><b>"+events[i][8]+"</b></td></tr>";
-		
-	//	evt_lst+="<tr valign='top'><td bordercolor='white'>"+timeString+"</td><td bordercolor='white'>"+events[i][7]+"</td></tr>";
+ 
 			
 		
 	}
-	// table_string=evt_lst;
+	 
 	 calEvt = calEvt.replace('undefined','');
 	calEvtDetails = calEvtDetails.replace('undefined','');
  document.getElementById('xPort').innerHTML=ev_lst+"</table>" ;
 	
 
  }
-//alert('venue '+v);
+ 
 }
 	  
 	
@@ -802,7 +798,7 @@ function openCity(evt, cityName) {
 	
 	function category()
 	{
-	//alert('in');
+	 
 	
 			checkConnection();
 		document.getElementById("category").style.display="block";
@@ -841,10 +837,6 @@ function openCity(evt, cityName) {
 		document.getElementById("panel").style.display="none";
 		document.getElementById("panel").style.visibility="false";
 	
-	
-	
-		 
-		
 	}
 	document.getElementById("defaultOpen").click();
 var calEvt='';
@@ -915,13 +907,7 @@ for (var i = 0, len = events.length; i < len; i++)
 		calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
 			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
 			
-	//	evt_lst+="<tr valign='top' height='100px'><td> "+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+'<br>'+timeString +"</td><td>&nbsp;&nbsp;"+events[i][5]+"</td><td>&nbsp;&nbsp;"+"<b>"+events[i][8]+"</b>&nbsp;&nbsp;"+events[i][7]+"</td></tr>";
-			
-	//	evt_lst+="<tr valign='top' height='25px'><td> &nbsp;&nbsp;"+events[i][2]+"."+events[i][1]+"."+events[i][3]+"</td><td rowspan=2>"+events[i][5]+"</td><td>"+"<b>"+events[i][8]+"</b></td></tr>";	
-			
-	//	evt_lst+="<tr valign='top' height='25px'><td> "+timeString+"</td><td>"+events[i][7]+"</td></tr>";
-			//calArray+=events[i][3]+'/' +events[i][1]+"/"+events[i][2]+'&';
-		//	calArrayDetails+=events[i][5]+'-'+events[i][8]+'-'+'%';
+	 
 			
 	ev_lst+="<tr align='center' ><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+"<br>";
 			
@@ -929,20 +915,16 @@ for (var i = 0, len = events.length; i < len; i++)
 	ev_lst+=events[i][5]+'<br>'+'<br>';
 	ev_lst+=events[i][8]+'<br>';
 	ev_lst+=events[i][7]+'<hr size=2></td></tr>';
-		//	calEvt+=events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
-		//	calEvtDetails+=events[i][5]+'  '+events[i][8]+'%';
-	//  ev_lst+=events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+'<br>'+events[i][5]+'<br>'+ events[i][8]+'<br>'+events[i][7]+'<br><hr size=2>';
-		//alert('evlst'+ev_lst);	
+	 
 		}
  
 } 
-//document.getElementById('xPort').innerHTML=evt_lst+"</table>" ;
-//	alert('evlst'+ev_lst);
+ 
 	ev_lst = ev_lst.replace('undefined','');
 	calEvt = calEvt.replace('undefined','');
 	calEvtDetails = calEvtDetails.replace('undefined','');
 	document.getElementById('xPort').innerHTML=ev_lst +"<table>";
-	//alert(calEvt);
+	 
 }
 	
 	
@@ -981,9 +963,7 @@ function calAdd()
   var notes = calEvtDetails1[i];
 
 
- //alert(startDate);
-	//	alert(endDate);
-	//	alert(notes);
+ 
     window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror)
   var calsuccess = function(message) {
     navigatore.notification.alert("Event added successfully.");
@@ -1014,9 +994,7 @@ function share()
    message = message.replace(/&nbsp;/g,'');
 	
 	
-//	window.plugins.socialsharing.share('MMM','Madras Music & Miscellany','Testing',null);
-//setTimeout(function(){ navigator.notification.alert('Image Shared Successfully...',  alertDismissed,   'DigiGraph',   'OK'); },8000);
-//window.plugins.socialsharing.share('Optional message',  'Optional title','default.pdf',null);	
+ 
 window.plugins.socialsharing.share(message); 
 }
 	
@@ -1118,8 +1096,8 @@ document.getElementById("xPort1").style.visibility="false";
 		{
 		 width: 100vw;
 		font-size: 8pt;
-		/*	background-color: #eeedf0;
-    border-color: #eeedf0;*/
+		/*	background-color: #eeedf0;*/
+  /*  border-color: #eeedf0;*/
 	  border-collapse:separate;
  
 /*    border-radius:6px;*/
@@ -1326,42 +1304,7 @@ display	: none;
      display:none;
 		
 		}
-		#rcorners2 {
-			display: none; 
-  /*  border-radius: 25px;
-    border: 2px solid #FFFFFF;
-    padding: 20px; 
-    width: 100vw; !important;
-  
-			
-			width: 100vw;
-			border-style: solid;
-			font-size: 9pt;
-    border-color: black;
-	  border-collapse:separate;
-    border:solid black 0px;
-    border-radius:6px;
-    -moz-border-radius:6px;
-    height: 30px;*/
-}
-		#rcorners3 {
-			display: none; 
-  /*  border-radius: 25px;
-    border: 2px solid #FFFFFF;
-    padding: 20px; 
-    width: 100vw; !important;
-			
-     width: 100vw;
-     border-style: solid;
-     font-size: 9pt;
-     min-height: 50px;
-    border-color: black;
-    border-collapse:separate;
-    border:solid black 0px;
-    border-radius:6px;
-    -moz-border-radius:6px;*/
-   
-}
+	 
 	
 		@media screen and (min-width: 100px) and (max-width: 199px)
 {
@@ -1572,8 +1515,7 @@ span {
 	<tr bgcolor='f4f4f4' height='120px'><td> <button type="submit" class="btn2" value='Login'></button>	</td></tr>
 		</table>
 	</div>
-		<p id="rcorners2" align='center'></p>
-		<p id="rcorners3" align='center'></p>
+		 
 	</div>
 	
 			<div id='det' align='center' style="background-color:white">
