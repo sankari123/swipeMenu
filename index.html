@@ -991,6 +991,33 @@ navigator.notification.alert('Share Failed...',  alertDismissed,   'Madras Music
 function alertDismissed() {
             // do
 			}	
+function login()
+{
+document.getElementById("login").style.visibility="true";
+document.getElementById("login").style.display="block";
+document.getElementById("det").style.display="none";
+document.getElementById("det").style.visibility="false";
+document.getElementById("lst_mnu").style.display="none";
+document.getElementById("lst_mnu").style.visibility="false";
+document.getElementById("dl_btn").style.display="none";
+document.getElementById("dl_btn").style.visibility="false";
+document.getElementById("dl_btn1").style.display="none";
+document.getElementById("dl_btn1").style.visibility="false";
+document.getElementById("category").style.display="none";
+document.getElementById("category").style.visibility="false";
+document.getElementById("xPort").style.display="none";
+document.getElementById("xPort").style.visibility="false";
+document.getElementById("xPort1").style.display="none";
+document.getElementById("xPort1").style.visibility="false";
+	
+	 
+	document.getElementById("backmenu").style.display="block";
+	document.getElementById("backmenu").style.visibility="true";
+	document.getElementById("main").style.display="none";
+	document.getElementById("main").style.visibility="false";
+	document.getElementById("tab").style.display="none";
+	document.getElementById("tab").style.visibility="false";
+	}
 </script>
 	<style type="text/css">
 		.nav ul {
@@ -1379,7 +1406,7 @@ span {
 <nav class="nav">
                     
           <ul>
-		 <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
+		 <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Home</a>
      
               <li><a href="#">Login</a></li>
               <li><a href="#">Archives</a></li>
@@ -1387,11 +1414,14 @@ span {
           </ul>
        
         </nav>
-        <main>
-            <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor='#ffa1a1'><tr><td>
-            <a href="#" class="ssm-toggle-nav" style='text-decoration: none;' title="open nav">&#9776;</a></td><td width=99% align='center'>Madras Music & Miscellany</td></tr></table>
-        </main>
-
+        <div id=main>
+            <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor='#ffa1a1'><tr height='70px'><td>
+         <font size=4><b>   <a href="#" class="ssm-toggle-nav" style='text-decoration: none;' title="open nav">&#9776;</a></td><td width=99% align='center'>Madras Music & Miscellany</b></font></td></tr></table>
+        </div>
+<div id='backmenu' class='backmenu'>
+		      <table border=0 width='100%' bgcolor='#ffa1a1'><tr height='70px'><td>
+           <font size=4><b><a href="#"  onclick="category();" style='text-decoration: none;' title="back">&#x003C;</a></b></td><td width=99% align='center'><b>Madras Music & Miscellany<b></font></td></tr></table>
+		</div>
         <!-- jQuery library (served from Google) -->
        
         <div class="ssm-overlay ssm-toggle-nav"></div>
@@ -1463,7 +1493,19 @@ span {
    
 				
 	</div>
-	
+
+	<div id='login' class='login'>
+		 
+	   <table border=0 cellpadding=0 cellpadding=0  >
+		   <tr height='130px'> <td>Madras Music & Miscellany</td></tr>
+		   <tr > <td><input type="text" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrname" placeholder="Email ID"></td></tr>	
+	 <tr > <td><input type="password" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrname" placeholder="*******"></td></tr>	
+	<tr><td align=right> <a href="#" style='decoration: none;'>Forgot Password?</a></td></tr>
+		
+	<tr bgcolor='f4f4f4' height='120px'><td> <button type="submit" class="btn2" value='Login'></button>	</td></tr>
+		</table>
+	</div>
+
 	<div class="dl_btn" id=dl_btn align='center'>
     
  <div style="float: left; font-size: 9pt; width: 33%;"> <button class='btn1'  onclick='calAdd();'><img src="cal1.png"></button>
