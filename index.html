@@ -24,7 +24,7 @@ function init() {
 $(document).ready(function() {
                 $('.nav').slideAndSwipe();
             });
-    	document.addEventListener("deviceready", onDeviceReady, false);
+ document.addEventListener("deviceready", onDeviceReady, false);
 	
 }
 function getLoc()
@@ -1015,6 +1015,8 @@ function login()
 {
 document.getElementById("login").style.visibility="true";
 document.getElementById("login").style.display="block";
+document.getElementById("backmenu").style.display="block";
+document.getElementById("backmenu").style.visibility="true";
 document.getElementById("det").style.display="none";
 document.getElementById("det").style.visibility="false";
 document.getElementById("lst_mnu").style.display="none";
@@ -1029,15 +1031,11 @@ document.getElementById("xPort").style.display="none";
 document.getElementById("xPort").style.visibility="false";
 document.getElementById("xPort1").style.display="none";
 document.getElementById("xPort1").style.visibility="false";
-	
-	 
-	document.getElementById("backmenu").style.display="block";
-	document.getElementById("backmenu").style.visibility="true";
-	document.getElementById("main").style.display="none";
-	document.getElementById("main").style.visibility="false";
-	document.getElementById("tab").style.display="none";
-	document.getElementById("tab").style.visibility="false";
-	}
+document.getElementById("main").style.display="none";
+document.getElementById("main").style.visibility="false";
+document.getElementById("tab").style.display="none";
+document.getElementById("tab").style.visibility="false";
+}
 			
 			</script>
 <style>
@@ -1387,9 +1385,7 @@ span {
       /*       background-color: silver;*/
 		
         }
-/*	.ven1 tr:nth-child(odd) {
-    background: silver;
-}*/
+
 	
 	
 	  </style>
