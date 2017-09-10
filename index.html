@@ -5,13 +5,20 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <!-- CSS stylesheet for example -->
-          <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
-        <script type="text/javascript" src="cordova.js"></script>
-         <link rel="stylesheet" href="css/styles.css">
-         <link rel="stylesheet" href="css/slide-and-swipe-menu.css">
-      <script src="jquery.touchSwipe.min.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.slideandswipe.min.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+        <!-- CSS stylesheet for sliding-swipe-menu -->
+        <link rel="stylesheet" href="css/slide-and-swipe-menu.css">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+        <!-- touchSwipe library -->
+        <script src="http://labs.rampinteractive.co.uk/touchSwipe/jquery.touchSwipe.min.js"></script>
+
+        <!-- Slider Javascript file -->
+<script src="jquery.slideandswipe.min.js"></script>
+<!--<a href="javascript:home();">-->
+<script type="text/javascript" src="cordova.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="Calendar.js"></script>
 <script>
@@ -24,7 +31,7 @@ function init() {
 $(document).ready(function() {
                 $('.nav').slideAndSwipe();
             });
- document.addEventListener("deviceready", onDeviceReady, false);
+    	document.addEventListener("deviceready", onDeviceReady, false);
 	
 }
 function getLoc()
@@ -694,7 +701,7 @@ function ven_det(v)
 	calEvt ='';
 	calEvtDetails='';
 	var ev_lst="<table border='0' id='test' class='ven1' cellpadding='0' cellspacing='0'>";
-	 
+	//events.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);	
 	for (var i = 0, len = events.length; i < len; i++)
  {
 	if(events[i][5]==v)
@@ -721,18 +728,22 @@ function ven_det(v)
 	ev_lst+=events[i][7]+'<hr size=2></td></tr>';
 		
 		
- 
+//	evt_lst+="<tr valign='top' height='100px'><td > "+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+"<br>"+timeString+"</td><td>&nbsp;&nbsp;"+events[i][6]+"&nbsp;&nbsp;&nbsp;<b>"+events[i][8]+"</b>&nbsp;&nbsp;"+events[i][7]+"</td></tr>";
+	
+	//	evt_lst+="<tr valign='top'><td bordercolor='black'> &nbsp;&nbsp;"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+"</td><td rowspan=2>"+events[i][6]+"</td><td><b>"+events[i][8]+"</b></td></tr>";
+		
+	//	evt_lst+="<tr valign='top'><td bordercolor='white'>"+timeString+"</td><td bordercolor='white'>"+events[i][7]+"</td></tr>";
 			
 		
 	}
-	 
+	// table_string=evt_lst;
 	 calEvt = calEvt.replace('undefined','');
 	calEvtDetails = calEvtDetails.replace('undefined','');
  document.getElementById('xPort').innerHTML=ev_lst+"</table>" ;
 	
 
  }
- 
+//alert('venue '+v);
 }
 	  
 	
@@ -798,7 +809,7 @@ function openCity(evt, cityName) {
 	
 	function category()
 	{
-	 
+	//alert('in');
 	
 			checkConnection();
 		document.getElementById("category").style.display="block";
@@ -837,6 +848,10 @@ function openCity(evt, cityName) {
 		document.getElementById("panel").style.display="none";
 		document.getElementById("panel").style.visibility="false";
 	
+	
+	
+		 
+		
 	}
 	document.getElementById("defaultOpen").click();
 var calEvt='';
@@ -907,7 +922,13 @@ for (var i = 0, len = events.length; i < len; i++)
 		calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
 			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
 			
-	 
+	//	evt_lst+="<tr valign='top' height='100px'><td> "+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+'<br>'+timeString +"</td><td>&nbsp;&nbsp;"+events[i][5]+"</td><td>&nbsp;&nbsp;"+"<b>"+events[i][8]+"</b>&nbsp;&nbsp;"+events[i][7]+"</td></tr>";
+			
+	//	evt_lst+="<tr valign='top' height='25px'><td> &nbsp;&nbsp;"+events[i][2]+"."+events[i][1]+"."+events[i][3]+"</td><td rowspan=2>"+events[i][5]+"</td><td>"+"<b>"+events[i][8]+"</b></td></tr>";	
+			
+	//	evt_lst+="<tr valign='top' height='25px'><td> "+timeString+"</td><td>"+events[i][7]+"</td></tr>";
+			//calArray+=events[i][3]+'/' +events[i][1]+"/"+events[i][2]+'&';
+		//	calArrayDetails+=events[i][5]+'-'+events[i][8]+'-'+'%';
 			
 	ev_lst+="<tr align='center' ><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+"<br>";
 			
@@ -915,16 +936,20 @@ for (var i = 0, len = events.length; i < len; i++)
 	ev_lst+=events[i][5]+'<br>'+'<br>';
 	ev_lst+=events[i][8]+'<br>';
 	ev_lst+=events[i][7]+'<hr size=2></td></tr>';
-	 
+		//	calEvt+=events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
+		//	calEvtDetails+=events[i][5]+'  '+events[i][8]+'%';
+	//  ev_lst+=events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+'<br>'+events[i][5]+'<br>'+ events[i][8]+'<br>'+events[i][7]+'<br><hr size=2>';
+		//alert('evlst'+ev_lst);	
 		}
  
 } 
- 
+//document.getElementById('xPort').innerHTML=evt_lst+"</table>" ;
+//	alert('evlst'+ev_lst);
 	ev_lst = ev_lst.replace('undefined','');
 	calEvt = calEvt.replace('undefined','');
 	calEvtDetails = calEvtDetails.replace('undefined','');
 	document.getElementById('xPort').innerHTML=ev_lst +"<table>";
-	 
+	//alert(calEvt);
 }
 	
 	
@@ -963,7 +988,9 @@ function calAdd()
   var notes = calEvtDetails1[i];
 
 
- 
+ //alert(startDate);
+	//	alert(endDate);
+	//	alert(notes);
     window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror)
   var calsuccess = function(message) {
     navigatore.notification.alert("Event added successfully.");
@@ -994,7 +1021,9 @@ function share()
    message = message.replace(/&nbsp;/g,'');
 	
 	
- 
+//	window.plugins.socialsharing.share('MMM','Madras Music & Miscellany','Testing',null);
+//setTimeout(function(){ navigator.notification.alert('Image Shared Successfully...',  alertDismissed,   'DigiGraph',   'OK'); },8000);
+//window.plugins.socialsharing.share('Optional message',  'Optional title','default.pdf',null);	
 window.plugins.socialsharing.share(message); 
 }
 	
@@ -1015,8 +1044,6 @@ function login()
 {
 document.getElementById("login").style.visibility="true";
 document.getElementById("login").style.display="block";
-document.getElementById("backmenu").style.display="block";
-document.getElementById("backmenu").style.visibility="true";
 document.getElementById("det").style.display="none";
 document.getElementById("det").style.visibility="false";
 document.getElementById("lst_mnu").style.display="none";
@@ -1031,11 +1058,15 @@ document.getElementById("xPort").style.display="none";
 document.getElementById("xPort").style.visibility="false";
 document.getElementById("xPort1").style.display="none";
 document.getElementById("xPort1").style.visibility="false";
-document.getElementById("main").style.display="none";
-document.getElementById("main").style.visibility="false";
-document.getElementById("tab").style.display="none";
-document.getElementById("tab").style.visibility="false";
-}
+	
+	 
+	document.getElementById("backmenu").style.display="block";
+	document.getElementById("backmenu").style.visibility="true";
+	document.getElementById("main").style.display="none";
+	document.getElementById("main").style.visibility="false";
+	document.getElementById("tab").style.display="none";
+	document.getElementById("tab").style.visibility="false";
+	}
 			
 			</script>
 <style>
@@ -1094,8 +1125,8 @@ document.getElementById("tab").style.visibility="false";
 		{
 		 width: 100vw;
 		font-size: 8pt;
-		/*	background-color: #eeedf0;*/
-  /*  border-color: #eeedf0;*/
+			background-color: #eeedf0;
+    border-color: #eeedf0;
 	  border-collapse:separate;
  
 /*    border-radius:6px;*/
@@ -1194,7 +1225,7 @@ button:focus {outline:none;} ::-moz-focus-inner {border:0;}
                 width: 100% !important;
 		display:none;
 		font: 15px arial, sans-serif;
-		/*background-color:  #f8f9fb;*/
+		background-color:  #f8f9fb;
 /*		font-family: "Sans Serif";*/
 	/*	font-size: 9pt;*/
 	/*	font: normal 12pt "Sans Serif";  */
@@ -1302,7 +1333,42 @@ display	: none;
      display:none;
 		
 		}
-	 
+		#rcorners2 {
+			display: none; 
+  /*  border-radius: 25px;
+    border: 2px solid #FFFFFF;
+    padding: 20px; 
+    width: 100vw; !important;
+  
+			
+			width: 100vw;
+			border-style: solid;
+			font-size: 9pt;
+    border-color: black;
+	  border-collapse:separate;
+    border:solid black 0px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+    height: 30px;*/
+}
+		#rcorners3 {
+			display: none; 
+  /*  border-radius: 25px;
+    border: 2px solid #FFFFFF;
+    padding: 20px; 
+    width: 100vw; !important;
+			
+     width: 100vw;
+     border-style: solid;
+     font-size: 9pt;
+     min-height: 50px;
+    border-color: black;
+    border-collapse:separate;
+    border:solid black 0px;
+    border-radius:6px;
+    -moz-border-radius:6px;*/
+   
+}
 	
 		@media screen and (min-width: 100px) and (max-width: 199px)
 {
@@ -1341,8 +1407,8 @@ display	: none;
 		position: fixed; 
 		border-radius: 0px;
     border: 0px solid #FFFFFF;
-     height: 100%;
-    width: 100vw; !important;
+    
+    width: 100%; !important;
     margin-left: 0px;
 }
 #calendar
@@ -1385,19 +1451,19 @@ span {
       /*       background-color: silver;*/
 		
         }
-
+/*	.ven1 tr:nth-child(odd) {
+    background: silver;
+}*/
 	
 	
 	  </style>
 	   
     </head>
     <body onload='init();'> 
-	 
-         <nav class="nav">
+       <nav class="nav">
                     
           <ul>
-		 <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
-     
+		  <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Home</a></li>
               <li><a href="#">Login</a></li>
               <li><a href="#">Archives</a></li>
                   <li><a href="#">Feedback</a></li>
@@ -1416,8 +1482,7 @@ span {
 		      <table border=0 width='100%' bgcolor='#ffa1a1'><tr height='70px'><td>
            <font size=4><b><a href="#"  onclick="category();" style='text-decoration: none;' title="back">&#x003C;</a></b></td><td width=99% align='center'><b>Madras Music & Miscellany<b></font></td></tr></table>
 		</div>
-    <div class="ssm-overlay ssm-toggle-nav"></div>
-
+   
 <div class="tab">
       <table border="0"  bordercolor='#003c67' cellpadding="0" cellspacing="0" width="100%">
 	<tr height='25px'  bgcolor='#003c67'><td align=center>
@@ -1449,7 +1514,7 @@ span {
 	
 	<div id='category' class='category'>
 		 
-	   <table border=0 width='100%' cellpadding=0 cellpadding=0 bgcolor='FFFFFF'>
+	   <table border=0 cellpadding=0 cellpadding=0 bgcolor='FFFFFF'>
 		   <tr height='30px'><td><font size=2 face='arial'>Browse by Category</font></td></tr>
 		   <tr><td><button onclick='eventList(1);' class='btn2'><img src='concert.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td></tr>
 		   <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
@@ -1496,12 +1561,12 @@ span {
     <div style='font-size: 9pt;'>Share</div></div>
  <br style="clear: left;" />
 </div>
- 
+</div>
 	<div id='xPort' >     </div>
 
 		<div id='dl_btn1'></div>
 	
-		 
+		<div>
 	
 	<div id='login' class='login'>
 		 
@@ -1514,7 +1579,9 @@ span {
 	<tr bgcolor='f4f4f4' height='120px'><td> <button type="submit" class="btn2" value='Login'></button>	</td></tr>
 		</table>
 	</div>
-	 
+		<p id="rcorners2" align='center'></p>
+		<p id="rcorners3" align='center'></p>
+	</div>
 	
 			<div id='det' align='center' style="background-color:white">
 				 
