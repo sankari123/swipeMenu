@@ -609,6 +609,8 @@ function calClick()
 		document.getElementById("calendar").style.visibility="true";
 		document.getElementById("category").style.display="none";
 		document.getElementById("category").style.visibility="false";
+		document.getElementById("login").style.display="none";
+		document.getElementById("login").style.visibility="false";
 		document.getElementById("xPort").style.display="none";
 		document.getElementById("xPort").style.visibility="false";
 		document.getElementById("xPort1").style.display="none";
@@ -1004,15 +1006,18 @@ function alertDismissed() {
 			}	
 function login()
 {
-document.getElementById("login").style.visibility="true";
-document.getElementById("login").style.display="block";
+
 if(document.getElementById("main").style.visibility=="true")
 {	
-	document.getElementById("main").style.visibility=="false";
-	document.getElementById("main").style.display="none";
 	document.getElementById("backmenu").style.display="block";
 	document.getElementById("backmenu").style.visibility="true";
+	document.getElementById("main").style.visibility=="false";
+	document.getElementById("main").style.display="none";
+	document.getElementById("mainMenu").style.visibility=="false";
+	document.getElementById("mainMenu").style.display="none";
 }
+document.getElementById("login").style.visibility="true";
+document.getElementById("login").style.display="block";
 document.getElementById("det").style.display="none";
 document.getElementById("det").style.visibility="false";
 document.getElementById("lst_mnu").style.display="none";
@@ -1421,7 +1426,7 @@ span {
        
         <div class="ssm-overlay ssm-toggle-nav"></div>
 	
-		
+	<div id='mainMenu' class='mainMenu'>	
 	 
 <table border="0"  bordercolor='#003c67' cellpadding="0" cellspacing="0" width="100%">
 	<tr height='25px'  bgcolor='#003c67'><td align=center>
@@ -1433,6 +1438,7 @@ span {
 		
 </div>
 		</td></tr></table>
+</div>
 <div id="London" class="tabcontent">
 <!--  <span onclick="this.parentElement.style.display='none'" class="topright">x</span>-->
    
