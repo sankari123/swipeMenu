@@ -793,6 +793,10 @@ function openCity(evt, cityName) {
 		document.getElementById("category").style.visibility="true";
 		document.getElementById("main").style.display="none";
 		document.getElementById("main").style.visibility="false";
+		document.getElementById("dl_btn1").style.display="none";
+		document.getElementById("dl_btn1").style.visibility="false";
+		document.getElementById("dl_btn").style.display="none";
+		document.getElementById("dl_btn").style.visibility="false";
 		document.getElementById("calendar").style.display="none";
 		document.getElementById("calendar").style.visibility="false";
 		document.getElementById("lst_mnu").style.display="none";
@@ -801,10 +805,7 @@ function openCity(evt, cityName) {
 		document.getElementById("xPort").style.visibility="false";
 		document.getElementById("xPort1").style.display="none";
 		document.getElementById("xPort1").style.visibility="false";
-		document.getElementById("dl_btn1").style.display="none";
-		document.getElementById("dl_btn1").style.visibility="false";
-		document.getElementById("dl_btn").style.display="none";
-		document.getElementById("dl_btn").style.visibility="false";
+		
 		document.getElementById("rnd").style.display="none";
 		document.getElementById("rnd").style.visibility="false";
 		document.getElementById("det").style.display="block";
@@ -1195,9 +1196,13 @@ button:focus {outline:none;} ::-moz-focus-inner {border:0;}
 .dl_btn {
     width: 100% !important;
      background:#f3f3f3;
+	display: none;
 }
 
-				
+.dl_btn1 {
+   
+	display: none;
+}				
 		div.tab {
     overflow: hidden;
     border: 0px solid #ccc;
