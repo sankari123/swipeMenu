@@ -794,16 +794,15 @@ function openCity(evt, cityName) {
 			checkConnection();
 		document.getElementById("category").style.display="block";
 		document.getElementById("category").style.visibility="true";
-		if(document.getElementById("main").style.visibility=="true")
-		{
-		document.getElementById("backmenu").style.display="none";
-		document.getElementById("backmenu").style.visibility="false";
-		}
-		else
-		{
 		document.getElementById("main").style.display="block";
 		document.getElementById("main").style.visibility="true";
-		}
+		 document.getElementById("mainMenu").style.display="block";
+		document.getElementById("mainMenu").style.visibility="true"; 
+		document.getElementById("backmenu").style.display="none";
+		document.getElementById("backmenu").style.visibility="false";
+		document.getElementById("login").style.display="none";
+		document.getElementById("login").style.visibility="false"; 
+		
 		document.getElementById("dl_btn1").style.display="none";
 		document.getElementById("dl_btn1").style.visibility="false";
 		document.getElementById("dl_btn").style.display="none";
@@ -1040,6 +1039,9 @@ document.getElementById("xPort1").style.visibility="false";
 	document.getElementById("tab").style.display="none";
 	document.getElementById("tab").style.visibility="false";
 	}
+	
+	
+ 
 </script>
 	<style type="text/css">
 		.nav ul {
