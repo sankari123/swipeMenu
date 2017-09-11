@@ -791,8 +791,16 @@ function openCity(evt, cityName) {
 			checkConnection();
 		document.getElementById("category").style.display="block";
 		document.getElementById("category").style.visibility="true";
-		document.getElementById("main").style.display="none";
-		document.getElementById("main").style.visibility="false";
+		if(document.getElementById("main").style.visibility=="true")
+		{
+		document.getElementById("backmenu").style.display="none";
+		document.getElementById("backmenu").style.visibility="false";
+		}
+		else
+		{
+		document.getElementById("main").style.display="block";
+		document.getElementById("main").style.visibility="true";
+		}
 		document.getElementById("dl_btn1").style.display="none";
 		document.getElementById("dl_btn1").style.visibility="false";
 		document.getElementById("dl_btn").style.display="none";
