@@ -791,6 +791,8 @@ function openCity(evt, cityName) {
 			checkConnection();
 		document.getElementById("category").style.display="block";
 		document.getElementById("category").style.visibility="true";
+		document.getElementById("main").style.display="none";
+		document.getElementById("main").style.visibility="false";
 		document.getElementById("calendar").style.display="none";
 		document.getElementById("calendar").style.visibility="false";
 		document.getElementById("lst_mnu").style.display="none";
@@ -1277,40 +1279,7 @@ display	: none;
      display:none;
 		
 		}
-		#rcorners2 {
-  /*  border-radius: 25px;
-    border: 2px solid #FFFFFF;
-    padding: 20px; 
-    width: 100vw; !important;*/
-  
-			
-			width: 100vw;
-			border-style: solid;
-			font-size: 9pt;
-    border-color: black;
-	  border-collapse:separate;
-    border:solid black 0px;
-    border-radius:6px;
-    -moz-border-radius:6px;
-    height: 30px;
-}
-		#rcorners3 {
-  /*  border-radius: 25px;
-    border: 2px solid #FFFFFF;
-    padding: 20px; 
-    width: 100vw; !important;*/
-			
-			width: 100vw;
-			border-style: solid;
-			font-size: 9pt;
-			min-height: 50px;
-    border-color: black;
-	  border-collapse:separate;
-    border:solid black 0px;
-    border-radius:6px;
-    -moz-border-radius:6px;
-   
-}
+		 
 	
 		@media screen and (min-width: 100px) and (max-width: 199px)
 {
@@ -1514,7 +1483,7 @@ span {
 		</table>
 	</div>
 
-	<div class="dl_btn" id=dl_btn align='center'>
+	<div class="dl_btn" id='dl_btn' align='center'>
     
  <div style="float: left; font-size: 9pt; width: 33%;"> <button class='btn1'  onclick='calAdd();'><img src="cal1.png"></button>
     <div style='font-size: 9pt;' >Calendar</div></div>
@@ -1529,12 +1498,7 @@ span {
 
 		<div id='dl_btn1'></div>
 	
-		<div>
-	
 		 
-		<p id="rcorners2" align='center'></p>
-		<p id="rcorners3" align='center'></p>
-	</div>
 	
 			<div id='det' align='center' style="background-color:white">
 				 
@@ -1545,7 +1509,7 @@ span {
 	 
 <textarea id="rest1" class="hideDontTakeUpSpace" rows=1 cols=40></textarea>
 	
-<div id='xPort1' style="display:none;">     </div>
+<div id='xPort1'>     </div>
 	
 </body>
 </html>
