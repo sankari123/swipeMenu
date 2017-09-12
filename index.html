@@ -510,14 +510,15 @@ var lat2,long2;
 	{
 		var j;
 		checkConnection();
+		document.getElementById("lst_mnu").style.display="block";
+		document.getElementById("lst_mnu").style.visibility="true";
 		getLoc();
 		for (var i = 0, len = uniq.length; i < len; i++) {
 		 alert(uniq[i]);
 		}
 		// alert(uniq);
 		//lst_mnu.innerHTML='';
-		document.getElementById("lst_mnu").style.display="block";
-		document.getElementById("lst_mnu").style.visibility="true";
+		
 		document.getElementById("calendar").style.display="none";
 		document.getElementById("calendar").style.visibility="false";
 		document.getElementById("category").style.display="none";
@@ -1465,13 +1466,13 @@ span {
 		</table>
 			   
 	</div>
-	
+	<div id='lst_mnu' align='left'>	</div>
 	<table id="evtcal" border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
 			<td style="padding: 3px;" align="center" valign="top" width="314">
 				<div id="calendar"><!--  Dynamically Filled --></div>
 				
 			</td></tr></table>
-	<div id='lst_mnu' align='left'>	</div>
+	
 	<!--<div id="previewImage">
     </div>-->
       
