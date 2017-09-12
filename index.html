@@ -1037,26 +1037,13 @@ function usrauth()
 {
 	alert('in');
 	
-	usrauth='y';
+	//usrauth='y';
 //usrnam=document.form.usrname.value;
 //pd=document.form.pwd.value;	
 //  checkConnection() ;             
  
 		
-        $.ajax({    //create an ajax request to load_page.php
-          type: "GET",
-          url: 'http://www.writeacademy.in/MMF/authUsr.php',             
-          dataType: "html",
-          data: {
-              "unam": $('#usrname').val(),
-	      "pwd": $('#pwd').val(),  
-          },            
-          success: function(response){                    
-              $("#responsecontainer").html(response);
-          }
-
-        });
-	
+     
 	
 }
  
@@ -1540,7 +1527,7 @@ span {
 		    <tr><td>&nbsp;</td></tr>
 		   <tr><td align=right> <a href="#" style='text-decoration: none;'><font size=1>Forgot Password?</font></a></td></tr>
 		   <tr><td>&nbsp;</td></tr>
-	<tr bgcolor='f4f4f4' height='60px'><td> <button type="submit" id='display' class="btn34" value='Login' onclick='usrauth();'>Login</button>	</td></tr>
+	<tr bgcolor='f4f4f4' height='60px'><td> <button id='display' class="btn34"   onclick='usrauth();'>Login</button>	</td></tr>
 		   
 		</table>
 			
