@@ -25,6 +25,7 @@
 <script type="text/javascript" src="Calendar.js"></script>
 
 <script type="text/JavaScript" language="JavaScript">
+	usrauth='';
 	 $(document).ready(function() {
                 $('.nav').slideAndSwipe();
             });
@@ -75,8 +76,16 @@ function checkConnection() {
       {
 	    connSel='Y';
 	     // alert(connSel);
+	      
+	      if(usrauth=='y')
+	      {
+	         
+	      }
+	      else
+	      {
 	      ajaxFunction();
 	 changedate('return');
+	      }
 	// ajaxFunction();
 	 
       }
@@ -1025,6 +1034,7 @@ document.getElementById("xPort1").style.visibility="false";
 	
 $("#display").click(function() 
 {
+	usrauth='y';
 //usrnam=document.form.usrname.value;
 //pd=document.form.pwd.value;	
   checkConnection() ;             
