@@ -25,12 +25,13 @@
 <script type="text/javascript" src="Calendar.js"></script>
 
 <script type="text/JavaScript" language="JavaScript">
-	usrauth='';
+	
 	 $(document).ready(function() {
                 $('.nav').slideAndSwipe();
             });
   var optSel;
-	
+var usrauth ;	
+	usrauth='';	
 function alertDismissed() {
             alert('ddd');
         }	
@@ -89,7 +90,7 @@ function checkConnection() {
 	// ajaxFunction();
 	 
       }
-	
+ 
 }
 	
 function RgotFS(fileSystem) {
@@ -1034,14 +1035,18 @@ document.getElementById("xPort1").style.visibility="false";
 	
 $("#display").click(function() 
 {
+	alert('in');
+	
 	usrauth='y';
 //usrnam=document.form.usrname.value;
 //pd=document.form.pwd.value;	
   checkConnection() ;             
-
+ 
+		
+		
         $.ajax({    //create an ajax request to load_page.php
           type: "GET",
-          url: "authUsr.php",             
+          url: 'http://www.writeacademy.in/MMF/authUsr.php',             
           dataType: "html",
           data: {
               "unam": $('#usrname').val(),
