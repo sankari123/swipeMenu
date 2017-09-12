@@ -550,7 +550,7 @@ uniq.push(["d"]);
  
 }
 		//var im_htm='';
-var im_htm="<font color='black'><table border='0'  class='ven' cellpadding='0' cellspacing='0'>";
+var im_htm="<table border='0'  class='ven' cellpadding='0' cellspacing='0'>";
 	 
 	for (var i = 0, len = uniq.length; i < len; i++) {
 	
@@ -580,7 +580,7 @@ im_htm+="<tr height='120px'> <td style='width: 100px; height: 50px; border: 0px 
 	
 	}
 	
-document.getElementById('lst_mnu').innerHTML=im_htm+"</font></table>" ;
+document.getElementById('lst_mnu').innerHTML=im_htm+"</table>" ;
 	
 	}
 function calClick()
@@ -1128,8 +1128,19 @@ text-align:center;
 
 .btn1 {  background-color: transparent; border:none; padding: 0; font-weight: bold; color: white; text-decoration:underline;
     display:inline-block;}
-.btn24 {  background-color: transparent; border:none; padding: 0; font-weight: bold; color: white; text-decoration:underline;
+.btn24
+	
+	{
+	width:100%;
+	height:100%;
+	background-color:#f2f2f2; border:block; padding: 2;  display:inline-block; font-weight: bold; color: black;
+	border-radius:6px;
+    -moz-border-radius:6px;
+	}
+		 	
+.btn34 {  background-color: transparent; border:none; padding: 0; font-weight: bold; color: white; text-decoration:underline;
     display:inline-block;}		
+		
 		
 .btn2 {  background-color: transparent; border:none; padding: 0; font-weight: bold; color: black;}
 button:focus {outline:none;} ::-moz-focus-inner {border:0;}
@@ -1492,7 +1503,7 @@ span {
 	 <tr > <td><input type="password" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrname" placeholder="*******"></td></tr>	
 	<tr><td align=right> <a href="#" style='decoration: none;'>Forgot Password?</a></td></tr>
 		
-	<tr bgcolor='f4f4f4' height='60px'><td> <button type="submit" class="btn24" value='Login'>Login</button>	</td></tr>
+	<tr bgcolor='f4f4f4' height='60px'><td> <button type="submit" class="btn34" value='Login'>Login</button>	</td></tr>
 		</table>
 	</div>
 
