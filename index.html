@@ -1033,7 +1033,7 @@ document.getElementById("xPort1").style.visibility="false";
 	document.getElementById("tab").style.visibility="false";
 	}
 	
-$("#display").click(function() 
+function(authusr) 
 {
 	alert('in');
 	
@@ -1058,7 +1058,7 @@ $("#display").click(function()
 
         });
 
-    });		
+}
  
  
 </script>
@@ -1540,7 +1540,7 @@ span {
 		    <tr><td>&nbsp;</td></tr>
 		   <tr><td align=right> <a href="#" style='text-decoration: none;'><font size=1>Forgot Password?</font></a></td></tr>
 		   <tr><td>&nbsp;</td></tr>
-	<tr bgcolor='f4f4f4' height='60px'><td> <button type="button" id='display' class="btn34" value='Login'>Login</button>	</td></tr>
+	<tr bgcolor='f4f4f4' height='60px'><td> <button type="button" id='display' class="btn34" value='Login' onclick='usrauth();'>Login</button>	</td></tr>
 		   
 		</table>
 			
