@@ -1033,7 +1033,7 @@ document.getElementById("xPort1").style.visibility="false";
 	document.getElementById("tab").style.visibility="false";
 	}
 	
-function(authusr) 
+function authusr()
 {
 	alert('in');
 	
@@ -1042,7 +1042,6 @@ function(authusr)
 //pd=document.form.pwd.value;	
 //  checkConnection() ;             
  
-		
 		
         $.ajax({    //create an ajax request to load_page.php
           type: "GET",
@@ -1057,7 +1056,8 @@ function(authusr)
           }
 
         });
-
+	
+	
 }
  
  
@@ -1540,7 +1540,7 @@ span {
 		    <tr><td>&nbsp;</td></tr>
 		   <tr><td align=right> <a href="#" style='text-decoration: none;'><font size=1>Forgot Password?</font></a></td></tr>
 		   <tr><td>&nbsp;</td></tr>
-	<tr bgcolor='f4f4f4' height='60px'><td> <button type="button" id='display' class="btn34" value='Login' onclick='usrauth();'>Login</button>	</td></tr>
+	<tr bgcolor='f4f4f4' height='60px'><td> <button type="submit" id='display' class="btn34" value='Login' onclick='usrauth();'>Login</button>	</td></tr>
 		   
 		</table>
 			
