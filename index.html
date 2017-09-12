@@ -512,9 +512,9 @@ var lat2,long2;
 		checkConnection();
 		getLoc();
 		for (var i = 0, len = uniq.length; i < len; i++) {
-		//alert(uniq[i]);
+		 alert(uniq[i]);
 		}
-		//alert(uniq);
+		// alert(uniq);
 		//lst_mnu.innerHTML='';
 		document.getElementById("lst_mnu").style.display="block";
 		document.getElementById("lst_mnu").style.visibility="true";
@@ -541,56 +541,40 @@ var lat2,long2;
 		
         if(uniq.length % 2==0)
 {
-//alert('no add');
+ 
 }
 else
 {
 uniq.push(["d"]);
-//alert('add');
+ 
 }
 		//var im_htm='';
 var im_htm="<table border='0' class='ven'  cellpadding='0' cellspacing='0'>";
-	//for (var i = 0, len = multiArr.length-1; i < len; i++) {
+	 
 	for (var i = 0, len = uniq.length; i < len; i++) {
 	
 	j=i+1;
 		
-		//checking
-		//venue=String(latR[1]);
-		//venue=venue.replace(/\s/g, ' ');
-		//end check
+		 
 		im_file=uniq[i]+".jpg";
 		im1_file=uniq[j]+".jpg";
-		// alert(uniq[i]);
-	      //  alert(uniq[j]);	
+		 
 		ch_uni=String(uniq[i]);
 		 
 		ch_uni=ch_uni.replace(/\s/g, '_');
-		//venue.replace(/\s/g, ' ');
-		//venue=venue.replace(/\s/g, ' ');
+		 
               ch_uni1=String(uniq[j]);
 		ch_uni1=ch_uni1.replace(/\s/g, '_');
 
-//  alert('after'+ch_uni);
-//	alert('after'+ch_uni1);	
+ 
 if(uniq[j]=='d')
 {
-	//	alert('in');
-//	im_htm+="<font size=2><div class='left-div'><button onclick='ven_det(this.value);' style='display:none;' value="+ch_uni +">"+uniq[i]+"</button></div>";
-	
-//im_htm+="<font size=2><tr height='80px' valign='top'><td width='50%' bordercolor='#eeeded'> <table border='0' bgcolor='#eeeded' bordercolor='#eeeded' class='ven1' cellspacing='3' cellpadding='3'><tr height='80px'><td colspan='2' align='center' bgcolor='white' bordercolor='white'><button onclick='ven_det(this.value);' class='btn2' value="+ch_uni +">"+uniq[i]+"</button></td></tr></table></td></tr>";
+	 
 	im_htm+="<tr height='120px'> <td style='width: 100px; height: 50px; border: 0px solid gray;'><button onclick='ven_det(this.value);' class='btn24' value="+ch_uni +">"+uniq[i]+"</button></td><td>&nbsp;</td> </tr>";
  }
 		else
 		{
-//		alert('out');
-	//		im_htm+="<font size=2><div class='left-div'><button onclick='ven_det(this.value);' style='display:none;' value="+ch_uni +">"+uniq[i]+"</button></div>";
-//im_htm+="<font size=2><tr height='80px' valign='top'><td width='50%' bordercolor='#eeeded'> <table border='1' bordercolor='#eeeded' class='ven1' cellspacing='3' cellpadding='3'><tr height='80px'><td colspan='2' align='center' bgcolor='white' bordercolor='white'><button onclick='ven_det(this.value);' class='btn2' value="+ch_uni+">"+uniq[i]+"</button></td></tr></table></td>";	
-
-			
-//			im_htm+="<font size=2><div class='right-div'><button onclick='ven_det(this.value);' style='display:none;' value="+ch_uni1 +">"+uniq[j]+"</button></div>";	
-			
-//im_htm+="<font size=2><td width='50%' bordercolor='#eeeded'> <table border='1' bordercolor='#eeeded' class='ven1' cellspacing='3' cellpadding='3'><tr height='80px'><td colspan='2' align='center' bgcolor='white' bordercolor='white'><button onclick='ven_det(this.value);' class='btn2' value="+ch_uni1+">"+uniq[j]+"</button></td></tr></table></td></tr>";
+ 
 			
 im_htm+="<tr height='120px'> <td style='width: 100px; height: 50px; border: 0px solid gray;'><button onclick='ven_det(this.value);' class='btn24' value="+ch_uni +">"+uniq[i]+"</button></td> <td style='width: 100px; height: 50px; border: 0px solid gray;'><button onclick='ven_det(this.value);' class='btn24' value="+ch_uni1+">"+uniq[j]+"</button></td> </tr>";
 }
@@ -790,7 +774,8 @@ function openCity(evt, cityName) {
 	function category()
 	{
 	//alert('in');
-	
+		
+	document.getElementById("defaultOpen").click();
 			checkConnection();
 		document.getElementById("category").style.display="block";
 		document.getElementById("category").style.visibility="true";
