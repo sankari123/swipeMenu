@@ -8,8 +8,7 @@
         <!-- CSS stylesheet for example -->
 	<script type="text/javascript" src="cordova.js"></script>
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
-
+       
         <!-- CSS stylesheet for sliding-swipe-menu -->
         <link rel="stylesheet" href="css/slide-and-swipe-menu.css">
  <script src="js/jquery.min.js"></script>
@@ -1060,7 +1059,7 @@ function authusr1()
 	 
 }
  
- function authusr()
+ function authusr2()
 {
  
 	usrnam=document.usrForm.usrname.value;
@@ -1077,7 +1076,28 @@ function authusr1()
 	xhr.send();
 	
 }
-
+function authusr(){
+    $.ajax({
+        url:'http://www.writeacademy.in/MMF/authUsr.php',
+        type:'GET',
+	data: {
+              "unam": $('#usrname').val(),
+	      "pwd": $('#usrpwd').val(),  
+          },        
+        headers:{
+            "Content-Type":'application/x-www-form-urlencoded'
+        },
+       
+        cache:false,
+        success: function (data) {
+            alert(data);
+        },
+        error:function(request, textStatus, errorThrown){
+            alert(errorThrown);
+        }
+    });
+    return false;
+}
 	
 </script>
 	<style type="text/css">
