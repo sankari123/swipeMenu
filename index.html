@@ -1052,11 +1052,12 @@ function authusr()
           },            
           success: function(response){                    
               $("#responsecontainer").html(response);
+		document.getElementById('responsecontainer').innerHTML=response;
           }
 
         });	
      
-	alert(document.getElementById('responsecontainer').innerHTML);
+	alert(response);
 }
  
  
