@@ -1077,11 +1077,13 @@ function authusr1()
 	
 }
 function authusr(){
+	  document.getElementById('rest1').value='';
 	usrnam=document.usrForm.usrname.value;
 	usrpwd1=document.usrForm.usrpwd.value;
 	//alert(usrnam);
 	//alert(usrpwd1);
          var params = "unam=" + usrnam +"&pwd=" + usrpwd1; 
+	alert(params);
 	var myURL="http://www.writeacademy.in/MMF/authUsr.php"; 
         var request = new XMLHttpRequest(); 
         request.open("POST", myURL, true); 
