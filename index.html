@@ -1052,12 +1052,12 @@ function authusr()
           },            
           success: function(response){                    
               $("#responsecontainer").html(response);
-		document.getElementById('responsecontainer').innerHTML=response;
+		//document.getElementById('responsecontainer').innerHTML=response;
           }
 
         });	
      
-	alert(response);
+	//alert(response);
 }
  
  
@@ -1510,7 +1510,7 @@ span {
 		    <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
 		   
 		</table>
-			   
+			<div id="responsecontainer">&nbsp;ddddddd</div>	   
 	</div>
 	
 	<table id="evtcal" border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
