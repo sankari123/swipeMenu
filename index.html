@@ -1041,7 +1041,19 @@ function authusr()
 //pd=document.form.pwd.value;	
 //  checkConnection() ;             
  
-		
+	$.ajax({    //create an ajax request to load_page.php
+          type: "GET",
+          url: 'http://www.writeacademy.in/MMF/authUsr.php',             
+          dataType: "html",
+          data: {
+              "unam": $('#usrname').val(),
+	      "pwd": $('#pwd').val(),  
+          },            
+          success: function(response){                    
+              $("#responsecontainer").html(response);
+          }
+
+        });	
      
 	
 }
@@ -1559,6 +1571,6 @@ span {
 <textarea id="rest1" class="hideDontTakeUpSpace" rows=1 cols=40></textarea>
 	
 <div id='xPort1'>     </div>
-	<div id="responsecontainer">&nbsp;dfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsfs</div>
+	<div id="responsecontainer">&nbsp;</div>
 </body>
 </html>
