@@ -1008,7 +1008,8 @@ function login()
 	document.getElementById("main").style.display="none";
 	document.getElementById("mainMenu").style.visibility="false";
 	document.getElementById("mainMenu").style.display="none";
- 
+document.getElementById("calendar").style.display="none";
+document.getElementById("calendar").style.visibility="false"; 
 document.getElementById("login").style.visibility="true";
 document.getElementById("login").style.display="block";
 document.getElementById("det").style.display="none";
@@ -1028,9 +1029,9 @@ document.getElementById("xPort1").style.visibility="false";
 document.getElementById("tab").style.display="none";
 document.getElementById("tab").style.visibility="false";
 	}
-var el = document.getElementById("display");
-el.addEventListener("click", function(){alert("click1 triggered")}, false);
-el.addEventListener("click", function(){alert("click2 triggered")}, false);	
+//var el = document.getElementById("display");
+//el.addEventListener("click", function(){alert("click1 triggered")}, false);
+//el.addEventListener("click", function(){alert("click2 triggered")}, false);	
  
 function authusr()
 {
@@ -1542,6 +1543,7 @@ span {
 		   
 		</table>
 		</form>	
+		<div id="responsecontainer">&nbsp;ddddddd</div>
 	</div>
 
 	<div class="dl_btn" id='dl_btn' align='center'>
@@ -1571,6 +1573,6 @@ span {
 <textarea id="rest1" class="hideDontTakeUpSpace" rows=1 cols=40></textarea>
 	
 <div id='xPort1'>     </div>
-	<div id="responsecontainer">&nbsp;ddddddd</div>
+	
 </body>
 </html>
