@@ -1077,27 +1077,23 @@ function authusr1()
 	
 }
 function authusr(){
-    $.ajax({
-        url:'http://www.writeacademy.in/MMF/authUsr.php',
-        type:'GET',
-	data: {
-              "unam": $('#usrname').val(),
-	      "pwd": $('#usrpwd').val(),  
-          },        
-        headers:{
-            "Content-Type":'application/x-www-form-urlencoded'
-        },
-       
-        cache:false,
-        success: function (data) {
-            alert('data'+data);
-	    $("#responsecontainer").html(data);
-        },
-        error:function(request, textStatus, errorThrown){
-            alert('error'+errorThrown);
-        }
-    });
-    return false;
+	usrnam=document.usrForm.usrname.value;
+	usrpwd1=document.usrForm.usrpwd.value;
+         var params = "unam=" + usrnam +"&pwd=" + usrpwd1; 
+	var myURL="http://www.writeacademy.in/MMF/authUsr.php"; 
+        var request = new XMLHttpRequest(); 
+        request.open("POST", myURL, true); 
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); 
+        request.setRequestHeader("Content-length", params.length); 
+        request.setRequestHeader("Connection", "close"); 
+        request.onreadystatechange = function() {//Call a function when the state changes. 
+                if(request.readyState == 4 && request.status == 200) { 
+                        alert("response: "+request.responseText);
+			document.getElementById("responsecontainer").innerHTML = request.responseText;
+			 
+                } 
+        } 
+        request.send(params); 
 }
 	
 </script>
