@@ -1033,7 +1033,7 @@ document.getElementById("tab").style.visibility="false";
 //el.addEventListener("click", function(){alert("click1 triggered")}, false);
 //el.addEventListener("click", function(){alert("click2 triggered")}, false);	
  
-function authusr()
+function authusr1()
 {
 	alert('in');
 	
@@ -1060,7 +1060,25 @@ function authusr()
 	 
 }
  
+ function authusr()
+{
  
+	usrnam=document.usrForm.usrname.value;
+	usrpwd1=document.usrForm.usrpwd.value;
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'http://www.writeacademy.in/MMF/test.php', true,usrnam,usrpwd1);
+	xhr.onload = function(){
+    	//console.log(xhr);
+		//alert(xhr.responseText);
+	//document.getElementById("ajaxDiv").innerHTML = xhr.responseText;
+	document.getElementById('responsecontainer').innerHTML=xhr.responseText;
+	//ajaxResponse=xhr.responseText;
+	};
+	xhr.send();
+	
+}
+
+	
 </script>
 	<style type="text/css">
 		.nav ul {
@@ -1533,11 +1551,11 @@ span {
 	</div>
 
 	<div id='login' align='center' class='login'>
-		<form name='authForm'>
+		<form name='usrForm'>
 	   <table align='center' border=0 cellpadding=0 cellpadding=0  >
 		   <tr height='130px'> <td>Madras Music & Miscellany</td></tr>
 		   <tr > <td><input type="text" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrname" placeholder="Email ID" value='write2sankari@gmail.com'></td></tr>	
-	 <tr > <td><input type="password" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="pwd" placeholder="*******" value='peace4all'></td></tr>
+	 <tr > <td><input type="password" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrpwd" placeholder="*******" value='peace4all'></td></tr>
 		    <tr><td>&nbsp;</td></tr>
 		   <tr><td align=right> <a href="#" style='text-decoration: none;'><font size=1>Forgot Password?</font></a></td></tr>
 		   <tr><td>&nbsp;</td></tr>
