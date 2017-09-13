@@ -1090,10 +1090,11 @@ function authusr(){
        
         cache:false,
         success: function (data) {
-            alert(data);
+            alert('data'+data);
+	    $("#responsecontainer").html(data);
         },
         error:function(request, textStatus, errorThrown){
-            alert(errorThrown);
+            alert('error'+errorThrown);
         }
     });
     return false;
