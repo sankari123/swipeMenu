@@ -1033,14 +1033,11 @@ document.getElementById("tab").style.visibility="false";
 //el.addEventListener("click", function(){alert("click1 triggered")}, false);
 //el.addEventListener("click", function(){alert("click2 triggered")}, false);	
  
-function authusr11()
+function authusr()
 {
 	alert('in');
 	
-	//usrauth='y';
-//usrnam=document.form.usrname.value;
-//pd=document.form.pwd.value;	
-//  checkConnection() ;             
+	 
  
 	$.ajax({    //create an ajax request to load_page.php
           type: "POST",
@@ -1054,7 +1051,9 @@ function authusr11()
               $("#responsecontainer").html(response);
 		 
           }
-
+	error: function(e) {
+     	alert('Error: ' + e.message);
+  	 }
         });	
      
 	 
@@ -1106,37 +1105,7 @@ function authusr(){
 }
 
 	
-$(document).ready(function(){
-	
-    $("#display").click(function(){
-       alert('in');
-	$.ajax({
-   type: "POST",
-   url: "http://writeacademy.in/MMF/authUsr.php",
-   dataType: "json",
-    data: {
-              "unam": $('#usrname').val(),
-	      "pwd": $('#usrpwd').val(),  
-          },  
-  
-    success: function(data) {
-     obj = JSON.parse(data);
-     if (obj && obj.success === true) {
-	           alert('inw');
-         $("#responsecontainer").html(data);
-     }
-	    else
-	    {
-	    alert(obj);
-	    }
-   },
-   error: function(e) {
-     alert('Error: ' + e.message);
-   }
-});
-	
- });
-});
+ 
 	
 </script>
 	<style type="text/css">
@@ -1619,7 +1588,7 @@ span {
 		    <tr><td>&nbsp;</td></tr>
 		   <tr><td align=right> <a href="#" style='text-decoration: none;'><font size=1>Forgot Password?</font></a></td></tr>
 		   <tr><td>&nbsp;</td></tr>
-	<tr bgcolor='f4f4f4' height='60px'><td> <button id='display' class="btn34">Login</button>	</td></tr>
+	<tr bgcolor='f4f4f4' height='60px'><td> <button id='display' class="btn34" onclick='authusr();'>Login</button>	</td></tr>
 		   
 		</table>
 		</form>	
