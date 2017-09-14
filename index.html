@@ -353,7 +353,7 @@ function showevents(day,month,year,week,dayofweek) {
 	document.getElementById("dl_btn1").style.visibility="true";
 	document.getElementById("dl_btn").style.display="block";
 	document.getElementById("dl_btn").style.visibility="true";
-	window.plugins.spinnerDialog.hide();		
+//	window.plugins.spinnerDialog.hide();		
 var theevent = "";
 var floater = 0;
 	 
@@ -416,7 +416,7 @@ var ajaxResponse;
 var arr_store;
 function ajaxFunction()
 {
-	window.plugins.spinnerDialog.hide();
+	//window.plugins.spinnerDialog.hide();
 	if(connSel=='Y')
 	{	
 	var xhr = new XMLHttpRequest();
@@ -437,7 +437,8 @@ function ajaxFunction()
 	//	alert('no conn');
 	//	alert(document.getElementById('rest1').value);
 	procVal(document.getElementById('rest1').value);
-	}	
+	}
+	window.plugins.spinnerDialog.hide();
 }
 	function alertDismissed1()
 	{
