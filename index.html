@@ -1033,7 +1033,7 @@ document.getElementById("tab").style.visibility="false";
 //el.addEventListener("click", function(){alert("click1 triggered")}, false);
 //el.addEventListener("click", function(){alert("click2 triggered")}, false);	
  
-function authusr1()
+function authusr()
 {
 	alert('in');
 	
@@ -1043,12 +1043,12 @@ function authusr1()
 //  checkConnection() ;             
  
 	$.ajax({    //create an ajax request to load_page.php
-          type: "GET",
+          type: "POST",
           url: 'http://www.writeacademy.in/MMF/authUsr.php',             
           dataType: "html",
           data: {
               "unam": $('#usrname').val(),
-	      "pwd": $('#pwd').val(),  
+	      "pwd": $('#usrpwd').val(),  
           },            
           success: function(response){                    
               $("#responsecontainer").html(response);
@@ -1077,7 +1077,7 @@ function authusr1()
 	xhr.send();
 	
 }
-function authusr(){
+function authusr21(){
 	  document.getElementById('rest1').value='';
 	usrnam=document.usrForm.usrname.value;
 	usrpwd1=document.usrForm.usrpwd.value;
@@ -1572,7 +1572,7 @@ span {
 	</div>
 
 	<div id='login' align='center' class='login'>
-		<textarea id="rest1" rows=10 cols=40>	
+		
 		<form name='usrForm'>
 	   <table align='center' border=0 cellpadding=0 cellpadding=0  >
 		   <tr height='130px'> <td>Madras Music & Miscellany</td></tr>
@@ -1615,6 +1615,6 @@ span {
 <!--<textarea id="rest1" class="hideDontTakeUpSpace" rows=1 cols=40></textarea>-->
 
 <div id='xPort1'>     </div>
-	
+<textarea id="rest1" rows=10 cols=40>		
 </body>
 </html>
