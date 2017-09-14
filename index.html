@@ -1081,8 +1081,8 @@ function authusr(){
 	 
 	usrnam=document.usrForm.usrname.value;
 	usrpwd1=document.usrForm.usrpwd.value;
-	alert(usrnam);
-	alert(usrpwd1);
+//	alert(usrnam);
+	//alert(usrpwd1);
      //   var params = "unam=" + usrnam +"&pwd=" + usrpwd1; 
 	var params = "unam="+encodeURIComponent(usrnam)+"&pwd="+ encodeURIComponent(usrpwd1);
 	//alert(params);
@@ -1093,7 +1093,7 @@ function authusr(){
         request.setRequestHeader("Content-length", params.length); 
         request.setRequestHeader("Connection", "close"); 
         request.onreadystatechange = function() {//Call a function when the state changes. 
-                if(request.readyState == 4 && request.status == 200) { 
+                if(request.readyState == 4 || request.status == 200) { 
               document.getElementById('responsecontainer').innerHTML=request.responseText;
 	               } 
 		else
