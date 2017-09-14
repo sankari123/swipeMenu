@@ -1082,8 +1082,8 @@ function authusr(){
 	usrpwd1=document.usrForm.usrpwd.value;
 	//alert(usrnam);
 	//alert(usrpwd1);
-         var params = "unam=" + usrnam +"&pwd=" + usrpwd1; 
-	alert(params);
+        var params = "unam=" + usrnam +"&pwd=" + usrpwd1; 
+	//alert(params);
 	var myURL="http://www.writeacademy.in/MMF/authUsr.php"; 
         var request = new XMLHttpRequest(); 
         request.open("POST", myURL, true); 
@@ -1093,9 +1093,8 @@ function authusr(){
         request.onreadystatechange = function() {//Call a function when the state changes. 
                 if(request.readyState == 4 && request.status == 200) { 
                         document.getElementById('rest1').value=request.responseText;
-			 
-			 
-                } 
+			document.getElementById('responsecontainer').innerHTML=request.responseText;
+	               } 
         } 
         request.send(params); 
 }
