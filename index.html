@@ -1066,7 +1066,7 @@ function authusr11()
 	usrnam=document.usrForm.usrname.value;
 	usrpwd1=document.usrForm.usrpwd.value;
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'http://www.writeacademy.in/MMF/authUsr.php', true,usrnam,usrpwd1);
+	xhr.open('POST', 'http://www.writeacademy.in/MMF/authUsr.php', true,usrnam,usrpwd1);
 	xhr.onload = function(){
     	//console.log(xhr);
 		//alert(xhr.responseText);
@@ -1096,6 +1096,7 @@ function authusr(){
 		  if (request.readyState == 4) {
 		         if (request.status == 200 || request.status == 0) {
 				 document.getElementById('responsecontainer').innerHTML=request.responseText;
+			
 			 }
 		  }
 		 
@@ -1103,6 +1104,34 @@ function authusr(){
         request.send(params); 
 	
 }
+
+	
+$(document).ready(function(){
+	
+    $("#login").click(function(){
+       
+	$.ajax({
+   type: "POST",
+   url: "http://writeacademy.in/MMF/authUsr.php",
+   dataType: "json",
+    data: {
+              "unam": $('#usrname').val(),
+	      "pwd": $('#usrpwd').val(),  
+          },  
+  
+    success: function(data) {
+     obj = JSON.parse(data);
+     if (obj && obj.success === true) {
+         $("#responsecontainer").html(data);
+     }
+   },
+   error: function(e) {
+     alert('Error: ' + e.message);
+   }
+});
+	
+ });
+});
 	
 </script>
 	<style type="text/css">
