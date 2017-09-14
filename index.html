@@ -1109,7 +1109,7 @@ function authusr(){
 $(document).ready(function(){
 	
     $("#display").click(function(){
-       
+       alert('in');
 	$.ajax({
    type: "POST",
    url: "http://writeacademy.in/MMF/authUsr.php",
@@ -1122,8 +1122,13 @@ $(document).ready(function(){
     success: function(data) {
      obj = JSON.parse(data);
      if (obj && obj.success === true) {
+	           alert('inw');
          $("#responsecontainer").html(data);
      }
+	    else
+	    {
+	    alert(obj);
+	    }
    },
    error: function(e) {
      alert('Error: ' + e.message);
