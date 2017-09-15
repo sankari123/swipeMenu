@@ -1069,25 +1069,17 @@ function authusr()
 	 x=document.usrForm.usrname.value;
 	 y=document.usrForm.usrpwd.value;
 		var params = "unam=" + x +"&pwd=" + y; 
-	 //alert(params); 
-		var myURL="http://www.writeacademy.in/MMF/authUsr.php"; 
-        var request = new XMLHttpRequest(); 
-        request.open("POST", myURL, true); 
-        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); 
-        request.setRequestHeader("Content-length", params.length); 
-        request.setRequestHeader("Connection", "close"); 
-        request.onreadystatechange = function() {//Call a function when the state changes.
-	if(request.readyState == 4 && request.status == 200) {
-		document.getElementById('rest1').value=request.responseText;
-	}
-		else
-		{
-		alert(request.status);
-		alert(request.readyState);
-		}
+	 var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("responsecontainer").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "http://www.writeacademy.in/MMF/authUsr.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("unam=write2sankari@gmail.com&pwd=peace4all");
 		
-}
-http.send(params);
+ 
 }
 	
 	
