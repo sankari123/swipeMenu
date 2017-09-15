@@ -1066,8 +1066,8 @@ function authusr()
  function ajaxCall() {
 	 
 	 //alert('in');
-	 x=document.usrForm.usrname.value;
-	 y=document.usrForm.usrpwd.value;
+	 x=document.getElementById('usrname').value;
+	 y=document.getElementById('usrpwd').value;
 		var params = "unam=" + x +"&pwd=" + y; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -1562,7 +1562,7 @@ span {
 
 	<div id='login' align='center' class='login'>
 		
-		<form name='usrForm'>
+	 
 	   <table align='center' border=0 cellpadding=0 cellpadding=0  >
 		   <tr height='130px'> <td>Madras Music & Miscellany</td></tr>
 		   <tr > <td><input type="text" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrname" placeholder="Email ID" value='write2sankari@gmail.com'></td></tr>	
@@ -1573,7 +1573,7 @@ span {
 	<tr bgcolor='f4f4f4' height='60px'><td> <button id='display' class="btn34" onclick='ajaxCall();'>Login</button>	</td></tr>
 		   
 		</table>
-		</form>	
+		 
 		
 	</div>
 
