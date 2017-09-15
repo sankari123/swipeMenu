@@ -1071,8 +1071,10 @@ function authusr()
 		var params = "unam=" + x +"&pwd=" + y; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
+    if (this.readyState == 4) {
+      if(this.status == 200 || this.status == 0){
       document.getElementById("responsecontainer").innerHTML = this.responseText;
+    }
     }
   };
   xhttp.open("POST", "http://www.writeacademy.in/MMF/authUsr.php", true);
