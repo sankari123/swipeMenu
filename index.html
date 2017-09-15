@@ -98,7 +98,7 @@ function RgotFS(fileSystem) {
         fileSystem.root.getFile("events.txt", null, RgotFileEntry, fail);
     }	
 	
-	
+
 function gotFS(fileSystem) {
         fileSystem.root.getFile("events.txt", {create: true, exclusive: false}, gotFileEntry, fail);
 }
