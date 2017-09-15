@@ -1088,7 +1088,33 @@ function authusr()
 }
 	
 	
- 
+function uploadFile() {
+   var fileURL = "///storage/emulated/0/Download/xport1.csv"
+   var uri = encodeURI("http://www.writeacademy.in/MMF/updSchedule.php");
+   var options = new FileUploadOptions();
+   options.fileKey = "file";
+   options.fileName = fileURL.substr(fileURL.lastIndexOf('/')+1);
+   options.mimeType = "text/plain";
+   
+   var headers = {'headerParam':'headerValue'};
+   options.headers = headers;
+   var ft = new FileTransfer();
+   ft.upload(fileURL, uri, onSuccess, onError, options);
+
+   function onSuccess(r) {
+      console.log("Code = " + r.responseCode);
+      console.log("Response = " + r.response);
+      console.log("Sent = " + r.bytesSent);
+   }
+
+   function onError(error) {
+      alert("An error has occurred: Code = " + error.code);
+      console.log("upload error source " + error.source);
+      console.log("upload error target " + error.target);
+   }
+	
+}
+  
 	
 </script>
 	<style type="text/css">
@@ -1471,9 +1497,10 @@ span {
 <nav class="nav">
                     
           <ul>
-		 <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Home</a>
-     
-              <li><a href="#">Login</a></li>
+		  <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
+		  <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Login</a>
+      		  <li> <a id="myLink" href="#" onclick="uploadFile() ;" class="ssm-toggle-nav">Upload Program Scehdule</a>
+ 
               <li><a href="#">Archives</a></li>
                   <li><a href="#">Feedback</a></li>
           </ul>
