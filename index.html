@@ -1037,37 +1037,34 @@ document.getElementById("tab").style.visibility="false";
  
 function authusr()
 {
-	alert('in');
+//	alert('in');
 	
 	 
- data: { userID : userID }
-	$.ajax({    //create an ajax request to load_page.php
-          type: "POST",
-          url: 'http://www.writeacademy.in/MMF/authUsr.php',             
-          dataType: "html",
-          data: {
-              "unam": $('#usrname').val(),
-	      "pwd": $('#usrpwd').val(),  
-          },            
-          success: function(data) {
-     obj = JSON.parse(data);
-     if (obj && obj.success === true) {
-        document.getElementById('responsecontainer').innerHTML=data;
-     }
-   },
-   error: function(e) {
-     alert('Error: ' + e.message);
-   }
-});
+ //data: { userID : userID }
+	//$.ajax({    //create an ajax request to load_page.php
+      //    type: "POST",
+     //     url: 'http://www.writeacademy.in/MMF/authUsr.php',             
+    //      dataType: "html",
+  //        data: {
+  //            "unam": $('#usrname').val(),
+//	      "pwd": $('#usrpwd').val(),  
+ //         },            
+ //         success: function(data) {
+//     obj = JSON.parse(data);
+//     if (obj && obj.success === true) {
+ //       document.getElementById('responsecontainer').innerHTML=data;
+//     }
+ //  },
+//   error: function(e) {
+ //    alert('Error: ' + e.message);
+//   }
+//});
      
 	 
 }
  
  function ajaxCall() {
-	//screen.unlockOrientation();
-	//codeLatLng(x,y);
-	// msg='Searching DIVE Joints..!';
-	//window.pl0ugins.spinnerDialog.show(null, 'Searching DIVE Joints..!');
+	 
 	 alert('in');
 	 x=document.usrForm.usrname.value;
 	 y=document.usrForm.usrpwd.value;
