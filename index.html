@@ -1071,17 +1071,18 @@ function authusr()
 		var params = "unam=" + x +"&pwd=" + y; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-	  alert(this.readyState);
+	  //alert(this.readyState);
     if (this.readyState == 4) {
-	    alert(this.status);
+	 //   alert(this.status);
       if(this.status == 200 || this.status == 0){
       document.getElementById("responsecontainer").innerHTML = this.responseText;
+	      alert(this.responseText);
     }
     }
   };
   xhttp.open("POST", "http://www.writeacademy.in/MMF/authUsr.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("unam=write2sankari@gmail.com&pwd=peace4all");
+  xhttp.send(params);
 		
  
 }
