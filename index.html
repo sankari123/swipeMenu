@@ -1072,25 +1072,19 @@ function authusr()
 	 x=document.usrForm.usrname.value;
 	 y=document.usrForm.usrpwd.value;
 		var params = "unam=" + x +"&pwd=" + y; 
+	 alert(params); 
 		var myURL="http://www.writeacademy.in/MMF/authUsr.php"; 
         var request = new XMLHttpRequest(); 
         request.open("POST", myURL, true); 
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); 
         request.setRequestHeader("Content-length", params.length); 
         request.setRequestHeader("Connection", "close"); 
-        request.onreadystatechange = function() {//Call a function when the state changes. 
-                if(request.readyState == 4 && request.status == 200) { 
-                     //   alert("response: "+request.responseText);
-			//document.getElementById("ajaxDiv").innerHTML = request.responseText;
-			document.getElementById('rest1').value=request.responseText;
-			 
-                } 
-		else
-		{
-		alert(request.status);
-		}
-        } 
-        request.send(params); 
+        request.onreadystatechange = function() {//Call a function when the state changes.
+	if(request.readyState == 4 && request.status == 200) {
+		alert(request.responseText);
+	}
+}
+http.send(params);
 }
 	
 	
