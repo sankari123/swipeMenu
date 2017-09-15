@@ -1075,7 +1075,7 @@ function authusr()
     if (this.readyState == 4) {
 	 //   alert(this.status);
       if(this.status == 200 || this.status == 0){
-      document.getElementById("responsecontainer").innerHTML = this.responseText;
+   //   document.getElementById("responsecontainer").innerHTML = this.responseText;
 	      alert(this.responseText);
     }
     }
@@ -1127,6 +1127,7 @@ function uploadFile() {
       }
       .nav ul li {
           margin: 0;
+	    color: black;  
 		  
       }
       .nav ul li a {
@@ -1551,7 +1552,7 @@ span {
 	
 	
 	<div id='category' class='category'>
-		<div id='responsecontainer'>&nbsp;</div> 
+		 
 		<font size=1 face='arial'>Browse by Category</font><br><br>
 	   <table width='100%' border=0 cellpadding=0 cellpadding=0 class='cat'>
 		   <tr><td><button onclick='eventList(1);' class='btn2'><img src='concert.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td></tr>
