@@ -78,7 +78,8 @@
   <access origin="*" subdomains="true" />
   <access origin="tel:*" launch-external="yes" />
   <access origin="mailto:*" launch-external="yes" />
-  <plugin name="cordova-plugin-whitelist" />
+  
+  <plugin name="cordova-plugin-whitelist" spec="1" />
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
