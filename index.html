@@ -1065,13 +1065,14 @@ function authusr()
  
  function ajaxCall() {
 	 
-	 alert('in');
+	 //alert('in');
 	 x=document.usrForm.usrname.value;
 	 y=document.usrForm.usrpwd.value;
 		var params = "unam=" + x +"&pwd=" + y; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4) {
+	    alert(this.status);
       if(this.status == 200 || this.status == 0){
       document.getElementById("responsecontainer").innerHTML = this.responseText;
     }
