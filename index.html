@@ -1095,11 +1095,12 @@ function uploadFile() {
    options.fileKey = "file";
    options.fileName = fileURL.substr(fileURL.lastIndexOf('/')+1);
    options.mimeType = "text/plain";
-   
+   options.chunkedMode = true;
+	
    var headers = {'headerParam':'headerValue'};
    options.headers = headers;
    var ft = new FileTransfer();
-   ft.upload(fileURL, uri, onSuccess, onError, options);
+   ft.upload(fileURL, uri, onSuccess, onError, options,true);
 
    function onSuccess(r) {
       console.log("Code = " + r.responseCode);
