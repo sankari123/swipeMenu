@@ -1071,6 +1071,7 @@ function authusr()
 		var params = "unam=" + x +"&pwd=" + y; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
+	  alert(this.readyState);
     if (this.readyState == 4) {
 	    alert(this.status);
       if(this.status == 200 || this.status == 0){
