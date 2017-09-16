@@ -1107,29 +1107,13 @@ function onFileSystemSuccess(fileSystem) {
    
    fileSystem.root.getFile(file_upload, {
 
-
                 create: true,
-
-
                 exclusive: false
-
-
         }, gotFileEntry1, fail);
-
-	   
-   // alert("fileSystem.root.toInternalURL()="+fileSystem.root.toInternalURL());
-   // alert("fileSystem.root.nativeURL="+fileSystem.root.nativeURL);
-   // fileURL=   fileSystem.root.toURL() + "/download/" +"xport1.csv";
+   
+   
 }
-	} 
-
-	
-//	window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-  //      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSW, failW);
-//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccessW, failW);
-     //   window.resolveLocalFileSystemURI("file:///xport1.csv", onResolveSuccess, failW);
-	
-}
+	 
 	
 function gotFileEntry1(fileEntry) {
 
@@ -1202,105 +1186,7 @@ function gotFileEntry1(fileEntry) {
         }
 	
 	
-   function uploadFile2(updfile) {
- //  var fileURL = "///storage/emulated/0/Download/xport1.csv";
- // var fileURL="cdvfile://localhost/persistent/download/xport1.csv";
-	 //  window.rootFS.fullPath + "/" + fileName
-	//var fileURL=   fileSystem.root.toURL() + "/" +"xport1.csv";
-	alert(updfile);
- //   var fileURL="file:///sdcard/Download/xport1.csv";
- //  var fileURL="/sdcard/Download/xport1.csv";
-   var uri = encodeURI("http://www.writeacademy.in/MMF/updSchedule.php");
-   var options = new FileUploadOptions();
-   options.fileKey = "file";
-   options.fileName = updfile.substr(fileURL.lastIndexOf('/')+1);
-   options.mimeType = "text/plain";
-   options.chunkedMode = true;
-	
-   var headers = {'headerParam':'headerValue'};
-   options.headers = headers;
-   var ft = new FileTransfer();
-   ft.upload(fileURL, uri, onUSuccess, onUError, options,true);
-
-   function onUSuccess(r) {
-      alert("Code = " + r.responseCode);
-      alert("Response = " + r.response);
-      alert("Sent = " + r.bytesSent);
-   }
-
-   function onUError(error) {
-      alert("An error has occurred: Code = " + error.code);
-      console.log("upload error source " + error.source);
-      console.log("upload error target " + error.target);
-   }
-	
-} 
-
- 
-function uploadFile() {
-    alert("Let's Start")    
-     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
-        function gotFS(fileSystem) {
-            fileSys = fileSystem;
-        }
-        , fsFail);
-
-    fileSys.root.getDirectory("Download/", {create: true, exclusive: false},  
-        function(parent) {
-            folder=parent;
-        }
-        , dirFail);
-
-        //Creating a reader
-        var directoryReader = folder.createReader();
-        // Get a list of all the entries in the directory
-        directoryReader.readEntries(ReaderSucces,readerFail);   
-
-    function ReaderSucces(entries){
-        alert("I'm reading")
-        var i,len;
-        len = entries.length;
-        for (i=0; i<len; i++) {
-            if (entries[i].isDirectory) {
-                 var directoryReaderIn = entries[i].createReader();
-                directoryReaderIn.readEntries(ReaderSucces,readingFail); 
-            }
-             if(entries[i].isFile==true)
-            {
-            entries[i].file(uploadFile122, readingFail);
-            }
-        }
-    }
-
-    var fsFail = function(error) {
-            alert("failed with error code: " + error.code);
-    };                  
-    var dirFail = function(error) {
-        alert("Directory error code: " + error.code);
-    };
-    var readerFail = function(error) {
-        alert("Reading Directory error code: " + error.code);
-    };          
-    var readingFail = function (error){
-        alert("Reading Files error code: "+error.code);
-    };
-}
-
-function uploadFile122(file) {
-    alert("Let's upload!!!" + file)
-    var target= "http://www.writeacademy.in/MMF/updSchedule.php" ; //the url to upload on server
-    var ft = new FileTransfer();
-    var path = file.fullPath; //"file://"+ 
-    var name = file.name;
-
-    var ft = new FileTransfer();
-
-    ft.upload(path, encodeURI(target), win, fail, { fileName: name, fileKey: "file", mimeType:"text/plain" });
-           // var ft = new FileTransfer();
-          //ft.upload(file.fullPath, target, win, fail, options);
-}
-		
-	
+    
 	
 	
 	
