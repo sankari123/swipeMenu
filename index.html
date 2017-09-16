@@ -95,6 +95,8 @@ function checkConnection() {
 }
 	
 function RgotFS(fileSystem) {
+	alert(fileSystem.root.fullPath);
+        window.rootFS = fileSystem.root;
         fileSystem.root.getFile("events.txt", null, RgotFileEntry, fail);
 	
     }	
@@ -154,6 +156,8 @@ writer.write(ajaxResponse);
 }
 	
     function fail(error) {
+	alert(fileSystem.root.fullPath);
+        window.rootFS = fileSystem.root;
         alert('Failed to load events...');
     }
 function failU(error) {
@@ -1114,7 +1118,9 @@ uploadFile1();
 
    function uploadFile1() {
  //  var fileURL = "///storage/emulated/0/Download/xport1.csv";
-  var fileURL="cdvfile://localhost/persistent/download/xport1.csv";
+ // var fileURL="cdvfile://localhost/persistent/download/xport1.csv";
+	 //  window.rootFS.fullPath + "/" + fileName
+	var fileURL   window.rootFS.fullPath + "/" +"xport1.csv";
 	alert(fileURL);
  //   var fileURL="file:///sdcard/Download/xport1.csv";
  //  var fileURL="/sdcard/Download/xport1.csv";
