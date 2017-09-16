@@ -95,7 +95,7 @@ function checkConnection() {
 }
 	
 function RgotFS(fileSystem) {
-	alert(fileSystem.root.fullPath);
+	//alert(fileSystem.root.fullPath);
         window.rootFS = fileSystem.root;
         fileSystem.root.getFile("events.txt", null, RgotFileEntry, fail);
 	
@@ -156,7 +156,7 @@ writer.write(ajaxResponse);
 }
 	
     function fail(error) {
-	alert(fileSystem.root.fullPath);
+	//alert(fileSystem.root.fullPath);
         window.rootFS = fileSystem.root;
         alert('Failed to load events...');
     }
