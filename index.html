@@ -1093,11 +1093,25 @@ function authusr()
  
 }
 	
-	
 function uploadFile() {
+	 var fileURL="cdvfile://localhost/persistent/path/to/xport1.csv";
+  resolveLocalFileSystemURL(fileURL, function(entry) {
+    var nativePath = entry.toURL();
+    alert('Native URI: ' + nativePath);
+   // document.getElementById('video').src = nativePath;
+   }	
+}
+function uploadFile1() {
  //  var fileURL = "///storage/emulated/0/Download/xport1.csv";
   var fileURL="cdvfile://localhost/persistent/path/to/xport1.csv";
-	alert(fileURL);
+	
+	
+	
+	
+ 
+		
+		
+	//alert(fileURL);
  //   var fileURL="file:///sdcard/Download/xport1.csv";
  //  var fileURL="/sdcard/Download/xport1.csv";
    var uri = encodeURI("http://www.writeacademy.in/MMF/updSchedule.php");
