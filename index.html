@@ -1094,21 +1094,25 @@ function authusr()
 }
 	
 function uploadFile() {
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccessW, failW);
-        window.resolveLocalFileSystemURI("file:///xport1.csv", onResolveSuccess, failW);
+	
+	window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSW, failW);
+//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccessW, failW);
+     //   window.resolveLocalFileSystemURI("file:///xport1.csv", onResolveSuccess, failW);
+	
 }
 	
- function onResolveSuccess(fileEntry) {
-        alert(fileEntry.name);
+ function gotFSW(filesystem) {
+	 
+       alert(fileSystem.root.fullPath);
+    window.rootFS = fileSystem.root;
     }
 
     function failW(error) {
        alert(error.code);
     }
 
-   function onFileSystemSuccessW(fileSystem) {
-        alert(fileSystem.name);
-    }
+    
 
  
 </script>
