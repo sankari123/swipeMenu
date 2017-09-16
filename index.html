@@ -1125,36 +1125,14 @@ function uploadFile1() {
 	
 }
   
-function uploadFile()
-{
-window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, RgotFSU, failU);
-	
-//var file = "xport1.csv";
-	
-//window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSys){
-//	fileSys.root.getDirectory("Download", 
-		//		{create:false, exclusive: false}, 
-		//		  function(directory) {
-		//			  alert("File URL: "+directory.toURL()+file);
-		//		  }, getDirectoryError);
-		//		},
-//getDirectoryError);
-//function getDirectoryError(error) {
-//   alert("getDirectoryError: "+error.code);
-//}	
-	
-}
-function RgotFSU()
-	{
-	fileSystem.root.getFile("xport1.csv",null,RgotFileEntryU,failU);
-	}
-function RgotFileEntryU(fileEntry) {
-        fileEntry.file(gotFileU, failU);
-    }
 
-function gotFileU(file){
-      alert(directory.toURL()+file);
-    }	
+function uploadFile()
+	
+	{
+	//window.resolveLocalFileSystemURI("xport1.csv", onSuccessW, onErrorW);	
+	dataDir = fileSystem.root.getDirectory("xport1.csv", {create: false});
+		alert(dataDir);
+}
 </script>
 	<style type="text/css">
 		.nav ul {
