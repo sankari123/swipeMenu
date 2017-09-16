@@ -1094,10 +1094,11 @@ function authusr()
 }
 	
 function uploadFile() {
-	 window.resolveLocalFileSystemURI("file:///xport1.csv", onResolveSuccess, failW);
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccessW, failW);
+        window.resolveLocalFileSystemURI("file:///xport1.csv", onResolveSuccess, failW);
 }
 	
-	 function onResolveSuccess(fileEntry) {
+ function onResolveSuccess(fileEntry) {
         alert(fileEntry.name);
     }
 
@@ -1105,7 +1106,9 @@ function uploadFile() {
        alert(error.code);
     }
 
-  
+   function onFileSystemSuccessW(fileSystem) {
+        alert(fileSystem.name);
+    }
 
  
 </script>
