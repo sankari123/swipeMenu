@@ -1093,7 +1093,7 @@ function authusr()
  
 }
 	
-function uploadFile() {
+function uploadFile2() {
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
     alert("fileSystem.root.toURL()="+fileSystem.root.toURL());
     alert("fileSystem.root.toInternalURL()="+fileSystem.root.toInternalURL());
@@ -1145,6 +1145,73 @@ uploadFile1();
 } 
 
  
+function uploadFile() {
+    alert("Let's Start")    
+     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
+        function gotFS(fileSystem) {
+            fileSys = fileSystem;
+        }
+        , fsFail);
+
+    fileSys.root.getDirectory("download/", {create: false, exclusive: false},  
+        function(parent) {
+            folder=parent;
+        }
+        , dirFail);
+
+        //Creating a reader
+        var directoryReader = folder.createReader();
+        // Get a list of all the entries in the directory
+        directoryReader.readEntries(ReaderSucces,readerFail);   
+
+    function ReaderSucces(entries){
+        alert("I'm reading")
+        var i,len;
+        len = entries.length;
+        for (i=0; i<len; i++) {
+            if (entries[i].isDirectory) {
+                 var directoryReaderIn = entries[i].createReader();
+                directoryReaderIn.readEntries(ReaderSucces,readingFail); 
+            }
+             if(entries[i].isFile==true)
+            {
+            entries[i].file(uploadFile, readingFail);
+            }
+        }
+    }
+
+    var fsFail = function(error) {
+            alert("failed with error code: " + error.code);
+    };                  
+    var dirFail = function(error) {
+        alert("Directory error code: " + error.code);
+    };
+    var readerFail = function(error) {
+        alert("Reading Directory error code: " + error.code);
+    };          
+    var readingFail = function (error){
+        console.log("Reading Files error code: "+error.code);
+    };
+}
+
+function uploadFile(file) {
+    console.log("Let's upload!!!" + file)
+    var target="http://YOUR_IP/upload.php"; //the url to upload on server
+    var ft = new FileTransfer();
+    var path = file.fullPath; //"file://"+ 
+    var name = file.name;
+
+    var ft = new FileTransfer();
+
+    ft.upload(path, encodeURI(target), win, fail, { fileName: name, fileKey: "file", mimeType:"text/plain" });
+           // var ft = new FileTransfer();
+          //ft.upload(file.fullPath, target, win, fail, options);
+}
+		
+	
+	
+	
+	
 </script>
 	<style type="text/css">
 		.nav ul {
