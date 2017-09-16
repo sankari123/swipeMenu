@@ -1094,13 +1094,16 @@ function authusr()
 }
 	
 function uploadFile() {
-	 var fileURL="cdvfile://localhost/persistent/path/to/xport1.csv";
-  resolveLocalFileSystemURL(fileURL, function(entry) {
-    var nativePath = entry.toURL();
-    alert('Native URI: ' + nativePath);
-   // document.getElementById('video').src = nativePath;
-   });	
+	 window.resolveLocalFileSystemURI("file:///xport1.csv", onResolveSuccess, failW);
 }
+	
+	 function onResolveSuccess(fileEntry) {
+        alert(fileEntry.name);
+    }
+
+    function failW(error) {
+       alert(error.code);
+    }
 
   
 
