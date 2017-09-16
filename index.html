@@ -1098,11 +1098,11 @@ function authusr()
 }
 var fileURL;	
 function uploadFile1() {
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
     alert("fileSystem.root.toURL()="+fileSystem.root.toURL());
     alert("fileSystem.root.toInternalURL()="+fileSystem.root.toInternalURL());
     alert("fileSystem.root.nativeURL="+fileSystem.root.nativeURL);
-    fileURL=   fileSystem.root.toURL() + "/download" +"xport1.csv";
+    fileURL=   fileSystem.root.toURL() + "/download/" +"xport1.csv";
 }, function(){
     alert("fails!");
 });
