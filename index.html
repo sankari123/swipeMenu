@@ -1104,8 +1104,8 @@ function uploadFile() {
 	
  function gotFSW(filesystem) {
 	 
-       alert(fileSystem.root.fullPath);
-    window.rootFS = fileSystem.root;
+       alert(fileSystem.root.nativeURL);
+  //  window.rootFS = fileSystem.root;
     }
 
     function failW(error) {
