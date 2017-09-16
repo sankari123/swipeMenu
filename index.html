@@ -1129,8 +1129,10 @@ function uploadFile1() {
 function uploadFile()
 	
 	{
+		alert('in');
 	//window.resolveLocalFileSystemURI("xport1.csv", onSuccessW, onErrorW);	
 	dataDir = fileSystem.root.getDirectory("xport1.csv", {create: false});
+	//	lockFile = dataDir.getFile("lockfile.txt", {create: true, exclusive: true});
 		alert(dataDir);
 }
 </script>
