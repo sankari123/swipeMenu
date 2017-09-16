@@ -1094,9 +1094,17 @@ function authusr()
 }
 	
 function uploadFile() {
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+    console.log("fileSystem.root.toURL()="+fileSystem.root.toURL());
+    console.log("fileSystem.root.toInternalURL()="+fileSystem.root.toInternalURL());
+    console.log("fileSystem.root.nativeURL="+fileSystem.root.nativeURL);
+}, function(){
+    alert("fails!");
+});
 	
-	window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSW, failW);
+	
+//	window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+  //      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSW, failW);
 //	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccessW, failW);
      //   window.resolveLocalFileSystemURI("file:///xport1.csv", onResolveSuccess, failW);
 	
