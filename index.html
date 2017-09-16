@@ -1153,7 +1153,7 @@ function uploadFile() {
         }
         , fsFail);
 
-    fileSys.root.getDirectory("download/", {create: false, exclusive: false},  
+    fileSys.root.getDirectory("Download/", {create: true, exclusive: false},  
         function(parent) {
             folder=parent;
         }
@@ -1175,7 +1175,7 @@ function uploadFile() {
             }
              if(entries[i].isFile==true)
             {
-            entries[i].file(uploadFile, readingFail);
+            entries[i].file(uploadFile122, readingFail);
             }
         }
     }
@@ -1190,13 +1190,13 @@ function uploadFile() {
         alert("Reading Directory error code: " + error.code);
     };          
     var readingFail = function (error){
-        console.log("Reading Files error code: "+error.code);
+        alert("Reading Files error code: "+error.code);
     };
 }
 
-function uploadFile1222(file) {
+function uploadFile122(file) {
     console.log("Let's upload!!!" + file)
-    var target="http://YOUR_IP/upload.php"; //the url to upload on server
+    var target= "http://www.writeacademy.in/MMF/updSchedule.php" ; //the url to upload on server
     var ft = new FileTransfer();
     var path = file.fullPath; //"file://"+ 
     var name = file.name;
