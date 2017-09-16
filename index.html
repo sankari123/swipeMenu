@@ -1096,16 +1096,17 @@ function authusr()
 		
  
 }
-	
+var fileURL;	
 function uploadFile1() {
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
     alert("fileSystem.root.toURL()="+fileSystem.root.toURL());
     alert("fileSystem.root.toInternalURL()="+fileSystem.root.toInternalURL());
     alert("fileSystem.root.nativeURL="+fileSystem.root.nativeURL);
+    fileURL=   fileSystem.root.toURL() + "/download" +"xport1.csv";
 }, function(){
     alert("fails!");
 });
-uploadFile2(); 	
+uploadFile2(fileURL); 	
 	
 //	window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
   //      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSW, failW);
@@ -1116,18 +1117,18 @@ uploadFile2();
 	
   
 
-   function uploadFile2() {
+   function uploadFile2(updfile) {
  //  var fileURL = "///storage/emulated/0/Download/xport1.csv";
  // var fileURL="cdvfile://localhost/persistent/download/xport1.csv";
 	 //  window.rootFS.fullPath + "/" + fileName
-	var fileURL=   fileSystem.root.toURL() + "/" +"xport1.csv";
-	alert(fileURL);
+	//var fileURL=   fileSystem.root.toURL() + "/" +"xport1.csv";
+	alert(updfile);
  //   var fileURL="file:///sdcard/Download/xport1.csv";
  //  var fileURL="/sdcard/Download/xport1.csv";
    var uri = encodeURI("http://www.writeacademy.in/MMF/updSchedule.php");
    var options = new FileUploadOptions();
    options.fileKey = "file";
-   options.fileName = fileURL.substr(fileURL.lastIndexOf('/')+1);
+   options.fileName = updfile.substr(fileURL.lastIndexOf('/')+1);
    options.mimeType = "text/plain";
    options.chunkedMode = true;
 	
@@ -1137,9 +1138,9 @@ uploadFile2();
    ft.upload(fileURL, uri, onUSuccess, onUError, options,true);
 
    function onUSuccess(r) {
-      console.log("Code = " + r.responseCode);
-      console.log("Response = " + r.response);
-      console.log("Sent = " + r.bytesSent);
+      alert("Code = " + r.responseCode);
+      alert("Response = " + r.response);
+      alert("Sent = " + r.bytesSent);
    }
 
    function onUError(error) {
