@@ -96,7 +96,7 @@ function checkConnection() {
 	
 function RgotFS(fileSystem) {
 	//alert(fileSystem.root.fullPath);
-        window.rootFS = fileSystem.root;
+    //    window.rootFS = fileSystem.root;
         fileSystem.root.getFile("events.txt", null, RgotFileEntry, fail);
 	
     }	
@@ -157,7 +157,7 @@ writer.write(ajaxResponse);
 	
     function fail(error) {
 	//alert(fileSystem.root.fullPath);
-        window.rootFS = fileSystem.root;
+      //  window.rootFS = fileSystem.root;
         alert('Failed to load events...');
     }
 function failU(error) {
@@ -1097,7 +1097,7 @@ function authusr()
  
 }
 	
-function uploadFile2() {
+function uploadFile1() {
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
     alert("fileSystem.root.toURL()="+fileSystem.root.toURL());
     alert("fileSystem.root.toInternalURL()="+fileSystem.root.toInternalURL());
@@ -1105,7 +1105,7 @@ function uploadFile2() {
 }, function(){
     alert("fails!");
 });
-uploadFile1(); 	
+uploadFile2(); 	
 	
 //	window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
   //      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFSW, failW);
@@ -1116,11 +1116,11 @@ uploadFile1();
 	
   
 
-   function uploadFile1() {
+   function uploadFile2() {
  //  var fileURL = "///storage/emulated/0/Download/xport1.csv";
  // var fileURL="cdvfile://localhost/persistent/download/xport1.csv";
 	 //  window.rootFS.fullPath + "/" + fileName
-	var fileURL   window.rootFS.fullPath + "/" +"xport1.csv";
+	var fileURL=   fileSystem.root.toURL() + "/" +"xport1.csv";
 	alert(fileURL);
  //   var fileURL="file:///sdcard/Download/xport1.csv";
  //  var fileURL="/sdcard/Download/xport1.csv";
