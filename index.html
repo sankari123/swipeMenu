@@ -1096,8 +1096,9 @@ function authusr()
 	
 function uploadFile1() {
  //  var fileURL = "///storage/emulated/0/Download/xport1.csv";
-  // var fileURL="cdvfile://localhost/persistent/path/to/xport1.csv";
-    var fileURL="file:///sdcard/Download/xport1.csv";
+  var fileURL="cdvfile://localhost/persistent/path/to/xport1.csv";
+	alert(fileURL);
+ //   var fileURL="file:///sdcard/Download/xport1.csv";
  //  var fileURL="/sdcard/Download/xport1.csv";
    var uri = encodeURI("http://www.writeacademy.in/MMF/updSchedule.php");
    var options = new FileUploadOptions();
@@ -1126,15 +1127,7 @@ function uploadFile1() {
 }
   
 
-function uploadFile()
-	
-	{
-		alert('in');
-	//window.resolveLocalFileSystemURI("xport1.csv", onSuccessW, onErrorW);	
-	dataDir = fileSystem.root.getDirectory("xport1.csv", {create: false});
-	//	lockFile = dataDir.getFile("lockfile.txt", {create: true, exclusive: true});
-		alert(dataDir);
-}
+ 
 </script>
 	<style type="text/css">
 		.nav ul {
