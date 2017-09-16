@@ -1098,7 +1098,13 @@ function authusr()
 }
 var file_upload='xport1.csv';	
 function uploadFile1() {
-   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+	
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+	
+}
+function onFileSystemSuccess(fileSystem) {
+	
+   
    fileSystem.root.getFile(file_upload, {
 
 
@@ -1114,9 +1120,8 @@ function uploadFile1() {
    // alert("fileSystem.root.toInternalURL()="+fileSystem.root.toInternalURL());
    // alert("fileSystem.root.nativeURL="+fileSystem.root.nativeURL);
    // fileURL=   fileSystem.root.toURL() + "/download/" +"xport1.csv";
-}, function(){
-    alert("fails!");
-});
+}
+	} 
 
 	
 //	window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
@@ -1131,10 +1136,72 @@ function gotFileEntry1(fileEntry) {
 
         fileURL = fileEntry.toURL();
 	
- uploadFile2(fileURL); 	
+ uploadAudio(fileURL); 	
         }
   
 
+	
+	
+	
+	function uploadAudio(fileURL) {
+
+
+
+        var options = new FileUploadOptions();
+
+
+        options.fileKey = "file";
+
+
+        options.fileName = "xport1.csv";
+
+
+       options.mimeType = "text/plain";
+
+
+
+        var ft = new FileTransfer();
+
+
+        ft.upload(fileURL, encodeURI("http://www.writeacademy.in/MMF/updSchedule.php"), win1, fail2, options);
+
+
+        }
+
+ function win1(r) {
+
+
+                console.log("Code = " + r.responseCode);
+
+
+                console.log("Response = " + r.response);
+
+
+                console.log("Sent = " + r.bytesSent);
+
+
+                alert("success!");
+
+
+        }
+
+
+
+        function fail2(error) {
+
+
+                alert("An error has occurred: Code = " + error.code);
+
+
+                console.log("upload error source " + error.source);
+
+
+                console.log("upload error target " + error.target);
+
+
+        }
+	
+	
    function uploadFile2(updfile) {
  //  var fileURL = "///storage/emulated/0/Download/xport1.csv";
  // var fileURL="cdvfile://localhost/persistent/download/xport1.csv";
