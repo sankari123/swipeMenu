@@ -1101,8 +1101,9 @@ function authusr()
 function uploadSchedule()
 {
 	alert('in');
+	var filePath = cordova.file.dataDirectory + "download/xport1.csv";
   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, failu);
-  window.resolveLocalFileSystemURI("file:///xport1.csv", onResolveSuccess, failu);
+  window.resolveLocalFileSystemURI(filePath, onResolveSuccess, failu);
 }
 function onFileSystemSuccess(fileSystem) {
         alert('filesys name '+fileSystem.name);
@@ -1112,7 +1113,7 @@ function onFileSystemSuccess(fileSystem) {
         alert('file entry '+fileEntry.name);
     }
 
-    function failu(error,fileEntry) {
+    function failu(error) {
 	alert(fileEntry.fullPath);
         alert('error '+error.code);
     }	
