@@ -1126,9 +1126,8 @@ function onFileSystemSuccess(fileSystem) {
    var headers = {'headerParam':'headerValue'};
    options.headers = headers;
    var ft = new FileTransfer();
-   ft.upload(fileURL, uri, onUSuccess, onUError, options,true);
-	    
-	    
+   ft.upload(fileURL, uri, onUSuccess, onUError, options);
+	
 	    
     }
 	
@@ -1151,7 +1150,20 @@ function onUSuccess(r) {
       alert("upload error target " + error.target);
    }
 	
-	
+function readCSV()
+{
+document.getElementById("csv").style.visibility="true";
+document.getElementById("csv").style.display="block";	
+var cURL="http://www.writeacademy.in/MMF/readCSV.php"; 
+var xhr = new XMLHttpRequest(); 
+xhr.open("POST", cURL, true); 
+xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); 
+xhr.setRequestHeader("Content-length", params.length); 
+xhr.setRequestHeader("Connection", "close"); 
+xhr.onreadystatechange = function() {//Call a function when the state changes. 
+if(xhr.readyState == 4 && xhr.status == 200) { 
+document.getElementById('csv1').value=xhr.responseText;
+}
 </script>
 	<style type="text/css">
 		.nav ul {
@@ -1533,6 +1545,12 @@ span {
 		display	: none;
    
 }
+		.csv
+{
+		 
+		display	: none;
+   
+}		
 	</style>
 	
 </head>
@@ -1543,8 +1561,8 @@ span {
           <ul>
 		  <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
 		  <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Login</a>
-      		  <li> <a id="myLink" href="#" onclick="uploadSchedule();" class="ssm-toggle-nav">Upload Program Scehdule</a>
- 
+      		  <li> <a id="myLink" href="#" onclick="uploadSchedule();" class="ssm-toggle-nav">Upload Scehdule</a>
+ 		  <li> <a id="myLink" href="#" onclick="readCSV();" class="ssm-toggle-nav">Check Schedule</a>
               <li><a href="#">Archives</a></li>
                   <li><a href="#">Feedback</a></li>
           </ul>
@@ -1677,6 +1695,8 @@ span {
  <textarea id="rest1" class="hideDontTakeUpSpace" rows=1 cols=40></textarea> 
 
 <div id='xPort1'>     </div>
- 
+ <div id='csv' class='csv'>
+	 <textarea id="csv1" rows=10 cols=40></textarea> 
+      </div>
 </body>
 </html>
