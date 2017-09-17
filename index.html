@@ -1121,18 +1121,33 @@ function onFileSystemSuccess(fileSystem) {
 
     var ft = new FileTransfer();
 
-    ft.upload(path, encodeURI(target), win, fail, { fileName: name, fileKey: "file", mimeType:"text/plain" });
-	    
+    ft.upload(path, encodeURI(target), winupd, failupd, { fileName: name, fileKey: "file", mimeType:"text/plain" });
+//	 ft.upload(fileURL, uri, onUSuccess, onUError, options,true);    
 	    
 	    
 	    
     }
+	
+	
 
     function failu(error) {
 	 
         alert('error '+error.code);
     }	
  
+ function winupd(r) {
+      console.log("Code = " + r.responseCode);
+      console.log("Response = " + r.response);
+      console.log("Sent = " + r.bytesSent);
+   }
+
+   function failupd(error) {
+      alert("An error has occurred: Code = " + error.code);
+      console.log("upload error source " + error.source);
+      console.log("upload error target " + error.target);
+   }	
+	
+	
 </script>
 	<style type="text/css">
 		.nav ul {
