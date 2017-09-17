@@ -1096,117 +1096,24 @@ function authusr()
 		
  
 }
-var file_upload='xport1.csv';	
-function uploadFile1() {
-	
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
-	
+
+
+function uploadScehdule()
+{
+  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, failu);
+  window.resolveLocalFileSystemURI("file:///xport1.csv", onResolveSuccess, failu);
 }
 function onFileSystemSuccess(fileSystem) {
-	
-   
-   fileSystem.root.getFile(file_upload, {
+        alert(fileSystem.name);
+    }
 
-                create: true,
-                exclusive: false
-        }, gotFileEntry1, fail);
-   
-   
-}
-	 
-	
-function gotFileEntry1(fileEntry) {
+    function onResolveSuccess(fileEntry) {
+        alert(fileEntry.name);
+    }
 
-
-        fileURL = fileEntry.toURL();
-	
- uploadAudio(fileURL); 	
-        }
-  
-
-	
-	
-	
-	function uploadAudio(fileURL) {
-
-
-
-        var options = new FileUploadOptions();
-
-
-        options.fileKey = "file";
-
-
-        options.fileName = "xport1.csv";
-
-
-       options.mimeType = "text/plain";
-
-
-
-        var ft = new FileTransfer();
-
-
-        ft.upload(fileURL, encodeURI("http://www.writeacademy.in/MMF/updSchedule.php"), win1, fail2, options);
-
-
-        }
-
- function win1(r) {
-
-
-                console.log("Code = " + r.responseCode);
-
-
-                console.log("Response = " + r.response);
-
-
-                console.log("Sent = " + r.bytesSent);
-
-
-                alert("success!");
-
-
-        }
-
-
-
-        function fail2(error) {
-
-
-                alert("An error has occurred: Code = " + error.code);
-
-
-                console.log("upload error source " + error.source);
-
-
-                console.log("upload error target " + error.target);
-
-
-        }
-	
-function uploadSchedule2()
-{
-
-document.getElementById("updFile").style.display="block";
-document.getElementById("updFile").style.visibility="true";	
-var f = document.getElementById("myFile");	
-alert(f);
-}
- 
-function uploadSchedule()
-{
-
-document.getElementById("updFile").style.display="block";
-document.getElementById("updFile").style.visibility="true";
-  $('#i_file').on('change',function ()
-        {
-            var filePath = $(this).val();
-            console.log(filePath);
-        });
-}
-	
-	
+    function failu(error) {
+        alert(error.code);
+    }	
  
 </script>
 	<style type="text/css">
@@ -1720,14 +1627,7 @@ span {
 
 		<div id='dl_btn1'></div>
 	
-		 <div id='updFile' class='updFile'>
-			<input type="file" id="i_file" value=""> 
-<input type="button" id="i_submit" value="Upload Now" onclick='uploadSchedule();'>
-    <br>
-<img src="" width="200" style="display:none;" />
-        <br>
-<div id="disp_tmp_path"></div>
-</div>
+		
 
 	
 			<div id='det' align='center' style="background-color:white">
