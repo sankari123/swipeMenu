@@ -1113,16 +1113,19 @@ function onFileSystemSuccess(fileSystem) {
 
     function onResolveSuccess(fileEntry) {
         alert('file entry '+fileEntry.name);
-	     alert("Let's upload!!!" + fileEntry.name)
-    var target= "http://www.writeacademy.in/MMF/updSchedule.php" ; //the url to upload on server
-    var ft = new FileTransfer();
-    var path = filePath; //"file://"+ 
-    var name = fileEntry.name;
-
-    var ft = new FileTransfer();
-
-    ft.upload(path, encodeURI(target), winupd, failupd, { fileName: name, fileKey: "file", mimeType:"text/plain" });
-//	 ft.upload(fileURL, uri, onUSuccess, onUError, options,true);    
+	     alert("Let's upload!!!" + fileURL+'--'+fileEntry.name)
+   var fileURL=filePath;
+   var uri = encodeURI("http://www.writeacademy.in/MMF/updSchedule.php");
+   var options = new FileUploadOptions();
+   options.fileKey = "file";
+   options.fileName = fileURL.substr(fileURL.lastIndexOf('/')+1);
+   options.mimeType = "text/plain";
+   options.chunkedMode = true;
+	
+   var headers = {'headerParam':'headerValue'};
+   options.headers = headers;
+   var ft = new FileTransfer();
+   ft.upload(fileURL, uri, onUSuccess, onUError, options,true);
 	    
 	    
 	    
@@ -1135,17 +1138,17 @@ function onFileSystemSuccess(fileSystem) {
         alert('error '+error.code);
     }	
  
- function winupd(r) {
+function onUSuccess(r) {
       console.log("Code = " + r.responseCode);
       console.log("Response = " + r.response);
       console.log("Sent = " + r.bytesSent);
    }
 
-   function failupd(error) {
+   function onUError(error) {
       alert("An error has occurred: Code = " + error.code);
       console.log("upload error source " + error.source);
       console.log("upload error target " + error.target);
-   }	
+   }
 	
 	
 </script>
