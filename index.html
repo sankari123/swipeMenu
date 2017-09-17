@@ -1101,7 +1101,7 @@ function authusr()
 function uploadSchedule()
 {
 	alert('in');
-	var filePath = cordova.file.dataDirectory + "download/xport1.csv";
+	var filePath = "/storage/emulated/0/Download/xport1.csv";
 	alert(filePath);
   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, failu);
   window.resolveLocalFileSystemURI(filePath, onResolveSuccess, failu);
