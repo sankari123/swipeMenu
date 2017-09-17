@@ -1102,18 +1102,18 @@ function uploadSchedule()
 {
 	alert('in');
   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, failu);
-  window.resolveLocalFileSystemURI("file:///xport1.csv", onResolveSuccess, failu);
+  window.resolveLocalFileSystemURI("file:///download/xport1.csv", onResolveSuccess, failu);
 }
 function onFileSystemSuccess(fileSystem) {
-        alert(fileSystem.name);
+        alert('filesys name '+fileSystem.name);
     }
 
     function onResolveSuccess(fileEntry) {
-        alert(fileEntry.name);
+        alert('file entry '+fileEntry.name);
     }
 
     function failu(error) {
-        alert(error.code);
+        alert('error '+error.code);
     }	
  
 </script>
