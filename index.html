@@ -1113,12 +1113,13 @@ function onFileSystemSuccess(fileSystem) {
 
     function onResolveSuccess(fileEntry) {
         alert('file entry '+fileEntry.name);
-	     alert("Let's upload!!!" + fileURL+'--'+fileEntry.name)
+	     alert("Let's upload!!!" + filePath+'--'+fileEntry.name)
    var fileURL=filePath;
    var uri = encodeURI("http://www.writeacademy.in/MMF/updSchedule.php");
    var options = new FileUploadOptions();
    options.fileKey = "file";
-   options.fileName = fileURL.substr(fileURL.lastIndexOf('/')+1);
+  options.fileName = fileURL.substr(fileURL.lastIndexOf('/')+1);
+    alert(options.fileName);
    options.mimeType = "text/plain";
    options.chunkedMode = true;
 	
