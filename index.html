@@ -1113,6 +1113,19 @@ function onFileSystemSuccess(fileSystem) {
 
     function onResolveSuccess(fileEntry) {
         alert('file entry '+fileEntry.name);
+	     alert("Let's upload!!!" + fileEntry)
+    var target= "http://www.writeacademy.in/MMF/updSchedule.php" ; //the url to upload on server
+    var ft = new FileTransfer();
+    var path = fileEntry.fullPath; //"file://"+ 
+    var name = fileEntry.name;
+
+    var ft = new FileTransfer();
+
+    ft.upload(path, encodeURI(target), win, fail, { fileName: name, fileKey: "file", mimeType:"text/plain" });
+	    
+	    
+	    
+	    
     }
 
     function failu(error) {
