@@ -52,7 +52,10 @@
         <gap:plugin name="cordova-plugin-calendar" source="npm" />
         <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
   <plugin name="cordova-pdf-generator" source="npm" />
-  
+  <gap:config-file platform="android" parent="/manifest" overwrite="true">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+</gap:config-file>
   <icon src="icon.png" />
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
