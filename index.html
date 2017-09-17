@@ -1097,12 +1097,12 @@ function authusr()
  
 }
 
-
+var filePath;
 function uploadSchedule()
 {
 	alert('in');
-	var filePath = "/storage/emulated/0/Download/xport1.csv";
-	var filePath = "file:///storage/emulated/0/Download/xport1.csv";
+	//  filePath = "/storage/emulated/0/Download/xport1.csv";
+	  filePath = "file:///storage/emulated/0/Download/xport1.csv";
 	alert(filePath);
   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, failu);
   window.resolveLocalFileSystemURI(filePath, onResolveSuccess, failu);
@@ -1113,10 +1113,10 @@ function onFileSystemSuccess(fileSystem) {
 
     function onResolveSuccess(fileEntry) {
         alert('file entry '+fileEntry.name);
-	     alert("Let's upload!!!" + fileEntry)
+	     alert("Let's upload!!!" + fileEntry.name)
     var target= "http://www.writeacademy.in/MMF/updSchedule.php" ; //the url to upload on server
     var ft = new FileTransfer();
-    var path = fileEntry.fullPath; //"file://"+ 
+    var path = filePath; //"file://"+ 
     var name = fileEntry.name;
 
     var ft = new FileTransfer();
