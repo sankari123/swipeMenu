@@ -1185,10 +1185,27 @@ function gotFileEntry1(fileEntry) {
 
         }
 	
-	
+function uploadSchedule2()
+{
+
+document.getElementById("updFile").style.display="block";
+document.getElementById("updFile").style.visibility="true";	
+var f = document.getElementById("myFile");	
+alert(f);
+}
+ 
+function uploadSchedule()
+{
+
+document.getElementById("updFile").style.display="block";
+document.getElementById("updFile").style.visibility="true";
+$('#i_file').change( function(event) {
+var tmppath = URL.createObjectURL(event.target.files[0]);
+    $("img").fadeIn("fast").attr('src',URL.createObjectURL(event.target.files[0]));
     
-	
-	
+    $("#disp_tmp_path").html("Temporary Path(Copy it and try pasting it in browser address bar) --> <strong>["+tmppath+"]</strong>");
+});
+}	
 	
 </script>
 	<style type="text/css">
@@ -1563,7 +1580,14 @@ span {
 {
    display:none;
     
-}			
+}
+		
+.updFile
+		{
+		 
+		display	: none;
+   
+}
 	</style>
 	
 </head>
@@ -1574,7 +1598,7 @@ span {
           <ul>
 		  <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
 		  <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Login</a>
-      		  <li> <a id="myLink" href="#" onclick="uploadFile1() ;" class="ssm-toggle-nav">Upload Program Scehdule</a>
+      		  <li> <a id="myLink" href="#" onclick="uploadSchedule() ;" class="ssm-toggle-nav">Upload Program Scehdule</a>
  
               <li><a href="#">Archives</a></li>
                   <li><a href="#">Feedback</a></li>
@@ -1695,7 +1719,15 @@ span {
 
 		<div id='dl_btn1'></div>
 	
-		 
+		 <div id='updFile' class='updFile'>
+			<input type="file" id="i_file" value=""> 
+<input type="button" id="i_submit" value="Upload Now" onclick='uploadSchedule();'>
+    <br>
+<img src="" width="200" style="display:none;" />
+        <br>
+<div id="disp_tmp_path"></div>
+</div>
+
 	
 			<div id='det' align='center' style="background-color:white">
 				 
