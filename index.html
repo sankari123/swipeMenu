@@ -1112,7 +1112,8 @@ function onFileSystemSuccess(fileSystem) {
         alert('file entry '+fileEntry.name);
     }
 
-    function failu(error) {
+    function failu(error,fileEntry) {
+	alert(fileEntry.fullPath);
         alert('error '+error.code);
     }	
  
