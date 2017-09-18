@@ -1190,22 +1190,16 @@ document.getElementById("tab").style.visibility="false";
 document.getElementById('rest1').style.display="block";
  
 
-var cURL="http://www.writeacademy.in/MMF/readCSV.php"; 
-var xhr = new XMLHttpRequest(); 
-xhr.open("POST", cURL, true); 
-xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); 
-
-xhr.setRequestHeader("Connection", "close"); 
-xhr.onreadystatechange = function() {
-	alert(xhr.readyState);
-	alert(xhr.status);
-	      //Call a function when the state changes. 
-if(xhr.readyState == 4 && xhr.status == 200) { 
-	
-document.getElementById('rest1').value=xhr.responseText; 
+var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'http://www.writeacademy.in/MMF/readCSV.php', true);
+	xhr.onload = function(){
+    	//console.log(xhr);
+		//alert(xhr.responseText);
+	//document.getElementById("ajaxDiv").innerHTML = xhr.responseText;
+	//document.getElementById('rest1').value=xhr.responseText;
+	//ajaxResponse=xhr.responseText;
+document.getElementById('csv').innerHTML=xhr.responseText;
 }
-}
-//document.getElementById('csv').innerHTML=document.getElementById('rest1').value;
 }
 </script>
 	<style type="text/css">
