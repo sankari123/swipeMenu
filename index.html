@@ -1102,7 +1102,8 @@ function uploadSchedule()
 {
 	alert('in');
 	//  filePath = "/storage/emulated/0/Download/xport1.csv";
-	  filePath = "file:///storage/emulated/0/Download/xport1.csv";
+	  filePath = "file:///storage/emulated/0/Mmf/xport1.csv";
+	 //filePath = "file:///storage/emulated/0/Android/data/mmf/xport1.csv";
 	alert(filePath);
   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, failu);
   window.resolveLocalFileSystemURI(filePath, onResolveSuccess, failu);
