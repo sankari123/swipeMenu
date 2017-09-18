@@ -1194,11 +1194,11 @@ var xhr = new XMLHttpRequest();
 	xhr.open('GET', 'http://www.writeacademy.in/MMF/readCSV.php', true);
 	xhr.onload = function(){
     	//console.log(xhr);
-		//alert(xhr.responseText);
+		alert(xhr.responseText);
 	//document.getElementById("ajaxDiv").innerHTML = xhr.responseText;
-	//document.getElementById('rest1').value=xhr.responseText;
+	document.getElementById('rest1').value=xhr.responseText;
 	//ajaxResponse=xhr.responseText;
-document.getElementById('csv').innerHTML=xhr.responseText;
+//document.getElementById('csv').innerHTML=xhr.responseText;
 }
 }
 </script>
