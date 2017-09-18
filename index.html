@@ -1187,7 +1187,8 @@ document.getElementById("xPort1").style.visibility="false";
 document.getElementById("tab").style.display="none";
 document.getElementById("tab").style.visibility="false";
 	
-	
+document.getElementById('rest1').style.display="block";
+document.getElementById('rest1')).style.visibility="true";
 
 var cURL="http://www.writeacademy.in/MMF/readCSV.php"; 
 var xhr = new XMLHttpRequest(); 
@@ -1200,7 +1201,7 @@ if(xhr.readyState == 4 && xhr.status == 200) {
 document.getElementById('rest1').value=xhr.responseText; 
 }
 }
-document.getElementById('csv').innerHTML=document.getElementById('rest1').value;
+//document.getElementById('csv').innerHTML=document.getElementById('rest1').value;
 }
 </script>
 	<style type="text/css">
@@ -1730,7 +1731,7 @@ span {
 				</form>
 			</div>
 	 
- <textarea id="rest1" class="hideDontTakeUpSpace" rows=1 cols=40></textarea> 
+ <textarea id="rest1" class="hideDontTakeUpSpace" rows=13 cols=40></textarea> 
 
 <div id='xPort1'>     </div>
  <div id='csv' class='csv'>
