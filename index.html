@@ -1203,18 +1203,22 @@ document.getElementById("xPort1").style.visibility="false";
 document.getElementById("tab").style.display="none";
 document.getElementById("tab").style.visibility="false";
 	
-
+ var url = "http://www.writeacademy.in/MMF/readCSV.php"; 
+	
+	
+	var xhr1 = new XMLHttpRequest();
+	xhr1.open('GET', url, true);
+	xhr1.onload = function(){
+     
+	document.getElementById('rest2').value=xhr1.responseText;
+	};
+	xhr1.send();
+	 
+//document.getElementById('csv').innerHTML=xhr1.responseText;
 
 	
-    var url = "http://www.writeacademy.in/MMF/readCSV.php"; 
-   var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-    if (xhr.readyState == XMLHttpRequest.DONE) {
-        alert(xhr.responseText);
-    }
-}
-xhr.open('GET', url, true);
-xhr.send(null);
+   
+  
 }
  
 	
@@ -1753,7 +1757,7 @@ span {
 
 <div id='xPort1'>     </div>
  <div id='csv' class='csv'>
- <textarea id="rest2"   rows=13 cols=40>textarea asdadas a</textarea> 
+ <textarea id="rest2"   rows=13 cols=40>textarea  </textarea> 
 	  
       </div>
 </body>
