@@ -1207,26 +1207,16 @@ document.getElementById("tab").style.visibility="false";
 
 	
     var url = "http://www.writeacademy.in/MMF/readCSV.php"; 
-    var xhr1 = new XMLHttpRequest();
-    xhr1.open("GET", url, true);
-    xhr1.onreadystatechange = receiveResponse;
-    xhr1.send();
-}
-function receiveResponse(e)
-{
-	alert(this.readyState);
-	alert(this.status);
-    if (this.readyState == 4)
-    {
-        // xhr.readyState == 4, so we've received the complete server response
-        if (this.status == 200)
-        {
-            // xhr.status == 200, so the response is good
-            var response = this.responseText;
-            document.getElementById('rest2').value= response;
-        }
+   var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+        alert(xhr.responseText);
     }
 }
+xhr.open('GET', url, true);
+xhr.send(null);
+}
+ 
 	
 
  
