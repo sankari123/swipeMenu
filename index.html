@@ -1222,7 +1222,7 @@ document.getElementById("tab").style.visibility="false";
 }
  
 	
-function archive()
+function archive1()
 {
 var config = {
     title: "Select a Fruit", 
@@ -1250,7 +1250,48 @@ window.plugins.listpicker.showPicker(config,
 );	
 }
  
+	
+	
+	
+	function archive()
+{
+//alert('in');
  
+	//alert('in loop');
+	document.getElementById("backmenu").style.display="block";
+	document.getElementById("backmenu").style.visibility="true";
+	document.getElementById("main").style.visibility="false";
+	document.getElementById("main").style.display="none";
+	document.getElementById("mainMenu").style.visibility="false";
+	document.getElementById("mainMenu").style.display="none";
+document.getElementById("calendar").style.display="none";
+document.getElementById("calendar").style.visibility="false"; 
+document.getElementById("archive").style.visibility="true";
+document.getElementById("archive").style.display="block";
+document.getElementById("csv").style.display="none";
+document.getElementById("csv").style.visibility="false"; 
+document.getElementById("det").style.display="none";
+document.getElementById("det").style.visibility="false";
+document.getElementById("lst_mnu").style.display="none";
+document.getElementById("lst_mnu").style.visibility="false";
+document.getElementById("dl_btn").style.display="none";
+document.getElementById("dl_btn").style.visibility="false";
+document.getElementById("dl_btn1").style.display="none";
+document.getElementById("dl_btn1").style.visibility="false";
+document.getElementById("category").style.display="none";
+document.getElementById("category").style.visibility="false";
+document.getElementById("xPort").style.display="none";
+document.getElementById("xPort").style.visibility="false";
+document.getElementById("xPort1").style.display="none";
+document.getElementById("xPort1").style.visibility="false";
+document.getElementById("tab").style.display="none";
+document.getElementById("tab").style.visibility="false";
+	}
+	
+ function comboItemselect(item) {
+  var selectedItem = item.value;
+  alert("selected item is : " + selectedItem);
+}
 </script>
 	<style type="text/css">
 		.nav ul {
@@ -1788,7 +1829,7 @@ span {
 	  
       </div>
 <div id='archive' class='archive'>
-<select id='listMonth>
+<select id='listMonth' onchange="comboItemselect(this)">
 	    <option>September</option>
 	     <option>October</option>
 	     <option>November</option>
