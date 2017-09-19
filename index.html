@@ -365,6 +365,8 @@ function showevents(day,month,year,week,dayofweek) {
 	document.getElementById("dl_btn1").style.visibility="true";
 	document.getElementById("dl_btn").style.display="block";
 	document.getElementById("dl_btn").style.visibility="true";
+	document.getElementById("csv").style.display="none";
+	document.getElementById("csv").style.visibility="false"; 
 //	window.plugins.spinnerDialog.hide();		
 var theevent = "";
 var floater = 0;
@@ -551,7 +553,8 @@ var lat2,long2;
 		document.getElementById("xPort1").style.display="none";
 		document.getElementById("xPort1").style.visibility="false";
 		
-		
+		document.getElementById("csv").style.display="none";
+		document.getElementById("csv").style.visibility="false"; 
 		
 		document.getElementById("xPort").style.display="none";
 		document.getElementById("xPort").style.visibility="false";
@@ -630,7 +633,8 @@ function calClick()
 		document.getElementById("route_canvas").style.visibility="false"
 		document.getElementById("panel").style.display="none";
 		document.getElementById("panel").style.visibility="false";
-	
+		document.getElementById("csv").style.display="none";
+		document.getElementById("csv").style.visibility="false"; 
 		checkConnection();
 	}
 
@@ -807,6 +811,8 @@ function openCity(evt, cityName) {
 		document.getElementById("backmenu").style.visibility="false";
 		document.getElementById("login").style.display="none";
 		document.getElementById("login").style.visibility="false"; 
+		document.getElementById("csv").style.display="none";
+		document.getElementById("csv").style.visibility="false"; 
 		
 		document.getElementById("dl_btn1").style.display="none";
 		document.getElementById("dl_btn1").style.visibility="false";
@@ -840,6 +846,8 @@ var calEvt='';
 var calEvtDetails='';
 var calEvt1=[];
 var calEvtDetails1=[];
+	
+	
 function eventList(eVal)
 {
 //alert('eval'+eVal);
@@ -1024,6 +1032,8 @@ document.getElementById("calendar").style.display="none";
 document.getElementById("calendar").style.visibility="false"; 
 document.getElementById("login").style.visibility="true";
 document.getElementById("login").style.display="block";
+document.getElementById("csv").style.display="none";
+document.getElementById("csv").style.visibility="false"; 
 document.getElementById("det").style.display="none";
 document.getElementById("det").style.visibility="false";
 document.getElementById("lst_mnu").style.display="none";
@@ -1191,19 +1201,30 @@ document.getElementById("tab").style.visibility="false";
 	
 
 
-var xhr1 = new XMLHttpRequest();
-	xhr1.open('GET', 'http://www.writeacademy.in/MMF/readCSV.php', true);
-	xhr1.onload = function(){
-    	//console.log(xhr);
-	//	alert(xhr.responseText);
-	//document.getElementById("ajaxDiv").innerHTML = xhr.responseText;
-	document.getElementById('rest2').value=xhr1.responseText;
-	};
-	xhr1.send();
-	//ajaxResponse=xhr.responseText;
-//document.getElementById('csv').innerHTML=xhr1.responseText;
- 
+	
+    var url = "http://www.writeacademy.in/MMF/readCSV.php"; 
+    var xhr1 = new XMLHttpRequest();
+    xhr1.open("GET", url, true);
+    xhr1.onreadystatechange = receiveResponse;
+    xhr1.send();
 }
+function receiveResponse(e)
+{
+    if (this.readyState == 4)
+    {
+        // xhr.readyState == 4, so we've received the complete server response
+        if (this.status == 200)
+        {
+            // xhr.status == 200, so the response is good
+            var response = this.responseText;
+            document.getElementById('rest2').value= response;
+        }
+    }
+}
+	
+
+ 
+ 
 </script>
 	<style type="text/css">
 		.nav ul {
