@@ -1117,7 +1117,7 @@ function uploadSchedule()
 	 //filePath = "file:///storage/emulated/0/Android/data/mmf/xport1.csv";
 	alert(filePath);
   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, failu);
-  window.resolveLocalFileSystemURI(filePath, onResolveSuccess, failu);
+  window.resolveLocalFileSystemURI(filePath, onResolveSuccess, failu1);
 }
 function onFileSystemSuccess(fileSystem) {
         alert('filesys name '+fileSystem.name);
@@ -1143,7 +1143,11 @@ function onFileSystemSuccess(fileSystem) {
 	    
     }
 	
-	
+	function failu1(error) {
+	 
+        alert('error code= '+error.code);
+    }	
+ 
 
     function failu(error) {
 	 
@@ -1210,6 +1214,8 @@ document.getElementById("tab").style.visibility="false";
 }
 function receiveResponse(e)
 {
+	alert(this.readyState);
+	alert((this.status);
     if (this.readyState == 4)
     {
         // xhr.readyState == 4, so we've received the complete server response
