@@ -1288,9 +1288,9 @@ document.getElementById("tab").style.display="none";
 document.getElementById("tab").style.visibility="false";
 	}
 	
- function comboItemselect(item) {
-  var selectedItem = item.value;
-  alert("selected item is : " + selectedItem);
+ function getval(sel)
+{
+    alert(sel.value);
 }
 </script>
 	<style type="text/css">
@@ -1835,12 +1835,22 @@ span {
 	  
       </div>
 <div id='archive' class='archive'>
-<select id='listMonth' onchange="comboItemselect(this)">
-	    <option>September</option>
-	     <option>October</option>
-	     <option>November</option>
-	     <option>December</option>
-	    </select>
+<select class="js-select-3" onchange="getval(this);">
+  <option value="">Select a Month</option>
+  <option>January</option>
+  <option>February</option>
+  <option>March</option>
+  <option>April</option>
+  <option>May</option>
+  <option>June</option>
+  <option>July</option>
+  <option>August</option>
+ <option>September</option>
+ <option>October</option>
+  <option>November</option>
+   <option>December</option>
+	  
+</select>
 </div>
 
 </body>
