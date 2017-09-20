@@ -1328,9 +1328,9 @@ function procValArc(pVar)
 	for (var i = 0; i<locArr.length; i++) {
 		delimiter = ',';
 		start = 6;
-		var result = locArr[i].split(delimiter, start+1).join(delimiter);
+		var result1 = locArr[i].split(delimiter, start+1).join(delimiter);
 	 
-		latR=result.split(',');
+		latR=result1.split(',');
 		 
 		pnam=String(latR[0]);
 		venue=String(latR[1]);
@@ -1339,13 +1339,13 @@ function procValArc(pVar)
 		Pdeta=String(latR[3]);
 		Pdeta=Pdeta.replace('^','\'');
 		pTim=String(latR[5]);
-		pLatLong=String(latR[6]);
+	//	pLatLong=String(latR[6]);
 		var dt = new Date(latR[4]);
 		var eDat= dt.getDate();
 		eMon=dt.getMonth()+1;
 		eYr=dt.getFullYear();
 		 
-		events1.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);
+		events1.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art]);
 		 
 		 
 		}
@@ -1356,7 +1356,7 @@ function procValArc(pVar)
 function displayArchive()
 {
 	for (var i = 0; i < events1.length; i++) {
-			alert(events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
+			alert(i+'-----'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
 			
 		}
 	 
