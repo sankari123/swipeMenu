@@ -465,6 +465,7 @@ function ajaxFunction()
 var latR;
 var events = new Array();
 var venue_arr = new Array();
+	
 function procVal(pVar)
 {
 //multiArr=[];
@@ -1214,7 +1215,7 @@ document.getElementById("tab").style.visibility="false";
 	document.getElementById('rest2').value=xhr1.responseText;
 	};
 	xhr1.send();
-	 
+	
 //document.getElementById('csv').innerHTML=xhr1.responseText;
 
 	
@@ -1302,8 +1303,58 @@ document.getElementById("tab").style.visibility="false";
 	document.getElementById('rest2').value=xhr1.responseText;
 	};
 	xhr1.send();
-	 
+	procValArc(document.getElementById('rest2').value); 
+	
+	
 }
+events1=new Array();	
+	function procValArc(pVar)
+{
+//multiArr=[];
+	//alert('Ajax Resp'+pVar);
+	locArr = pVar;
+	 
+	locArr = locArr.substring(0, locArr.length-1 );
+	locArr=locArr.split('#');
+	events1=[];
+	 
+	for (var i = 0; i<locArr.length; i++) {
+		delimiter = ',';
+		start = 6;
+		var result = locArr[i].split(delimiter, start+1).join(delimiter);
+	 
+		latR=result.split(',');
+		 
+		pnam=String(latR[0]);
+		venue=String(latR[1]);
+		venue=venue.replace(/\s/g, ' ');
+		art=String(latR[2]);
+		Pdeta=String(latR[3]);
+		Pdeta=Pdeta.replace('^','\'');
+		pTim=String(latR[5]);
+		pLatLong=String(latR[6]);
+		var dt = new Date(latR[4]);
+		var eDat= dt.getDate();
+		eMon=dt.getMonth()+1;
+		eYr=dt.getFullYear();
+		 
+		events1.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);
+		 
+		 
+		}
+	
+	 displayArchive();
+}
+	
+function displayArchive()
+{
+	for (var i = 0; i < events.length; i++) {
+			alert(events[i][2]+"/"+events[i][1]+"/"+events[i][3]);
+			
+		}
+	 
+	
+}	
 </script>
 	<style type="text/css">
 		.nav ul {
@@ -1863,7 +1914,7 @@ span {
    <option>December</option>
 	  
 </select>
-	<textarea id="rest2"   rows=13 cols=40>textarea  </textarea> 
+	<textarea id="rest2"    class="hideDontTakeUpSpace" rows=1 cols=40>textarea  </textarea> 
 </div>
 
 </body>
