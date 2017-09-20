@@ -1298,7 +1298,7 @@ document.getElementById("tab").style.visibility="false";
 	
  function getval(sel)
 {
-    alert(sel.value);
+//    alert(sel.value);
 	var url = "http://www.writeacademy.in/MMF/archive.php"; 
 	
 	
@@ -1340,12 +1340,12 @@ function procValArc(pVar)
 		Pdeta=Pdeta.replace('^','\'');
 		pTim=String(latR[5]);
 	//	pLatLong=String(latR[6]);
-		var dt = new Date(latR[4]);
-		var eDat= dt.getDate();
-		eMon=dt.getMonth()+1;
-		eYr=dt.getFullYear();
+		var dt2 = new Date(latR[4]);
+		var eDat1= dt2.getDate();
+		eMon=dt2.getMonth()+1;
+		eYr=dt2.getFullYear();
 		 
-		events1.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art]);
+		events1.push(["",String(eMon),String(eDat1),String(eYr),pTim,venue,pnam,Pdeta,art]);
 		 
 		 
 		}
@@ -1356,7 +1356,10 @@ function procValArc(pVar)
 function displayArchive()
 {
 	for (var i = 0; i < events1.length; i++) {
+		if(events1[i][2]!=NaN || events1[i][1]!=NaN || events1[i][3]!=NaN)
+		{
 			alert(i+'-----'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
+		}
 			
 		}
 	 
