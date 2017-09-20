@@ -1223,7 +1223,7 @@ document.getElementById("tab").style.visibility="false";
 }
  
 	
-function archive()
+function archive1()
 {
 var config = {
     title: "Select a Fruit", 
@@ -1254,7 +1254,7 @@ window.plugins.listpicker.showPicker(config,
 	
 	
 	
-	function archive1()
+	function archive()
 {
 //alert('in');
  
@@ -1292,6 +1292,17 @@ document.getElementById("tab").style.visibility="false";
  function getval(sel)
 {
     alert(sel.value);
+	var url = "http://www.writeacademy.in/MMF/archive.php"; 
+	
+	
+	var xhr1 = new XMLHttpRequest();
+	xhr1.open('GET', url, true);
+	xhr1.onload = function(){
+     
+	document.getElementById('rest2').value=xhr1.responseText;
+	};
+	xhr1.send();
+	 
 }
 </script>
 	<style type="text/css">
@@ -1832,7 +1843,7 @@ span {
 
 <div id='xPort1'>     </div>
  <div id='csv' class='csv'>
- <textarea id="rest2"   rows=13 cols=40>textarea  </textarea> 
+  
 	  
       </div>
 <div id='archive' class='archive'>
@@ -1852,6 +1863,7 @@ span {
    <option>December</option>
 	  
 </select>
+	<textarea id="rest2"   rows=13 cols=40>textarea  </textarea> 
 </div>
 
 </body>
