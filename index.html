@@ -816,6 +816,10 @@ function openCity(evt, cityName) {
 		document.getElementById("csv").style.display="none";
 		document.getElementById("csv").style.visibility="false"; 
 		
+		
+		document.getElementById("archive").style.display="none";
+		document.getElementById("archive").style.visibility="false"; 
+		
 		document.getElementById("dl_btn1").style.display="none";
 		document.getElementById("dl_btn1").style.visibility="false";
 		document.getElementById("dl_btn").style.display="none";
@@ -1030,6 +1034,8 @@ function login()
 	document.getElementById("main").style.display="none";
 	document.getElementById("mainMenu").style.visibility="false";
 	document.getElementById("mainMenu").style.display="none";
+	document.getElementById("archive").style.display="none";
+		document.getElementById("archive").style.visibility="false"; 
 document.getElementById("calendar").style.display="none";
 document.getElementById("calendar").style.visibility="false"; 
 document.getElementById("login").style.visibility="true";
@@ -1308,7 +1314,8 @@ document.getElementById("tab").style.visibility="false";
 	
 }
 events1=new Array();	
-	function procValArc(pVar)
+
+function procValArc(pVar)
 {
 //multiArr=[];
 	//alert('Ajax Resp'+pVar);
@@ -1348,8 +1355,8 @@ events1=new Array();
 	
 function displayArchive()
 {
-	for (var i = 0; i < events.length; i++) {
-			alert(events[i][2]+"/"+events[i][1]+"/"+events[i][3]);
+	for (var i = 0; i < events1.length; i++) {
+			alert(events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
 			
 		}
 	 
