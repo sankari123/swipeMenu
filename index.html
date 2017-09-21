@@ -1787,13 +1787,33 @@ span {
 {
 		 
 		display	: none;
+	 border: 1px solid #ccc;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa url("archive.png") no-repeat 90% 50%;
    
 }
-select {
+		
+		.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+		
+/*select {
   margin: 50px;
   border: 1px solid #111;
   background: transparent;
-  width: 150px;
+  width: 2px;
   padding: 5px 35px 5px 5px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -1801,21 +1821,11 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-background: url(archive.png)  no-repeat #eee;*/
+background: url(archive.png)  no-repeat #eee; 
 }
-
-/* CAUTION: IE hackery ahead */
-select::-ms-expand { 
-    display: none; /* remove default arrow on ie10 and ie11 */
-}
-
-/* target Internet Explorer 9 to undo the custom arrow */
-@media screen and (min-width:0\0) {
-    select {
-        background:none\9;
-        padding: 5px\9;
-    } 
-}
+*/
+ 
+ 
 
 	</style>
 	
