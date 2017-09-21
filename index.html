@@ -1323,7 +1323,7 @@ document.getElementById("tab").style.visibility="false";
 	document.getElementById('rest2').value=xhr1.responseText;
 	};
 	xhr1.send();
-	procValArc(document.getElementById('rest2').value); 
+	procValArc(xhr1.responseText); 
 	
 	
 }
@@ -1940,7 +1940,7 @@ span {
 	  
 </select>
 <button id='btnarch' class="btn2" onclick='getval();'>Done</button>	
-	<textarea id="rest2" class="hideDontTakeUpSpace" rows=1 cols=40>   </textarea> 
+	<textarea id="rest2" class="hideDontTakeUpSpace" rows=1 cols=40></textarea> 
 </div>
 
 </body>
