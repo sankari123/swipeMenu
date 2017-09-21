@@ -1315,15 +1315,23 @@ document.getElementById("tab").style.visibility="false";
     // alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
 	var url = "http://www.writeacademy.in/MMF/archive.php"; 
 	
+var xhr1 = new XMLHttpRequest();
 	
-	var xhr1 = new XMLHttpRequest();
-	xhr1.open('GET', url, true);
-	xhr1.onreadystatechange = function(){
-     
-	document.getElementById('rest2').value=xhr1.responseText;
-	};
-	xhr1.send();
+	
+	xhr1.onreadystatechange=function()
+  {
+  if (xhr1.readyState==4 && xhr1.status==200)
+    {
+    document.getElementById('rest2').value=xhr1.responseText;
+    }
+  }
+xhr1.open("GET",url,true);
+xhr1.send();
+	
 	procValArc(document.getElementById('rest2').value); 
+	
+	 
+	
 	
 	
 }
