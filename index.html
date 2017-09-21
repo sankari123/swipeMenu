@@ -1294,12 +1294,39 @@ document.getElementById("xPort1").style.display="none";
 document.getElementById("xPort1").style.visibility="false";
 document.getElementById("tab").style.display="none";
 document.getElementById("tab").style.visibility="false";
-	
-	AJAX(function (response) {
-            document.getElementById('rest2').value=response ;
-        });
-	}
+	 var url1 = "http://www.writeacademy.in/MMF/archive.php"; 
+doRequest(url1, function(err, response) { // pass an anonymous function
+    if (err) {
+        return "";
 
+    } else {
+        return response;
+    } 
+});
+
+
+}
+
+function doRequest(url, callback) {
+    var xmlhttp = ....; // create a new request here
+
+    xmlhttp.open("GET", url, true); // for async
+    xmlhttp.onreadystatechange=function() {     
+        if (xmlhttp.readyState==4) {
+            if (xmlhttp.status == 200) {
+
+                // pass the response to the callback function
+                callback(null, xmlhttp.responseText);
+
+            } else {
+                // pass the error to the callback function
+                callback(xmlhttp.statusText);
+            }
+        }
+    }
+    xmlhttp.send(null);
+}
+	
 	
 	 
 
