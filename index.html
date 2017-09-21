@@ -1306,7 +1306,7 @@ document.getElementById("tab").style.visibility="false";
 	xhr1.open('GET', url, true);
 	xhr1.onload = function(){
      
-	//document.getElementById('rest2').value=xhr1.responseText;
+	document.getElementById('rest2').value=sel;
 	};
 	xhr1.send();
 	procValArc(xhr1.responseText); 
@@ -1318,7 +1318,7 @@ events1=new Array();
 function procValArc(pVar)
 {
 //multiArr=[];
-	//alert('Ajax Resp'+pVar);
+	alert('Ajax Resp'+pVar);
 	locArr = pVar;
 	 
 	locArr = locArr.substring(0, locArr.length-1 );
