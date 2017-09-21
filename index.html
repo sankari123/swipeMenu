@@ -1307,6 +1307,8 @@ xhr1.onload = function (e) {
     if (xhr1.status === 200) {
      // alert(xhr1.responseText);
 	    document.getElementById('rest2').value=xhr1.responseText;
+	    procValArc(document.getElementById('rest2').value); 
+	
     } else {
      alert(xhr1.statusText);
     }
@@ -1348,7 +1350,7 @@ doRequest(url1);
 function procValArc(pVar)
 {
 //multiArr=[];
-	alert('Ajax Resp'+pVar);
+	//alert('Ajax Resp'+pVar);
 	locArr = pVar;
 	 
 	locArr = locArr.substring(0, locArr.length-1 );
@@ -1386,10 +1388,9 @@ function procValArc(pVar)
 function displayArchive()
 {
 	for (var i = 0; i < events1.length; i++) {
-		if(events1[i][2]!=NaN || events1[i][1]!=NaN || events1[i][3]!=NaN)
-		{
-		//	alert(i+'-----'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
-		}
+		 
+		 	alert(i+'-----'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
+		 
 			
 		}
 	 
