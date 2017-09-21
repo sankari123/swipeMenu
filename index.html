@@ -1306,10 +1306,12 @@ document.getElementById("tab").style.visibility="false";
  }
 	
  function getval( )
-{  var sel = document.getElementById(monNam).selectedIndex;
+{ 
+	alert('in');
+	var sel = document.getElementById(monNam).selectedIndex;
 
      alert("value =" + document.getElementById(monNam).value); // show selected value
-     alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
+    // alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
 	var url = "http://www.writeacademy.in/MMF/archive.php"; 
 	
 	
@@ -1317,10 +1319,10 @@ document.getElementById("tab").style.visibility="false";
 	xhr1.open('GET', url, true);
 	xhr1.onload = function(){
      
-	document.getElementById('rest2').value=sel;
+	document.getElementById('rest2').value=xhr1.responseText;
 	};
 	xhr1.send();
-	procValArc(xhr1.responseText); 
+	procValArc(document.getElementById('rest2').value); 
 	
 	
 }
@@ -1919,7 +1921,7 @@ span {
 	  
       </div>
 <div id='archive' class='archive'>
-	<button id='btnarch' class="btn2" onclick='getval();'>View</button>
+	
 <select id='monNam'>
   <option value="">Select a Month</option>
   <option value="1">January</option>
@@ -1936,7 +1938,7 @@ span {
   <option value="12">December</option>
 	  
 </select>
-	
+<button id='btnarch' class="btn2" onclick='getval();'>Done</button>	
 	<textarea id="rest2" class="hideDontTakeUpSpace" rows=1 cols=40>textarea  </textarea> 
 </div>
 
