@@ -1295,10 +1295,21 @@ document.getElementById("xPort1").style.visibility="false";
 document.getElementById("tab").style.display="none";
 document.getElementById("tab").style.visibility="false";
 	}
+
 	
- function getval(sel)
-{
-//    alert(sel.value);
+	function GetSelectedItem()
+ {
+     var index = document.getElementById(select1).selectedIndex;
+
+     alert("value =" + document.getElementById(select1).value); // show selected value
+     alert("text =" + document.getElementById(select1).options[index].text); // show selected text 
+ }
+	
+ function getval( )
+{  var sel = document.getElementById(monNam).selectedIndex;
+
+     alert("value =" + document.getElementById(monNam).value); // show selected value
+     alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
 	var url = "http://www.writeacademy.in/MMF/archive.php"; 
 	
 	
@@ -1924,7 +1935,7 @@ span {
   <option value="12">December</option>
 	  
 </select>
-	<button id='btnArchive' class=btn1 onclick="getval(document.getElementById('monNam').selectedIndex.value);" >Done</button>
+	<button id='btnArchive' class=btn1 onclick="getval();" >Done</button>
 	<textarea id="rest2" class="hideDontTakeUpSpace" rows=1 cols=40>textarea  </textarea> 
 </div>
 
