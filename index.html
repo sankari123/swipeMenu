@@ -1296,7 +1296,7 @@ document.getElementById("tab").style.display="none";
 document.getElementById("tab").style.visibility="false";
 	
 	AJAX(function (response) {
-           alert(response);
+            document.getElementById('rest2').value=response ;
         });
 	}
 
@@ -1304,7 +1304,7 @@ document.getElementById("tab").style.visibility="false";
 	 
 
 	
-function AJAX(querystring, callback) {
+function AJAX(callback) {
 	
 	 var url = "http://www.writeacademy.in/MMF/archive.php"; 
 	 var xmlhttp=new XMLHttpRequest();
@@ -1960,7 +1960,7 @@ span {
 	  
 </select>
 <button id='btnarch' class="btn2" onclick='getval();'>Done</button>	
-	<textarea id="rest2" class="hideDontTakeUpSpace" rows=1 cols=40></textarea> 
+	<textarea id="rest2"  rows=5 cols=40></textarea> 
 </div>
 
 </body>
