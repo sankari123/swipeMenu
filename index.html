@@ -1308,7 +1308,7 @@ document.getElementById("tab").style.visibility="false";
 	
  function getval( )
 { 
-	alert('in');
+	//alert('in');
 	 
         var sel = document.getElementById("monNam");
      alert("value =" + sel.options[sel.selectedIndex].value); // show selected value
@@ -1323,7 +1323,7 @@ document.getElementById("tab").style.visibility="false";
 	document.getElementById('rest2').value=xhr1.responseText;
 	};
 	xhr1.send();
-	procValArc(xhr1.responseText); 
+	procValArc(document.getElementById('rest2').value); 
 	
 	
 }
