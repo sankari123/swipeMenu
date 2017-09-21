@@ -1294,8 +1294,7 @@ document.getElementById("xPort1").style.display="none";
 document.getElementById("xPort1").style.visibility="false";
 document.getElementById("tab").style.display="none";
 document.getElementById("tab").style.visibility="false";
- var url1 = "http://www.writeacademy.in/MMF/archive.php"; 
-doRequest(url1);
+
 
 }
 
@@ -1323,18 +1322,7 @@ xhr1.send(null);
 	 
 
 	
-function AJAX(callback) {
-	
-	 var url = "http://www.writeacademy.in/MMF/archive.php"; 
-	 var xmlhttp=new XMLHttpRequest();
-	xmlhttp.onreadystatechange=function() {
-		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-			callback(xmlhttp.responseText);
-		}
-	}
-	xmlhttp.open("GET",url,true);
-	xmlhttp.send();
-}	
+ 
 	
 	
  function getval( )
@@ -1344,22 +1332,11 @@ function AJAX(callback) {
         var sel = document.getElementById("monNam");
      alert("value =" + sel.options[sel.selectedIndex].value); // show selected value
     // alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
-	var url = "http://www.writeacademy.in/MMF/archive.php"; 
-	
-var xhr1 = new XMLHttpRequest();
-	
-	
-	xhr1.onreadystatechange=function()
-  {
-  if (xhr1.readyState==4 && xhr1.status==200)
-    {
-    document.getElementById('rest2').value=xhr1.responseText;
-    }
-  }
-xhr1.open("GET",url,true);
-xhr1.send();
-	
-	procValArc(document.getElementById('rest2').value); 
+	//var url = "http://www.writeacademy.in/MMF/archive.php"; 
+	 var url1 = "http://www.writeacademy.in/MMF/archive.php"; 
+doRequest(url1);
+ 
+	//procValArc(document.getElementById('rest2').value); 
 	
 	 
 	
