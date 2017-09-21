@@ -1294,17 +1294,29 @@ document.getElementById("xPort1").style.display="none";
 document.getElementById("xPort1").style.visibility="false";
 document.getElementById("tab").style.display="none";
 document.getElementById("tab").style.visibility="false";
+	
+	AJAX(function (response) {
+           alert(response);
+        });
 	}
 
 	
-	function GetSelectedItem()
- {
-     var index = document.getElementById(select1).selectedIndex;
-	  var doc = document.getElementById("slanguage");
+	 
 
-     alert("value =" + document.getElementById(select1).value); // show selected value
-     alert("text =" + document.getElementById(select1).options[index].text); // show selected text 
- }
+	
+function AJAX(querystring, callback) {
+	
+	 var url = "http://www.writeacademy.in/MMF/archive.php"; 
+	 var xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function() {
+		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+			callback(xmlhttp.responseText);
+		}
+	}
+	xmlhttp.open("GET",url,true);
+	xmlhttp.send();
+}	
+	
 	
  function getval( )
 { 
