@@ -1306,10 +1306,10 @@ document.getElementById("tab").style.visibility="false";
 	xhr1.open('GET', url, true);
 	xhr1.onload = function(){
      
-	document.getElementById('rest2').value=xhr1.responseText;
+	//document.getElementById('rest2').value=xhr1.responseText;
 	};
 	xhr1.send();
-	procValArc(document.getElementById('rest2').value); 
+	procValArc(xhr1.responseText); 
 	
 	
 }
