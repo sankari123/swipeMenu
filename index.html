@@ -1300,6 +1300,7 @@ document.getElementById("tab").style.visibility="false";
 	function GetSelectedItem()
  {
      var index = document.getElementById(select1).selectedIndex;
+	  var doc = document.getElementById("slanguage");
 
      alert("value =" + document.getElementById(select1).value); // show selected value
      alert("text =" + document.getElementById(select1).options[index].text); // show selected text 
@@ -1308,9 +1309,9 @@ document.getElementById("tab").style.visibility="false";
  function getval( )
 { 
 	alert('in');
-	var sel = document.getElementById(monNam).selectedIndex;
-
-     alert("value =" + document.getElementById(monNam).value); // show selected value
+	//var sel = document.getElementById(monNam).selectedIndex;
+        var sel = document.getElementById("monNam");
+     alert("value =" + sel.options[sel.selectedIndex].value); // show selected value
     // alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
 	var url = "http://www.writeacademy.in/MMF/archive.php"; 
 	
