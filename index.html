@@ -1318,7 +1318,7 @@ document.getElementById("tab").style.visibility="false";
 	
 	var xhr1 = new XMLHttpRequest();
 	xhr1.open('GET', url, true);
-	xhr1.onload = function(){
+	xhr1.onreadystatechange = function(){
      
 	document.getElementById('rest2').value=xhr1.responseText;
 	};
@@ -1372,7 +1372,7 @@ function displayArchive()
 	for (var i = 0; i < events1.length; i++) {
 		if(events1[i][2]!=NaN || events1[i][1]!=NaN || events1[i][3]!=NaN)
 		{
-			alert(i+'-----'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
+		//	alert(i+'-----'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
 		}
 			
 		}
