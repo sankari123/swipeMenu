@@ -1265,7 +1265,7 @@ window.plugins.listpicker.showPicker(config,
 {
 //alert('in');
  
-	alert('in loop');
+	//alert('in loop');
 	document.getElementById("backmenu").style.display="block";
 	document.getElementById("backmenu").style.visibility="true";
 	document.getElementById("main").style.visibility="false";
@@ -1382,14 +1382,14 @@ function procValArc(pVar)
 		 
 		}
 	alert('len '+events1.length);
-	 displayArchive();
+	// displayArchive();
 }
 	
 function displayArchive()
 {
 	for (var i = 0; i < events1.length; i++) {
 		 
-		 	alert(i+'-----'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
+		 //	alert(i+'-----'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
 		 
 			
 		}
@@ -1801,7 +1801,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-background: url(archive.png) 96% / 15% no-repeat #eee;*/
+background: url(archive.png) 50% / 15% no-repeat #eee;*/
 }
 
 /* CAUTION: IE hackery ahead */
@@ -1967,7 +1967,7 @@ select::-ms-expand {
 	  
       </div>
 <div id='archive' class='archive'>
-<select id='monNam' class="js-select-3">
+<select id='monNam'>
   <option value="">Select a Month</option>
   <option value="1">January</option>
   <option value="2">February</option>
