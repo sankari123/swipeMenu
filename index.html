@@ -1628,7 +1628,7 @@ display	: none;
     width: 100%;
     border-radius: 3px;
     overflow: hidden;
-    background: #fafafa url("archive.png") no-repeat 90% 50%;
+   /* background: #fafafa url("archive.png") no-repeat 90% 50%;*/
    
 }
 		
@@ -1647,7 +1647,11 @@ display	: none;
     outline: none;
 }
 		
- 
+ .tblCen
+	{
+    margin-left: auto;
+    margin-right: auto;	
+	}
  
 	</style>
 	
@@ -1798,8 +1802,8 @@ display	: none;
 	  
       </div>
 <div id='archive' class='archive'>
-	<table cellpadding='0' cellspacing='0'>
-		<tr height='30px' bgcolor='#628c77'><td colspan=2> Archive</td></tr>
+	<table width='100%' cellpadding='0' cellspacing='0' class='tblCen'>
+		<tr height='80px' bgcolor='#8f7552'><td colspan=2> Archive</td></tr>
 <tr><td><select id='monNam'>
   <option value="">Select a Month</option>
   <option value="1">January</option>
@@ -1817,8 +1821,8 @@ display	: none;
 	  
 	</select></td>
 	<td><button id='btnarch' class="btn2" onclick='getval();'>Done</button>	</td></tr>
-	
-	<textarea id="rest2" class="hideDontTakeUpSpace"  rows=5 cols=40 readonly></textarea> 
+	</table>
+	<textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 readonly></textarea> 
 </div>
 </body>
 </html>
