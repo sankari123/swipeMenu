@@ -1179,8 +1179,10 @@ xhr1.send(null);
 { 
 	//alert('in');
 	 
-        selMonth = document.getElementById("monNam");
-     alert("value =" + selMonth.options[selMonth.selectedIndex].value); // show selected value
+        sel = document.getElementById("monNam");
+	
+	selMonth=sel.options[sel.selectedIndex].value; // 
+     alert("value =" + sel.options[sel.selectedIndex].value); // show selected value
     // alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
 	//var url = "http://www.writeacademy.in/MMF/archive.php"; 
 	 var url1 = "http://www.writeacademy.in/MMF/archive.php"; 
