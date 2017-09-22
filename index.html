@@ -1230,8 +1230,31 @@ function procValArc(pVar)
 		 
 		}
 	alert('len '+events1.length);
-	// displayArchive();
+	displayArchive();
 }	
+
+function displayArchive()
+{
+var q = new Date();
+var m = q.getMonth()+1;
+var d = q.getDay();
+var y = q.getYear();
+var date = new Date(y,m,d);
+//var arcdm=events1[i][1]
+//mydate=new Date('2011-04-11');	
+	
+	for (var i = 0; i < events1.length; i++) {
+		
+		if(events1[i][1]==m)
+		{
+		 	alert(i+'-----'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
+		 
+		}	
+		}
+	 
+	
+}		
+	
 	
 </script>
 	<style type="text/css">
@@ -1802,6 +1825,7 @@ display	: none;
 	  
       </div>
 <div id='archive' class='archive'>
+	<br><br><br><br><br>
 	<table width='100%' cellpadding='0' cellspacing='0' class='tblCen'>
 		<tr height='60px' bordercolor='#c8c9ca' bgcolor='#c8c9ca'><td colspan=2> Archive</td></tr>
 <tr><td><select id='monNam'>
