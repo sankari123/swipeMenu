@@ -1147,7 +1147,7 @@ document.getElementById("tab").style.visibility="false";
 }
 
 function doRequest(url) {
-	alert(url);
+	//alert(url);
    var xhr1 = new XMLHttpRequest();
 xhr1.open("GET",url, true);
 xhr1.onload = function (e) {
@@ -1248,16 +1248,16 @@ function displayArchive()
 		 
 		if(events1[i][1]==selMonth)
 		{
-		 	 
+		 		found=1 ;
 				alert(i+'--'+events1[i][6]+'---'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
 			 
 		}
-		else
-		{
-		alert('No archive found ....! Please try another...!');
-		 }
+		
 		}
-	 
+		if(found!=1)
+		{
+		alert('No archive found ....! ');
+		 }
 	
 }		
 	
