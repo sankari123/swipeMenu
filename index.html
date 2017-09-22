@@ -1255,7 +1255,7 @@ function displayArchive()
 		
 		}
 	
-	alert('f'+f);
+	//alert('f'+f);
 	if(f=='')
 	{
 	alert('No archive found ....! ');
@@ -1669,20 +1669,19 @@ display	: none;
 	
 
 
-.archive select {
-    padding: 5px 8px;
-    width: 130%;
-    border: none;
-    box-shadow: none;
-    background: transparent;
-    background-image: none;
+.archive select{
+    width: 268px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 5px;
+    height: 26px;
+     background: url('http://s24.postimg.org/lyhytocf5/dropdown.png') no-repeat right #ddd;
+    
     -webkit-appearance: none;
-}
-
-.archive select:focus {
-    outline: none;
-}
-		
+    background-position-x: 244px;
+}	
 		
 		.button {
     position: relative;
@@ -1869,7 +1868,7 @@ display	: none;
 	  
       </div>
 <div id='archive' class='archive'>
-	<table align='center' width='100%' style="margin: 0 auto; border:1px solid;text-align:center"><tr><td colspan=2 align=center>Archive</td></tr>
+	<table align='center' width='75%' style="margin: 0 auto; border:0px solid;text-align:center"><tr height='50px' bgcolor='gray'><td colspan=2 align=center>Archive</td></tr>
 	 
 	<tr><td>	<select id='monNam'>
   <option value="">Select a Month</option>
@@ -1888,7 +1887,7 @@ display	: none;
 	  
 		</select></td>
 	 
-		<td>	<button id='btnarch'  class='btn24'  onclick='getval();'>View</button>	</td></tr>
+		<td>	<button id='btnarch'   onclick='getval();'>View</button>	</td></tr>
 	 
 	<textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 readonly></textarea> 
 </div>
