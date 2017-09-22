@@ -5,24 +5,25 @@
 <title><center><font face=verdana size=12>Madras Music & Miscellany</font></center></title>
 <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-       <!-- cordova  -->
+        <!-- CSS stylesheet for example -->
 	<script type="text/javascript" src="cordova.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
        
-	  <!-- CSS stylesheet for example -->
-	
-	<link rel="stylesheet" href="css/styles.css">
+        <!-- CSS stylesheet for sliding-swipe-menu -->
         <link rel="stylesheet" href="css/slide-and-swipe-menu.css">
-	<link rel="stylesheet" href="normalize.min.css">
-	 <!-- JS  for example -->
-	<script src="js/jquery-2.2.3.min.js"></script>
-	<script src="js/jquery.touchSwipe.min.js"></script>
-	<script src="js/jquery.slideandswipe.min.js"></script>
- 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script type="text/javascript" src="Calendar.js"></script>
+ <script src="js/jquery-2.2.3.min.js"></script>
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.js"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.js"></script>
  
-        
+        <!-- touchSwipe library -->
+        <script src="js/jquery.touchSwipe.min.js"></script>
+
+        <!-- Slider Javascript file -->
+<script src="js/jquery.slideandswipe.min.js"></script>
+<!--<a href="javascript:home();">-->
+
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="Calendar.js"></script>
 
 <script type="text/JavaScript" language="JavaScript">
 	
@@ -364,8 +365,6 @@ function showevents(day,month,year,week,dayofweek) {
 	document.getElementById("dl_btn1").style.visibility="true";
 	document.getElementById("dl_btn").style.display="block";
 	document.getElementById("dl_btn").style.visibility="true";
-	document.getElementById("csv").style.display="none";
-	document.getElementById("csv").style.visibility="false"; 
 //	window.plugins.spinnerDialog.hide();		
 var theevent = "";
 var floater = 0;
@@ -463,7 +462,6 @@ function ajaxFunction()
 var latR;
 var events = new Array();
 var venue_arr = new Array();
-	
 function procVal(pVar)
 {
 //multiArr=[];
@@ -553,8 +551,7 @@ var lat2,long2;
 		document.getElementById("xPort1").style.display="none";
 		document.getElementById("xPort1").style.visibility="false";
 		
-		document.getElementById("csv").style.display="none";
-		document.getElementById("csv").style.visibility="false"; 
+		
 		
 		document.getElementById("xPort").style.display="none";
 		document.getElementById("xPort").style.visibility="false";
@@ -633,8 +630,7 @@ function calClick()
 		document.getElementById("route_canvas").style.visibility="false"
 		document.getElementById("panel").style.display="none";
 		document.getElementById("panel").style.visibility="false";
-		document.getElementById("csv").style.display="none";
-		document.getElementById("csv").style.visibility="false"; 
+	
 		checkConnection();
 	}
 
@@ -811,12 +807,6 @@ function openCity(evt, cityName) {
 		document.getElementById("backmenu").style.visibility="false";
 		document.getElementById("login").style.display="none";
 		document.getElementById("login").style.visibility="false"; 
-		document.getElementById("csv").style.display="none";
-		document.getElementById("csv").style.visibility="false"; 
-		
-		
-		document.getElementById("archive").style.display="none";
-		document.getElementById("archive").style.visibility="false"; 
 		
 		document.getElementById("dl_btn1").style.display="none";
 		document.getElementById("dl_btn1").style.visibility="false";
@@ -850,8 +840,6 @@ var calEvt='';
 var calEvtDetails='';
 var calEvt1=[];
 var calEvtDetails1=[];
-	
-	
 function eventList(eVal)
 {
 //alert('eval'+eVal);
@@ -1032,14 +1020,10 @@ function login()
 	document.getElementById("main").style.display="none";
 	document.getElementById("mainMenu").style.visibility="false";
 	document.getElementById("mainMenu").style.display="none";
-	document.getElementById("archive").style.display="none";
-		document.getElementById("archive").style.visibility="false"; 
 document.getElementById("calendar").style.display="none";
 document.getElementById("calendar").style.visibility="false"; 
 document.getElementById("login").style.visibility="true";
 document.getElementById("login").style.display="block";
-document.getElementById("csv").style.display="none";
-document.getElementById("csv").style.visibility="false"; 
 document.getElementById("det").style.display="none";
 document.getElementById("det").style.visibility="false";
 document.getElementById("lst_mnu").style.display="none";
@@ -1112,288 +1096,103 @@ function authusr()
 		
  
 }
-
-var filePath;
-function uploadSchedule()
-{
-	alert('in');
-	//  filePath = "/storage/emulated/0/Download/xport1.csv";
-	//  filePath = "file:///storage/emulated/0/Mmf/xport1.csv";
-	filePath = "file:///storage/emulated/0/Android/media/com.phonegap.helloworld/MMF/xport1.csv";
-	 //filePath = "file:///storage/emulated/0/Android/data/mmf/xport1.csv";
-	alert(filePath);
-  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, failu);
-  window.resolveLocalFileSystemURI(filePath, onResolveSuccess, failu1);
+var file_upload='xport1.csv';	
+function uploadFile1() {
+	
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+	
 }
 function onFileSystemSuccess(fileSystem) {
-        alert('filesys name '+fileSystem.name);
-    }
-
-    function onResolveSuccess(fileEntry) {
-        alert('file entry '+fileEntry.name);
-	     alert("Let's upload!!!" + filePath+'--'+fileEntry.name)
-   var fileURL=filePath;
-   var uri = encodeURI("http://www.writeacademy.in/MMF/updSchedule.php");
-   var options = new FileUploadOptions();
-   options.fileKey = "file";
-  options.fileName = fileURL.substr(fileURL.lastIndexOf('/')+1);
-    alert(options.fileName);
-   options.mimeType = "text/plain";
-   options.chunkedMode = true;
-	
-   var headers = {'headerParam':'headerValue'};
-   options.headers = headers;
-   var ft = new FileTransfer();
-   ft.upload(fileURL, uri, onUSuccess, onUError, options);
-	
-	    
-    }
-	
-	function failu1(error) {
-	 
-        alert('error code= '+error.code);
-    }	
- 
-
-    function failu(error) {
-	 
-        alert('error '+error.code);
-    }	
- 
-function onUSuccess(r) {
-      console.log("Code = " + r.responseCode);
-      console.log("Response = " + r.response);
-      console.log("Sent = " + r.bytesSent);
-   }
-
-   function onUError(error) {
-      alert("An error has occurred: Code = " + error.code);
-      alert("upload error source " + error.source);
-      alert("upload error target " + error.target);
-   }
-	
-function readCSV()
-{
-
-	alert('in');	
-	//document.getElementById('rest1').style.display="block";
- 
-	document.getElementById("csv").style.display="block";	
-	document.getElementById("csv").style.visibility="true";
-	document.getElementById("backmenu").style.display="block";
-	document.getElementById("backmenu").style.visibility="true";
-	document.getElementById("category").style.display="none";
-	document.getElementById("category").style.visibility="false";
-	
-	document.getElementById("main").style.visibility="false";
-	document.getElementById("main").style.display="none";
-	document.getElementById("mainMenu").style.visibility="false";
-	document.getElementById("mainMenu").style.display="none";
-document.getElementById("calendar").style.display="none";
-document.getElementById("calendar").style.visibility="false"; 
-document.getElementById("login").style.visibility="false";
-document.getElementById("login").style.display="none";
-document.getElementById("det").style.display="none";
-document.getElementById("det").style.visibility="false";
-document.getElementById("lst_mnu").style.display="none";
-document.getElementById("lst_mnu").style.visibility="false";
-document.getElementById("dl_btn").style.display="none";
-document.getElementById("dl_btn").style.visibility="false";
-document.getElementById("dl_btn1").style.display="none";
-document.getElementById("dl_btn1").style.visibility="false";
-
-document.getElementById("xPort").style.display="none";
-document.getElementById("xPort").style.visibility="false";
-document.getElementById("xPort1").style.display="none";
-document.getElementById("xPort1").style.visibility="false";
-document.getElementById("tab").style.display="none";
-document.getElementById("tab").style.visibility="false";
-	
- var url = "readCSV.php"; 
-	
-	
-	var xhr1 = new XMLHttpRequest();
-	xhr1.open('GET', url, true);
-	xhr1.onload = function(){
-     
-	document.getElementById('rest2').value=xhr1.responseText;
-	};
-	xhr1.send();
-	
-//document.getElementById('csv').innerHTML=xhr1.responseText;
-
 	
    
+   fileSystem.root.getFile(file_upload, {
+
+                create: true,
+                exclusive: false
+        }, gotFileEntry1, fail);
+   
+   
+}
+	 
+	
+function gotFileEntry1(fileEntry) {
+
+
+        fileURL = fileEntry.toURL();
+	
+ uploadAudio(fileURL); 	
+        }
   
-}
- 
-	
-function archive1()
-{
-var config = {
-    title: "Select a Fruit", 
-    items: [
-        { text: "Orange", value: "orange" },
-        { text: "Apple", value: "apple" },
-        { text: "Watermelon", value: "watermelon" },
-        { text: "Papaya", value: "papaya" },
-        { text: "Banana", value: "banana" },
-        { text: "Pear", value: "pear" }         
-    ],
-    selectedValue: "papaya",
-    doneButtonLabel: "Done",
-    cancelButtonLabel: "Cancel"
-};
-
-// Show the picker
-window.plugins.listpicker.showPicker(config, 
-    function(item) { 
-        alert("You have selected " + item);
-    },
-    function() { 
-        alert("You have cancelled");
-    }
-);	
-}
- 
-	
-	
-	
-	function archive()
-{
-//alert('in');
- 
-	//alert('in loop');
-	document.getElementById("backmenu").style.display="block";
-	document.getElementById("backmenu").style.visibility="true";
-	document.getElementById("main").style.visibility="false";
-	document.getElementById("main").style.display="none";
-	document.getElementById("mainMenu").style.visibility="false";
-	document.getElementById("mainMenu").style.display="none";
-document.getElementById("calendar").style.display="none";
-document.getElementById("calendar").style.visibility="false"; 
-document.getElementById("archive").style.visibility="true";
-document.getElementById("archive").style.display="block";
-document.getElementById("csv").style.display="none";
-document.getElementById("csv").style.visibility="false"; 
-document.getElementById("det").style.display="none";
-document.getElementById("det").style.visibility="false";
-document.getElementById("lst_mnu").style.display="none";
-document.getElementById("lst_mnu").style.visibility="false";
-document.getElementById("dl_btn").style.display="none";
-document.getElementById("dl_btn").style.visibility="false";
-document.getElementById("dl_btn1").style.display="none";
-document.getElementById("dl_btn1").style.visibility="false";
-document.getElementById("category").style.display="none";
-document.getElementById("category").style.visibility="false";
-document.getElementById("xPort").style.display="none";
-document.getElementById("xPort").style.visibility="false";
-document.getElementById("xPort1").style.display="none";
-document.getElementById("xPort1").style.visibility="false";
-document.getElementById("tab").style.display="none";
-document.getElementById("tab").style.visibility="false";
-
-
-}
-
-function doRequest(url) {
-	alert(url);
-   var xhr1 = new XMLHttpRequest();
-xhr1.open("GET",url, true);
-xhr1.onload = function (e) {
-  if (xhr1.readyState === 4) {
-    if (xhr1.status === 200) {
-     // alert(xhr1.responseText);
-	    document.getElementById('rest2').value=xhr1.responseText;
-	    procValArc(document.getElementById('rest2').value); 
-	
-    } else {
-     alert(xhr1.statusText);
-    }
-  }
-};
-xhr1.onerror = function (e) {
-  alert(xhr1.statusText);
-};
-xhr1.send(null);
-}
-	
-	
-	 
 
 	
- 
 	
 	
- function getval( )
-{ 
-	//alert('in');
-	 
-        var sel = document.getElementById("monNam");
-     alert("value =" + sel.options[sel.selectedIndex].value); // show selected value
-    // alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
-	//var url = "http://www.writeacademy.in/MMF/archive.php"; 
-	 var url1 = "http://www.writeacademy.in/MMF/archive.php"; 
-doRequest(url1);
- 
-	//procValArc(document.getElementById('rest2').value); 
-	
-	 
-	
-	
-	
-}
-//events1=new Array();	
+	function uploadAudio(fileURL) {
 
-function procValArc(pVar)
-{
-//multiArr=[];
-	//alert('Ajax Resp'+pVar);
-	locArr = pVar;
-	 
-	locArr = locArr.substring(0, locArr.length-1 );
-	locArr=locArr.split('#');
-	events1=[];
-	 
-	for (var i = 0; i<locArr.length; i++) {
-		delimiter = ',';
-		start = 6;
-		var result1 = locArr[i].split(delimiter, start+1).join(delimiter);
-	 
-		latR=result1.split(',');
-		 
-		pnam=String(latR[0]);
-		venue=String(latR[1]);
-		venue=venue.replace(/\s/g, ' ');
-		art=String(latR[2]);
-		Pdeta=String(latR[3]);
-		Pdeta=Pdeta.replace('^','\'');
-		pTim=String(latR[5]);
-	//	pLatLong=String(latR[6]);
-		var dt2 = new Date(latR[4]);
-		var eDat1= dt2.getDate();
-		eMon=dt2.getMonth()+1;
-		eYr=dt2.getFullYear();
-		 
-		events1.push(["",String(eMon),String(eDat1),String(eYr),pTim,venue,pnam,Pdeta,art]);
-		 
-		 
-		}
-	alert('len '+events1.length);
-	// displayArchive();
-}
+
+
+        var options = new FileUploadOptions();
+
+
+        options.fileKey = "file";
+
+
+        options.fileName = "xport1.csv";
+
+
+       options.mimeType = "text/plain";
+
+
+
+        var ft = new FileTransfer();
+
+
+        ft.upload(fileURL, encodeURI("http://www.writeacademy.in/MMF/updSchedule.php"), win1, fail2, options);
+
+
+        }
+
+ function win1(r) {
+
+
+                console.log("Code = " + r.responseCode);
+
+
+                console.log("Response = " + r.response);
+
+
+                console.log("Sent = " + r.bytesSent);
+
+
+                alert("success!");
+
+
+        }
+
+
+
+        function fail2(error) {
+
+
+                alert("An error has occurred: Code = " + error.code);
+
+
+                console.log("upload error source " + error.source);
+
+
+                console.log("upload error target " + error.target);
+
+
+        }
 	
-function displayArchive()
-{
-	for (var i = 0; i < events1.length; i++) {
-		 
-		 //	alert(i+'-----'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
-		 
-			
-		}
-	 
+	 function upd() {
+ // ft.upload("file:///storage/emulated/0/Pictures/Instagram/IMG_123123123.jpg", "http://website.com/dir/upload", win, fail, options)  
+var filepath="file:///data/data/com.highbrookcreate.wf3/files/files/my_downloads/sobrite.pdf";
+ft.upload("file:///storage/emulated/0/Pictures/Instagram/IMG_123123123.jpg", "http://website.com/dir/upload", win, fail, options)  		 
+ }	
 	
-}	
+	
+	
 </script>
 	<style type="text/css">
 		.nav ul {
@@ -1767,50 +1566,7 @@ span {
 {
    display:none;
     
-}
-		
-.updFile
-		{
-		 
-		display	: none;
-   
-}
-		.csv
-{
-		 
-		display	: none;
-   
-}		
-		.archive
-{
-		 
-display	: none;
- border: 0px solid #ccc;
-    width: 100%;
-    border-radius: 3px;
-    overflow: hidden;
-    background: #fafafa url("archive.png") no-repeat 90% 50%;
-   
-}
-		
-.archive select {
-    padding: 5px 8px;
-    width: 180px;
-    border: none;
-    box-shadow: none;
-    background: transparent;
-    background-image: none;
-    -webkit-appearance: none;
-}
-
-.archive select:focus {
-    outline: none;
-}
-		
- 
- 
- 
-
+}			
 	</style>
 	
 </head>
@@ -1821,21 +1577,20 @@ display	: none;
           <ul>
 		  <li> <a id="myLink" href="#" onclick="category();" class="ssm-toggle-nav">Home</a>
 		  <li> <a id="myLink" href="#" onclick="login();" class="ssm-toggle-nav">Login</a>
-      	           <li> <a id="myLink" href="#" onclick="uploadSchedule();" class="ssm-toggle-nav">Upload Scehdule</a>
- 		  <li> <a id="myLink" href="#" onclick="readCSV();" class="ssm-toggle-nav">Check Schedule</a> 
-		   <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Archive</a>
-              
+      		  <li> <a id="myLink" href="#" onclick="uploadFile1() ;" class="ssm-toggle-nav">Upload Program Scehdule</a>
+ 
+              <li><a href="#">Archives</a></li>
                   <li><a href="#">Feedback</a></li>
           </ul>
        
         </nav>
         <div id=main>
-            <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor='#ffa1a1'><tr height='70px'><td>&nbsp;
-         <font size=4><b>   <a href="#" class="ssm-toggle-nav" style='text-decoration: none;' title="open nav">&#9776;</a></td><td width='99%' align='center'>Madras Music & Miscellany</b></font></td></tr></table>
+            <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor='#ffa1a1'><tr height='70px'><td>
+         <font size=4><b>   <a href="#" class="ssm-toggle-nav" style='text-decoration: none;' title="open nav">&#9776;</a></td><td width=99% align='center'>Madras Music & Miscellany</b></font></td></tr></table>
         </div>
 <div id='backmenu' class='backmenu'>
-		      <table border=0 width='100%' bgcolor='#ffa1a1'><tr height='70px'><td>&nbsp;
-           <font size=5><b><a href="#" onclick="category();" style='text-decoration: none;' title="back">&#x003C;</a></font></td><td width=99% align='center'><b><font size=4>Madras Music & Miscellany</font></b></td></tr></table>
+		      <table border=0 width='100%' bgcolor='#ffa1a1'><tr height='70px'><td>
+           <font size=5><b><a href="#"  onclick="category();" style='text-decoration: none;' title="back">&#x003C;</a></font></td><td width=99% align='center'><b><font size=4>Madras Music & Miscellany</font></b></td></tr></table>
 		</div>
         <!-- jQuery library (served from Google) -->
        
@@ -1925,7 +1680,7 @@ display	: none;
 		   
 		</table>
 		 
-	
+		
 	</div>
 
 	<div class="dl_btn" id='dl_btn' align='center'>
@@ -1943,8 +1698,7 @@ display	: none;
 
 		<div id='dl_btn1'></div>
 	
-		
-
+		 
 	
 			<div id='det' align='center' style="background-color:white">
 				 
@@ -1953,34 +1707,9 @@ display	: none;
 				</form>
 			</div>
 	 
- <textarea id="rest1" class="hideDontTakeUpSpace" rows=1  cols=40 readonly></textarea> 
+ <textarea id="rest1" class="hideDontTakeUpSpace" rows=1 cols=40></textarea> 
 
 <div id='xPort1'>     </div>
- <div id='csv' class='csv'>
-  
-	  
-      </div>
-<div id='archive' class='archive'>
-<select id='monNam'>
-  <option value="">Select a Month</option>
-  <option value="1">January</option>
-  <option value="2">February</option>
-  <option value="3">March</option>
-  <option value="4">April</option>
-  <option value="5">May</option>
-  <option value="6">June</option>
-  <option value="7">July</option>
-  <option value="8">August</option>
- <option value="9">September</option>
- <option value="10">October</option>
- <option value="11">November</option>
-  <option value="12">December</option>
-	  
-</select>
-<button id='btnarch' class="btn2" onclick='getval();'>Done</button>	
-	
-	<textarea id="rest2" class="hideDontTakeUpSpace"  rows=5 cols=40 readonly></textarea> 
-</div>
-
+ 
 </body>
 </html>
