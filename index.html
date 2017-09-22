@@ -1256,7 +1256,7 @@ function displayArchive()
 		}
 	
 	alert('f'+f);
-	if(found1=='')
+	if(f=='')
 	{
 	alert('No archive found ....! ');
 	}
@@ -1869,7 +1869,7 @@ display	: none;
 	  
       </div>
 <div id='archive' class='archive'>
-	<table align='center' width='100%'><tr><td colspan=2 align=center>Archive</td></tr>
+	<table align='center' width='100%' style="margin: 0 auto; border:1px solid;text-align:center"><tr><td colspan=2 align=center>Archive</td></tr>
 	 
 	<tr><td>	<select id='monNam'>
   <option value="">Select a Month</option>
@@ -1888,7 +1888,7 @@ display	: none;
 	  
 		</select></td>
 	 
-		<td>	<button id='btnarch' class="button" onclick='getval();'>View</button>	</td></tr>
+		<td>	<button id='btnarch'  class='btn24'  onclick='getval();'>View</button>	</td></tr>
 	 
 	<textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 readonly></textarea> 
 </div>
