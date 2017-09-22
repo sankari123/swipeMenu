@@ -1191,7 +1191,129 @@ var filepath="file:///data/data/com.highbrookcreate.wf3/files/files/my_downloads
 ft.upload("file:///storage/emulated/0/Pictures/Instagram/IMG_123123123.jpg", "http://website.com/dir/upload", win, fail, options)  		 
  }	
 	
+function archive()
+{
+//alert('in');
+ 
+	//alert('in loop');
+	document.getElementById("backmenu").style.display="block";
+	document.getElementById("backmenu").style.visibility="true";
+	document.getElementById("main").style.visibility="false";
+	document.getElementById("main").style.display="none";
+	document.getElementById("mainMenu").style.visibility="false";
+	document.getElementById("mainMenu").style.display="none";
+document.getElementById("calendar").style.display="none";
+document.getElementById("calendar").style.visibility="false"; 
+document.getElementById("archive").style.visibility="true";
+document.getElementById("archive").style.display="block";
+document.getElementById("csv").style.display="none";
+document.getElementById("csv").style.visibility="false"; 
+document.getElementById("det").style.display="none";
+document.getElementById("det").style.visibility="false";
+document.getElementById("lst_mnu").style.display="none";
+document.getElementById("lst_mnu").style.visibility="false";
+document.getElementById("dl_btn").style.display="none";
+document.getElementById("dl_btn").style.visibility="false";
+document.getElementById("dl_btn1").style.display="none";
+document.getElementById("dl_btn1").style.visibility="false";
+document.getElementById("category").style.display="none";
+document.getElementById("category").style.visibility="false";
+document.getElementById("xPort").style.display="none";
+document.getElementById("xPort").style.visibility="false";
+document.getElementById("xPort1").style.display="none";
+document.getElementById("xPort1").style.visibility="false";
+document.getElementById("tab").style.display="none";
+document.getElementById("tab").style.visibility="false";
+
+
+}
+
+function doRequest(url) {
+	alert(url);
+   var xhr1 = new XMLHttpRequest();
+xhr1.open("GET",url, true);
+xhr1.onload = function (e) {
+  if (xhr1.readyState === 4) {
+    if (xhr1.status === 200) {
+     // alert(xhr1.responseText);
+	    document.getElementById('rest2').value=xhr1.responseText;
+	    procValArc(document.getElementById('rest2').value); 
 	
+    } else {
+     alert(xhr1.statusText);
+    }
+  }
+};
+xhr1.onerror = function (e) {
+  alert(xhr1.statusText);
+};
+xhr1.send(null);
+}
+	
+	
+	 
+
+	
+ 
+	
+	
+ function getval( )
+{ 
+	//alert('in');
+	 
+        var sel = document.getElementById("monNam");
+     alert("value =" + sel.options[sel.selectedIndex].value); // show selected value
+    // alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
+	//var url = "http://www.writeacademy.in/MMF/archive.php"; 
+	 var url1 = "http://www.writeacademy.in/MMF/archive.php"; 
+doRequest(url1);
+ 
+	//procValArc(document.getElementById('rest2').value); 
+	
+	 
+	
+	
+	
+}
+//events1=new Array();	
+
+function procValArc(pVar)
+{
+//multiArr=[];
+	//alert('Ajax Resp'+pVar);
+	locArr = pVar;
+	 
+	locArr = locArr.substring(0, locArr.length-1 );
+	locArr=locArr.split('#');
+	events1=[];
+	 
+	for (var i = 0; i<locArr.length; i++) {
+		delimiter = ',';
+		start = 6;
+		var result1 = locArr[i].split(delimiter, start+1).join(delimiter);
+	 
+		latR=result1.split(',');
+		 
+		pnam=String(latR[0]);
+		venue=String(latR[1]);
+		venue=venue.replace(/\s/g, ' ');
+		art=String(latR[2]);
+		Pdeta=String(latR[3]);
+		Pdeta=Pdeta.replace('^','\'');
+		pTim=String(latR[5]);
+	//	pLatLong=String(latR[6]);
+		var dt2 = new Date(latR[4]);
+		var eDat1= dt2.getDate();
+		eMon=dt2.getMonth()+1;
+		eYr=dt2.getFullYear();
+		 
+		events1.push(["",String(eMon),String(eDat1),String(eYr),pTim,venue,pnam,Pdeta,art]);
+		 
+		 
+		}
+	alert('len '+events1.length);
+	// displayArchive();
+}	
 	
 </script>
 	<style type="text/css">
