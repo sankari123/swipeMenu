@@ -1237,7 +1237,7 @@ function procValArc(pVar)
 	//alert('len '+events1.length);
 	displayArchive();
 }	
-var found=0 ;
+var found1=0 ;
 function displayArchive()
 {
  
@@ -1248,13 +1248,13 @@ function displayArchive()
 		 
 		if(events1[i][1]==selMonth)
 		{
-		 		found=1 ;
+		 		found1=1 ;
 				alert(i+'--'+events1[i][6]+'---'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
 			 
 		}
 		
 		}
-	if(found==0)
+	if(found1==0)
 	{
 	alert('No archive found ....! ');
 	}
@@ -1665,13 +1665,13 @@ display	: none;
 }
 		
 	
-  .archive select {
+
+
+.archive select {
     padding: 5px 8px;
-    width: 120px;
-    height: 70px;
-    border: 1;
-     box-shadow: 0 2px 0 #898223;
-   border-radius: 2px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
     background: transparent;
     background-image: none;
     -webkit-appearance: none;
@@ -1680,6 +1680,44 @@ display	: none;
 .archive select:focus {
     outline: none;
 }
+		
+		
+		.button {
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 10px;
+    color: #FFFFFF;
+    padding: 9px;
+    width: 70px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+		
 	</style>
 	
 </head>
@@ -1849,7 +1887,7 @@ display	: none;
 	  
 	</select>
 	 
-	<button id='btnarch' class="btn2" onclick='getval();'>Done</button>	
+	<button id='btnarch' class="button" onclick='getval();'>View</button>	
 	 
 	<textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 readonly></textarea> 
 </div>
