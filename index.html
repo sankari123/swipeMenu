@@ -1174,13 +1174,13 @@ xhr1.send(null);
 	
  
 	
-	
+ var selMonth;	
  function getval( )
 { 
 	//alert('in');
 	 
-        var sel = document.getElementById("monNam");
-     alert("value =" + sel.options[sel.selectedIndex].value); // show selected value
+        selMonth = document.getElementById("monNam");
+     alert("value =" + selMonth.options[selMonth.selectedIndex].value); // show selected value
     // alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
 	//var url = "http://www.writeacademy.in/MMF/archive.php"; 
 	 var url1 = "http://www.writeacademy.in/MMF/archive.php"; 
@@ -1235,18 +1235,14 @@ function procValArc(pVar)
 
 function displayArchive()
 {
-var q = new Date();
-var m = q.getMonth()+1;
-var d = q.getDay();
-var y = q.getYear();
-var date = new Date(y,m,d);
+ 
 //var arcdm=events1[i][1]
 //mydate=new Date('2011-04-11');	
 	
 	for (var i = 0; i < events1.length; i++) {
-		alert('c mon'+m);
+		alert('c mon'+selMonth);
 		alert('e mon'+events1[i][1]);
-		if(events1[i][1]==m)
+		if(events1[i][1]==selMonth)
 		{
 		 	alert(i+'-----'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
 		 
