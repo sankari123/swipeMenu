@@ -1677,8 +1677,10 @@ display	: none;
     border: 0;
     border-radius: 5px;
     height: 26px;
-     background: url('http://s24.postimg.org/lyhytocf5/dropdown.png') no-repeat right #ddd;
-    
+     
+     background: url('dropdown.png') no-repeat right ;
+     border-radius:1px;
+     box-shadow: 0 2px 0 #ccc, 0 -1px #fff inset;
     -webkit-appearance: none;
     background-position-x: 244px;
 }	
@@ -1868,9 +1870,9 @@ display	: none;
 	  
       </div>
 <div id='archive' class='archive'>
-	<table align='center' width='75%' style="margin: 0 auto; border:0px solid;text-align:center"><tr height='50px' bgcolor='gray'><td colspan=2 align=center>Archive</td></tr>
+	<table align='center' width='75%' style="margin: 0 auto; border:0px solid;text-align:center"><tr height='50px' bgcolor='#bca09e'><td colspan=2 align=center>Archive</td></tr>
 	 
-	<tr><td>	<select id='monNam'>
+	<tr height=50px><td>	<select id='monNam'>
   <option value="">Select a Month</option>
   <option value="1">January</option>
   <option value="2">February</option>
@@ -1887,7 +1889,7 @@ display	: none;
 	  
 		</select></td>
 	 
-		<td>	<button id='btnarch'   onclick='getval();'>View</button>	</td></tr>
+		<td>	&nbsp;&nbsp;&nbsp;<button id='btnarch'   onclick='getval();'>View</button>	</td></tr>
 	 
 	<textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 readonly></textarea> 
 </div>
