@@ -1237,7 +1237,7 @@ function procValArc(pVar)
 	//alert('len '+events1.length);
 	displayArchive();
 }	
-var found1=0 ;
+var f='';
 function displayArchive()
 {
  
@@ -1248,15 +1248,15 @@ function displayArchive()
 		 
 		if(events1[i][1]==selMonth)
 		{
-		 		found1=1 ;
+		 		f='ok' ;
 				alert(i+'--'+events1[i][6]+'---'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
 			 
 		}
 		
 		}
 	
-	alert('f'+found1);
-	if(found1==0)
+	alert('f'+f);
+	if(found1=='')
 	{
 	alert('No archive found ....! ');
 	}
@@ -1869,7 +1869,7 @@ display	: none;
 	  
       </div>
 <div id='archive' class='archive'>
-	<table><tr><td colspan=2>	<center>Archive</center></td></tr>
+	<table align='center' width='100%'><tr><td colspan=2 align=center>Archive</td></tr>
 	 
 	<tr><td>	<select id='monNam'>
   <option value="">Select a Month</option>
