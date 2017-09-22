@@ -1103,99 +1103,11 @@ function authusr()
  
 }
 var file_upload='xport1.csv';	
-function uploadFile1() {
-	
-	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
-	
-}
-function onFileSystemSuccess(fileSystem) {
-	
-   
-   fileSystem.root.getFile(file_upload, {
-
-                create: true,
-                exclusive: false
-        }, gotFileEntry1, fail);
-   
-   
-}
-	 
-	
-function gotFileEntry1(fileEntry) {
-
-
-        fileURL = fileEntry.toURL();
-	
- uploadAudio(fileURL); 	
-        }
-  
-
+ 
 	
 	
 	
-	function uploadAudio(fileURL) {
-
-
-
-        var options = new FileUploadOptions();
-
-
-        options.fileKey = "file";
-
-
-        options.fileName = "xport1.csv";
-
-
-       options.mimeType = "text/plain";
-
-
-
-        var ft = new FileTransfer();
-
-
-        ft.upload(fileURL, encodeURI("http://www.writeacademy.in/MMF/updSchedule.php"), win1, fail2, options);
-
-
-        }
-
- function win1(r) {
-
-
-                console.log("Code = " + r.responseCode);
-
-
-                console.log("Response = " + r.response);
-
-
-                console.log("Sent = " + r.bytesSent);
-
-
-                alert("success!");
-
-
-        }
-
-
-
-        function fail2(error) {
-
-
-                alert("An error has occurred: Code = " + error.code);
-
-
-                console.log("upload error source " + error.source);
-
-
-                console.log("upload error target " + error.target);
-
-
-        }
 	
-	 function upd() {
- // ft.upload("file:///storage/emulated/0/Pictures/Instagram/IMG_123123123.jpg", "http://website.com/dir/upload", win, fail, options)  
-var filepath="file:///data/data/com.highbrookcreate.wf3/files/files/my_downloads/sobrite.pdf";
-ft.upload("file:///storage/emulated/0/Pictures/Instagram/IMG_123123123.jpg", "http://website.com/dir/upload", win, fail, options)  		 
- }	
 	
 function archive()
 {
@@ -1723,6 +1635,7 @@ display	: none;
 .archive select {
     padding: 5px 8px;
     width: 180px;
+    height: 70px;
     border: none;
     box-shadow: none;
     background: transparent;
@@ -1885,7 +1798,9 @@ display	: none;
 	  
       </div>
 <div id='archive' class='archive'>
-<select id='monNam'>
+	<table cellpadding='0' cellspacing='0'>
+		<tr height='30px' bgcolor='#628c77'><td colspan=2> Archive</td></tr>
+<tr><td><select id='monNam'>
   <option value="">Select a Month</option>
   <option value="1">January</option>
   <option value="2">February</option>
@@ -1900,8 +1815,8 @@ display	: none;
  <option value="11">November</option>
   <option value="12">December</option>
 	  
-</select>
-<button id='btnarch' class="btn2" onclick='getval();'>Done</button>	
+	</select></td>
+	<td><button id='btnarch' class="btn2" onclick='getval();'>Done</button>	</td></tr>
 	
 	<textarea id="rest2" class="hideDontTakeUpSpace"  rows=5 cols=40 readonly></textarea> 
 </div>
