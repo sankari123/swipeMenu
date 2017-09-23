@@ -1289,13 +1289,13 @@ function forgot_pass()
 	}
 	
 function onPrompt(results) {
-  //  alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+   alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
 	var maild=trim(results.input1); 
 	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
 	 var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
 		
 	var quarter = function(maild) {
-   		return !emailField.match(reEmail);
+   		return !maild.match(reEmail);
 		}
 		
 	 
