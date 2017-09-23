@@ -1084,6 +1084,20 @@ function authusr()
 	 //alert('in');
 	 x=document.getElementById('usrname').value;
 	 y=document.getElementById('usrpwd').value;
+	 
+	 
+	 
+	x=x.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+	 if( !validateEmail(x)) 
+	 {
+	 var msg2='Invalid Email ID';
+	 navigator.notification.alert(  msg2,   alertDismissed,  'Login',   'Done'  );
+      
+	 }
+	 else
+	 {
+	 
+	 
 		var params = "unam=" + x +"&pwd=" + y; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -1094,14 +1108,14 @@ function authusr()
    //   document.getElementById("responsecontainer").innerHTML = this.responseText;
 	    //  alert(this.responseText);
 	      var msg1="Welcome to Madras Music & Miscellany ...! You will receive periodic notifications.  Please check your email...";
-	       navigator.notification.alert(  msg1,   alertDismissed,  'Login',   'Done'  );
+	       navigator.notification.alert(  msg1,   alertDismissed,  'Login',   'OK'  );
     }
     }
   };
   xhttp.open("POST", "http://www.writeacademy.in/MMF/authUsr.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(params);
-		
+	 }	
  
 }
 var file_upload='xport1.csv';	
@@ -1287,7 +1301,7 @@ function onPrompt(results) {
 	 if( !validateEmail(emailID)) 
 	 {
 	 var msg2='Invalid Email ID';
-	 alert( msg2);
+	 navigator.notification.alert(  msg2,   alertDismissed,  'Forgot Password',   'OK'  );
       
 	 }
 	else
