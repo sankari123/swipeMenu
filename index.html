@@ -1283,7 +1283,7 @@ function forgot_pass()
 	
 function onPrompt(results) {
   //alert( results.input1);
-	var emailID=trim(results.input1); 
+	var emailID=results.input1.replace(/^\s\s*/, ''); 
 	 if( !validateEmail(emailID)) 
 	 {
 	 var msg2='Invalid Email ID';
