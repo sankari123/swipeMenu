@@ -1266,7 +1266,7 @@ function displayArchive()
 function forgot_pass()
 	
 	{
-	
+	alert('in'); 
 	navnavigator.notification.prompt(
             'Enter mail ID',  // message
             onPrompt,                  // callback to invoke
@@ -1279,7 +1279,7 @@ function onPrompt(results) {
        // alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
 	var maild=results.input1; 
 	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
-ajaxCallFn(url1,maild)
+ajaxCallFn(url1,maild); 
     }	
 	
 	
@@ -1871,7 +1871,7 @@ display	: none;
 		   <tr > <td><input type="text" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrname" placeholder="Email ID" value='write2sankari@gmail.com'></td></tr>	
 	 <tr > <td><input type="password" style='border: 0;  outline: 0;  background: transparent;  border-bottom: 1px solid black;width:100%;height:34px;padding:6px 12px;font-size:14px;' id="usrpwd" placeholder="*******" value='peace4all'></td></tr>
 		    <tr><td>&nbsp;</td></tr>
-		   <tr><td align=right> <a href="#" onclick='forgot_pass();' style='text-decoration: none;'><font size=1>Forgot Password?</font></a></td></tr>
+		   <tr><td align=right> <a href="#" onclick='forgot_pass(); return false;' style='text-decoration: none;'><font size=1>Forgot Password?</font></a></td></tr>
 		   <tr><td>&nbsp;</td></tr>
 	<tr bgcolor='f4f4f4' height='60px'><td> <button id='display' class="btn34" onclick='ajaxCall();'>Login</button>	</td></tr>
 		   
