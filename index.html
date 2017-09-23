@@ -1264,17 +1264,7 @@ function displayArchive()
 	}
 	
 }		
-function validateEmail(emailField){
-       var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
-
-  if(!emailField.match(reEmail)) {
- //   alert("Invalid email address");
-    return false;
-  }
-
-  return true;
-
-}
+ 
 	
 function forgot_pass()
 	
@@ -1291,24 +1281,11 @@ function forgot_pass()
 function onPrompt(results) {
   alert( results.input1);
 	var emailID=trim(results.input1); 
-	
-	
 	 atpos = emailID.indexOf("@");
          dotpos = emailID.lastIndexOf(".");
-         alert( atpos);
+         alert(atpos);
 	alert(dotpos);
-         if (atpos < 1 || ( dotpos - atpos < 2 )) 
-         {
-           var msg2='Invalid Email ID';
-	   navigator.notification.alert( msg2,  alertDismissed,  'Password Recovery',   'Done'  );
-         }
-         else
-	 {
-	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
-	  ajaxCallFn(url1,emailID); 
-	 
-	 } 
-	
+      
  
  }	
 	
