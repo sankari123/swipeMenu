@@ -1258,14 +1258,14 @@ function procValArc(pVar)
 //    });
 	
 	
-	events1=events1.sort(function(a,b) {
+	events1=events1.sort(function(b,a) {
   return b[1] - a[1] || a[3] - b[3];
 });
 	
 	
 	for (var i = 0; i < events1.length; i++) {
 		
-		alert(events1[i][1]+"/"+events1[i][3]);
+	//	alert('m-'+events1[i][1]+"/"+events1[i][3]);
 		
 	}
 	//alert('len '+events1.length);
@@ -1278,12 +1278,13 @@ function displayArchive()
 //var arcdm=events1[i][1]
 //mydate=new Date('2011-04-11');	
 	var f='';
+	alert('ok');
 	for (var i = 0; i < events1.length; i++) {
 		 
 		if(events1[i][1]==selMonth)
 		{
 		 		f='ok' ;
-			alert('ok');
+			
 				alert(i+'--'+events1[i][6]+'---'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
 			 
 		}
