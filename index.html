@@ -1127,7 +1127,8 @@ var file_upload='xport1.csv';
 	
 function archive()
 {
-//alert('in');
+document.getElementById("archive").style.visibility="true";
+document.getElementById("archive").style.display="block";
  
 	
 var config = {
@@ -1148,7 +1149,7 @@ var config = {
 // Show the picker
 window.plugins.listpicker.showPicker(config, 
     function(item) { 
-        alert("You have selected " + item);
+        alert("You have selected " + item.value);
     },
     function() { 
         alert("You have cancelled");
