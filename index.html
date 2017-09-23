@@ -1276,7 +1276,7 @@ function forgot_pass()
 	}
 	
 function onPrompt(results) {
-       // alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+       alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
 	var maild=results.input1; 
 	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
 ajaxCallFn(url1,maild); 
@@ -1286,13 +1286,13 @@ ajaxCallFn(url1,maild);
 	ajaxCallFn(url,email)
 	
 	{
-	
+	alert('in');
 	var params = "usrMail=" + email; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-	  //alert(this.readyState);
+	  alert(this.readyState);
     if (this.readyState == 4) {
-	 //   alert(this.status);
+	 alert(this.status);
       if(this.status == 200 || this.status == 0){
    //   document.getElementById("responsecontainer").innerHTML = this.responseText;
 	      alert(this.responseText);
