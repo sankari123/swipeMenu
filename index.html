@@ -1159,7 +1159,30 @@ document.getElementById("xPort1").style.visibility="false";
 document.getElementById("tab").style.display="none";
 document.getElementById("tab").style.visibility="false";
 
+var config = {
+    title: "Select a Fruit", 
+    items: [
+        { text: "January", value: "1" },
+        { text: "February", value: "2" },
+        { text: "Watermelon", value: "watermelon" },
+        { text: "Papaya", value: "papaya" },
+        { text: "Banana", value: "banana" },
+        { text: "Pear", value: "pear" }         
+    ],
+    selectedValue: "papaya",
+    doneButtonLabel: "Done",
+    cancelButtonLabel: "Cancel"
+};
 
+// Show the picker
+window.plugins.listpicker.showPicker(config, 
+    function(item) { 
+        alert("You have selected " + item);
+    },
+    function() { 
+        alert("You have cancelled");
+    }
+);
 }
 
 function doRequest(url) {
@@ -1946,28 +1969,12 @@ display	: none;
 	  
       </div>
 <div id='archive' class='archive'>
-	<table align='center' width='75%' style="margin: 0 auto; border:0px solid;text-align:center"> 
+	
 	 
-	<tr height=50px><td>	<select id='monNam'>
-  <option value="">Select a Month</option>
-  <option value="1">January</option>
-  <option value="2">February</option>
-  <option value="3">March</option>
-  <option value="4">April</option>
-  <option value="5">May</option>
-  <option value="6">June</option>
-  <option value="7">July</option>
-  <option value="8">August</option>
- <option value="9">September</option>
- <option value="10">October</option>
- <option value="11">November</option>
-  <option value="12">December</option>
-	  
-		</select></td></tr>
+		 <button id='btnarch'   class=btn34 onclick='getval();'>View</button>	 
 	 
-		<tr><td><button id='btnarch'   class=btn34 onclick='getval();'>View</button>	</td></tr>
-	</table>
 	<textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 readonly></textarea> 
 </div>
+ 
 </body>
 </html>
