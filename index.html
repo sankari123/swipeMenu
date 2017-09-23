@@ -1282,13 +1282,13 @@ function forgot_pass()
 	}
 	
 function onPrompt(results) {
-  alert( results.input1);
+  //alert( results.input1);
 	var emailID=trim(results.input1); 
 	 if( !validateEmail(emailID)) 
 	 {
-	 msg2='Invalid Email ID';
+	 var msg2='Invalid Email ID';
 	 navigator.notification.alert( msg2,  alertDismissed,  'Password Recovery',   'Done'  );
-  
+      
 	 }
 	else
 	{
