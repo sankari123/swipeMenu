@@ -1262,6 +1262,18 @@ function displayArchive()
 	}
 	
 }		
+function validateEmail(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(emailField.value) == false) 
+        {
+            alert('Invalid Email Address');
+            return false;
+        }
+
+        return true;
+
+}
 	
 function forgot_pass()
 	
@@ -1279,20 +1291,22 @@ function onPrompt(results) {
        alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
 	var maild=results.input1; 
 	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
-	ajaxCallFn(url1,maild); 
+	var chkmail=validateEmail(maild); 
+	  alert(chkmail);
+	  ajaxCallFn(url1,maild); 
     }	
 	
 	
 function ajaxCallFn(url,email)
 	
 	{
-	alert('in');
+	//alert('in');
 	var params = "usrMail=" + email; 
 	 var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-	  alert(this.readyState);
+	//  alert(this.readyState);
     if (this.readyState == 4) {
-	 alert(this.status);
+	// alert(this.status);
       if(this.status == 200 || this.status == 0){
    //   document.getElementById("responsecontainer").innerHTML = this.responseText;
 	      alert(this.responseText);
