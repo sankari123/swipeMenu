@@ -1132,24 +1132,31 @@ document.getElementById("archive").style.display="block";
  
 	
 var config = {
-    title: "Select a Fruit", 
+    title: "Select a Month", 
     items: [
         { text: "January", value: "1" },
         { text: "February", value: "2" },
-        { text: "Watermelon", value: "watermelon" },
-        { text: "Papaya", value: "papaya" },
-        { text: "Banana", value: "banana" },
-        { text: "Pear", value: "pear" }         
+        { text: "March", value: "3" },
+        { text: "April", value: "4" },
+        { text: "May", value: "5" },
+        { text: "June", value: "6" },  
+	{ text: "July", value: "7" },
+	 { text: "August", value: "8" },
+        { text: "September", value: "9" },
+        { text: "October", value: "10" },
+        { text: "November", value: "11" },
+        { text: "December", value: "12" },
+        
     ],
-    selectedValue: "papaya",
-    doneButtonLabel: "Done",
+    selectedValue: "December",
+    doneButtonLabel: "OK",
     cancelButtonLabel: "Cancel"
 };
 
 // Show the picker
 window.plugins.listpicker.showPicker(config, 
     function(item) { 
-        alert("You have selected " + item.value);
+        alert("You have selected " + item);
     },
     function() { 
         alert("You have cancelled");
