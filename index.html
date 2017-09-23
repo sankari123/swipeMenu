@@ -1293,13 +1293,16 @@ function onPrompt(results) {
 	var maild=trim(results.input1); 
 	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
 	var chkmail=validateEmail(maild); 
+	if(typeof(chkmail) === "boolean"){
+ 	 alert('boolean');
+		}
 	  if(chkmail==true)
 	  {
 	  ajaxCallFn(url1,maild); 
 	  }
 	else
 	{
-	alert('Invalida EMail ID');
+	alert('Invalid Email ID');
 	}
     }	
 	
