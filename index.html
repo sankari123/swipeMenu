@@ -1266,7 +1266,7 @@ function validateEmail(emailField){
        var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
 
   if(!emailField.match(reEmail)) {
-    alert("Invalid email address");
+ //   alert("Invalid email address");
     return false;
   }
 
@@ -1277,7 +1277,7 @@ function validateEmail(emailField){
 function forgot_pass()
 	
 	{
-	alert('in'); 
+//	alert('in'); 
 	navigator.notification.prompt(
             'Enter mail ID',  // message
             onPrompt,                  // callback to invoke
@@ -1291,8 +1291,13 @@ function onPrompt(results) {
 	var maild=results.input1; 
 	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
 	var chkmail=validateEmail(maild); 
-	  alert(chkmail);
+	  if(chkmail==true)
+	  {
 	  ajaxCallFn(url1,maild); 
+	  }
+	else
+	alert('Invalida EMail ID');
+	}
     }	
 	
 	
