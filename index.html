@@ -1288,7 +1288,7 @@ function forgot_pass()
 	
 function onPrompt(results) {
        alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
-	var maild=results.input1; 
+	var maild=trim(results.input1); 
 	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
 	var chkmail=validateEmail(maild); 
 	  if(chkmail==true)
@@ -1314,7 +1314,8 @@ function ajaxCallFn(url,email)
 	// alert(this.status);
       if(this.status == 200 || this.status == 0){
    //   document.getElementById("responsecontainer").innerHTML = this.responseText;
-	      alert(this.responseText);
+    navigator.notification.alert(  this.responseText,   alertDismissed,  'Password Recovery',   'Done'  );
+//alert(this.responseText);
     }
     }
   };
