@@ -1295,7 +1295,8 @@ function onPrompt(results) {
 	
 	 atpos = emailID.indexOf("@");
          dotpos = emailID.lastIndexOf(".");
-         
+         alert( atpos);
+	alert(dotpos);
          if (atpos < 1 || ( dotpos - atpos < 2 )) 
          {
            var msg2='Invalid Email ID';
@@ -1304,7 +1305,7 @@ function onPrompt(results) {
          else
 	 {
 	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
-	  ajaxCallFn(url1,maild); 
+	  ajaxCallFn(url1,emailID); 
 	 
 	 } 
 	
