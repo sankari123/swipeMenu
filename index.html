@@ -1289,20 +1289,19 @@ function forgot_pass()
 	}
 	
 function onPrompt(results) {
-       alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+     //  alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
 	var maild=trim(results.input1); 
 	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
 	var chkmail=validateEmail(maild); 
-	if(typeof(chkmail) === "boolean"){
- 	 alert('boolean');
-		}
+	 alert(chkmail);
 	  if(chkmail==true)
 	  {
 	  ajaxCallFn(url1,maild); 
 	  }
 	else
 	{
-	alert('Invalid Email ID');
+		msg1='Invalid Email ID';
+	navigator.notification.alert(  msg1,   alertDismissed,  'Password Recovery',   'Done'  );
 	}
     }	
 	
