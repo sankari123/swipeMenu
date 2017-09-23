@@ -1292,24 +1292,18 @@ function onPrompt(results) {
    alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
 	var maild=trim(results.input1); 
 	 var url1 = "http://www.writeacademy.in/MMF/forgot_pass-mmf.php"; 
-	 var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
-		
-	var quarter = function(maild) {
-   		return !maild.match(reEmail);
-		}
-		
-	 
-	 alert(quarter);
-	  if(quarter==true)
+	 var atposition=maild.indexOf("@");  
+	var dotposition=maild.lastIndexOf(".");  
+	if (atposition<1 || dotposition<atposition+2 || dotposition+2>=maild.length)  
 	  {
 	  ajaxCallFn(url1,maild); 
 	  }
 	else
 	{
-		var msg2='Invalid Email ID';
+	var msg2='Invalid Email ID';
 	navigator.notification.alert(  msg2,   alertDismissed,  'Password Recovery',   'Done'  );
 	}
-    }	
+ }	
 	
 	
 function ajaxCallFn(url,email)
