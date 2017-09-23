@@ -1253,9 +1253,21 @@ function procValArc(pVar)
 		 
 		 
 		}
-	 events1 = events1.sort(function(a,b) {
-      return a[1] - b[1];
-    });
+//	 events1 = events1.sort(function(a,b) {
+  //    return a[1] - b[1];
+//    });
+	
+	
+	events1=events1.sort(function(b,a) {
+  return b[1] - a[1] || a[3] - b[3];
+});
+	
+	
+	for (var i = 0; i < events1.length; i++) {
+		
+		alert(i+'--'+events1[i][6]+'---'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
+		
+	}
 	//alert('len '+events1.length);
 	displayArchive();
 }	
