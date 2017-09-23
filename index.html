@@ -1157,6 +1157,10 @@ var config = {
 window.plugins.listpicker.showPicker(config, 
     function(item) { 
         alert("You have selected " + item);
+	selMonth= item;
+	var url1 = "http://www.writeacademy.in/MMF/archive.php"; 
+	doRequest(url1);
+ 
     },
     function() { 
         alert("You have cancelled");
