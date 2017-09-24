@@ -1158,8 +1158,8 @@ window.plugins.listpicker.showPicker(config,
     function(item) { 
         alert("You have selected " + item);
 	selMonth= item;
-	var url1 = "http://www.writeacademy.in/MMF/archive.php"; 
-	doRequest(url1);
+	var url1 = "http://www.writeacademy.in/MMF/archiveTest.php"; 
+	doRequest(url1,selMonth);
  
     },
     function() { 
@@ -1168,8 +1168,9 @@ window.plugins.listpicker.showPicker(config,
 );
 }
 
-function doRequest(url) {
+function doRequest(url,monSel) {
 	//alert(url);
+	var params = "arcMon=" + monSel; 
    var xhr1 = new XMLHttpRequest();
 xhr1.open("GET",url, true);
 xhr1.onload = function (e) {
@@ -1180,43 +1181,19 @@ xhr1.onload = function (e) {
 	    procValArc(document.getElementById('rest2').value); 
 	
     } else {
-     alert(xhr1.statusText);
+     navigator.notification.alert( 'No archive found..!',   alertDismissed,  'Login',   'OK'  );
     }
   }
 };
 xhr1.onerror = function (e) {
   alert(xhr1.statusText);
 };
-xhr1.send(null);
+xhr1.send(params);
 }
 	
-	
-	 
-
-	
- 
 	
  var selMonth;	
- function getval( )
-{ 
-	//alert('in');
-	 
-        sel = document.getElementById("monNam");
-	
-	selMonth=sel.options[sel.selectedIndex].value; // 
-   //  alert("value =" + sel.options[sel.selectedIndex].value); // show selected value
-    // alert("text =" + document.getElementById(monNam).options[sel].text); // show selected text 
-	//var url = "http://www.writeacademy.in/MMF/archive.php"; 
-	 var url1 = "http://www.writeacademy.in/MMF/archive.php"; 
-doRequest(url1);
- 
-	//procValArc(document.getElementById('rest2').value); 
-	
-	 
-	
-	
-	
-}
+  
 //events1=new Array();	
 
 function procValArc(pVar)
@@ -1258,45 +1235,28 @@ function procValArc(pVar)
 //    });
 	
 	
-	events1=events1.sort(function(b,a) {
-  return b[1] - a[1] || a[3] - b[3];
-});
+//	events1=events1.sort(function(b,a) {
+//  return b[1] - a[1] || a[3] - b[3];
+//});
 	
 	
-	for (var i = 0; i < events1.length; i++) {
-		
-	//	alert('m-'+events1[i][1]+"/"+events1[i][3]);
-		
-	}
+	 
 	//alert('len '+events1.length);
 	displayArchive();
 }	
 
 function displayArchive()
 {
- alert(selMonth);
+// alert(selMonth);
 //var arcdm=events1[i][1]
 //mydate=new Date('2011-04-11');	
-	var f='';
-	alert('ok');
+	 
 	for (var i = 0; i < events1.length; i++) {
-		 
-		if(events1[i][1]==selMonth)
-		{
-		 		f='ok' ;
 			
 				alert(i+'--'+events1[i][6]+'---'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
 			 
 		}
-		
-		}
-	
-	//alert('f'+f);
-	if(f=='')
-	{
-	alert('No archive found ....! ');
-	}
-	
+
 }		
  function validateEmail($email) {
   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
