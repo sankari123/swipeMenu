@@ -1258,17 +1258,18 @@ function procValArc(pVar)
 
 function displayArchive()
 {
-	
+alert('in');	
 document.getElementById("backmenu").style.display="block";
 	document.getElementById("backmenu").style.visibility="true";
 	document.getElementById("main").style.visibility="false";
 	document.getElementById("main").style.display="none";
 	document.getElementById("mainMenu").style.visibility="false";
 	document.getElementById("mainMenu").style.display="none";
-document.getElementById("calendar").style.display="none";
-document.getElementById("calendar").style.visibility="false"; 
+
 document.getElementById("archive").style.visibility="true";
 document.getElementById("archive").style.display="block";
+	document.getElementById("calendar").style.display="none";
+document.getElementById("calendar").style.visibility="false"; 
 document.getElementById("csv").style.display="none";
 document.getElementById("csv").style.visibility="false"; 
 document.getElementById("det").style.display="none";
@@ -1302,7 +1303,7 @@ prevyr='';
 		
 	}
 		
-	  document.getElementById("archive").innerHTML =pdfTxt+"</table>";
+	  document.getElementById("archive").innerHTML =pdfTxt+"</table>asjkdhasjkdhasjk dhasdjkash dkas jdasd";
 
 }		
  function validateEmail($email) {
@@ -1977,8 +1978,8 @@ display	: none;
 	 
 <!--		 <button id='btnarch'   class=btn34 onclick='getval();'>View</button>	 -->
 	 
-	<textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 readonly></textarea> 
+	
 </div>
- 
+ <textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 readonly></textarea> 
 </body>
 </html>
