@@ -1179,12 +1179,18 @@ function doRequest(url,monSel) {
       if(this.status == 200 || this.status == 0){
   
     document.getElementById('rest2').value= this.responseText;
+	     
+	      if(this.responseText.length!=0)
+		 {
+		//  document.getElementById("archive").innerHTML = this.responseText;
 	    procValArc(document.getElementById('rest2').value); 
- 
+		 }
+	        else {
+    		 navigator.notification.alert( 'No archive found..!',   alertDismissed,  'Login',   'OK'  );
+    		}
+	      
     }
-	    else {
-     navigator.notification.alert( 'No archive found..!',   alertDismissed,  'Login',   'OK'  );
-    }
+	     
     }
   };
   xhttp.open("POST", url, true);
