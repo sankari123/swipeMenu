@@ -1169,7 +1169,7 @@ window.plugins.listpicker.showPicker(config,
 }
 
 function doRequest(url,monSel) {
-	alert(monSel);
+	//alert(monSel);
 	var params = "arcMon=" + monSel; 
 	var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -1258,15 +1258,21 @@ function procValArc(pVar)
 
 function displayArchive()
 {
-// alert(selMonth);
-//var arcdm=events1[i][1]
-//mydate=new Date('2011-04-11');	
-	 
+ pdfTxt="<table><tr height='50px'><td colspan=4>Archive - "+events1[i][1]+"</td></tr>";
+	pdfTxt+="<tr><td>Date</td><td>Time</td><td>Program Details</td><td>Venue</td></tr>";
 	for (var i = 0; i < events1.length; i++) {
 			
-				alert(i+'--'+events1[i][6]+'---'+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]);
-			 
-		}
+		if(events1[i][3]!=prevyr)	
+		{
+			pdfTxt+="<tr height='10px' bgcolor=#fafbfc><td colspan=4>&nbsp;</tr>";
+		}	
+		pdfTxt+="<tr><td>"+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]+"</td><td>"+events1[i][4]+"</td><td>"+events1[i][6]+" "+events1[i][7]+"</td><td>"+events1[i][5]+"</td><tr>";
+		
+		prevyr=events1[i][3];	 
+		
+	}
+		
+	  document.getElementById("archive").innerHTML =pdfTxt+"</table>";
 
 }		
  function validateEmail($email) {
