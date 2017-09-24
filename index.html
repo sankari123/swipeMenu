@@ -1127,8 +1127,8 @@ var file_upload='xport1.csv';
 	
 function archive()
 {
-document.getElementById("archive").style.visibility="true";
-document.getElementById("archive").style.display="block";
+//document.getElementById("archive").style.visibility="true";
+//document.getElementById("archive").style.display="block";
  
 	
 var config = {
@@ -1258,13 +1258,43 @@ function procValArc(pVar)
 
 function displayArchive()
 {
- pdfTxt="<table><tr height='50px'><td colspan=4>Archive - "+events1[i][1]+"</td></tr>";
+	
+document.getElementById("backmenu").style.display="block";
+	document.getElementById("backmenu").style.visibility="true";
+	document.getElementById("main").style.visibility="false";
+	document.getElementById("main").style.display="none";
+	document.getElementById("mainMenu").style.visibility="false";
+	document.getElementById("mainMenu").style.display="none";
+document.getElementById("calendar").style.display="none";
+document.getElementById("calendar").style.visibility="false"; 
+document.getElementById("archive").style.visibility="true";
+document.getElementById("archive").style.display="block";
+document.getElementById("csv").style.display="none";
+document.getElementById("csv").style.visibility="false"; 
+document.getElementById("det").style.display="none";
+document.getElementById("det").style.visibility="false";
+document.getElementById("lst_mnu").style.display="none";
+document.getElementById("lst_mnu").style.visibility="false";
+document.getElementById("dl_btn").style.display="none";
+document.getElementById("dl_btn").style.visibility="false";
+document.getElementById("dl_btn1").style.display="none";
+document.getElementById("dl_btn1").style.visibility="false";
+document.getElementById("category").style.display="none";
+document.getElementById("category").style.visibility="false";
+document.getElementById("xPort").style.display="none";
+document.getElementById("xPort").style.visibility="false";
+document.getElementById("xPort1").style.display="none";
+document.getElementById("xPort1").style.visibility="false";
+document.getElementById("tab").style.display="none";
+document.getElementById("tab").style.visibility="false";
+	
+ var pdfTxt="<table><tr height='50px'><td colspan=4>Archive - "+events1[i][1]+"</td></tr>";
 	pdfTxt+="<tr><td>Date</td><td>Time</td><td>Program Details</td><td>Venue</td></tr>";
 	for (var i = 0; i < events1.length; i++) {
 			
 		if(events1[i][3]!=prevyr)	
 		{
-			pdfTxt+="<tr height='10px' bgcolor=#fafbfc><td colspan=4>&nbsp;</tr>";
+			pdfTxt+="<tr height='10px' bgcolor=#fafbfc><td colspan=4>&nbsp;</td></tr>";
 		}	
 		pdfTxt+="<tr><td>"+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]+"</td><td>"+events1[i][4]+"</td><td>"+events1[i][6]+" "+events1[i][7]+"</td><td>"+events1[i][5]+"</td><tr>";
 		
