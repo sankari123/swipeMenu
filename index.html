@@ -1146,8 +1146,8 @@ var config = {
         { text: "December", value: "12" },
         
     ],
-    selectedValue: "December",
-    doneButtonLabel: "OK",
+    selectedValue: "July",
+    doneButtonLabel: "Done",
     cancelButtonLabel: "Cancel"
 };
 
@@ -1258,11 +1258,11 @@ function displayArchive()
 {
  
 document.getElementById("backmenu").style.display="block";
-	document.getElementById("backmenu").style.visibility="true";
-	document.getElementById("main").style.visibility="false";
-	document.getElementById("main").style.display="none";
-	document.getElementById("mainMenu").style.visibility="false";
-	document.getElementById("mainMenu").style.display="none";
+document.getElementById("backmenu").style.visibility="true";
+document.getElementById("main").style.visibility="false";
+document.getElementById("main").style.display="none";
+document.getElementById("mainMenu").style.visibility="false";
+document.getElementById("mainMenu").style.display="none";
 document.getElementById("calendar").style.display="none";
 document.getElementById("calendar").style.visibility="false"; 
 document.getElementById("archive").style.visibility="true";
@@ -1289,6 +1289,7 @@ displayNow();
 }
 function displayNow()
 	{
+		alert('in');
 prevyr='';	
 var pdfTxt="<table border=1><tr height='50px'><td colspan=4>Archive - </td></tr>";
 	pdfTxt+="<tr><td>Date</td><td>Time</td><td>Program Details</td><td>Venue</td></tr>";
