@@ -1171,25 +1171,30 @@ window.plugins.listpicker.showPicker(config,
 function doRequest(url,monSel) {
 	//alert(url);
 	var params = "arcMon=" + monSel; 
-   var xhr1 = new XMLHttpRequest();
-xhr1.open("GET",url, true);
-xhr1.onload = function (e) {
-  if (xhr1.readyState === 4) {
-    if (xhr1.status === 200) {
-     // alert(xhr1.responseText);
-	    document.getElementById('rest2').value=xhr1.responseText;
+	var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+ 
+    if (this.readyState == 4) {
+	 
+      if(this.status == 200 || this.status == 0){
+  
+    document.getElementById('rest2').value=xhr1.responseText;
 	    procValArc(document.getElementById('rest2').value); 
-	
-    } else {
+ 
+    }
+	    else {
      navigator.notification.alert( 'No archive found..!',   alertDismissed,  'Login',   'OK'  );
     }
-  }
-};
-xhr1.onerror = function (e) {
-  alert(xhr1.statusText);
-};
-xhr1.send(params);
+    }
+  };
+  xhttp.open("POST", url, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(params);
 }
+   
+	    
+	
+     
 	
 	
  var selMonth;	
