@@ -1259,6 +1259,8 @@ function procValArc(pVar)
 function displayArchive()
 {
 alert('in');	
+	document.getElementById("archive").style.visibility="true";
+document.getElementById("archive").style.display="block";
 document.getElementById("backmenu").style.display="block";
 	document.getElementById("backmenu").style.visibility="true";
 	document.getElementById("main").style.visibility="false";
@@ -1266,8 +1268,7 @@ document.getElementById("backmenu").style.display="block";
 	document.getElementById("mainMenu").style.visibility="false";
 	document.getElementById("mainMenu").style.display="none";
 
-document.getElementById("archive").style.visibility="true";
-document.getElementById("archive").style.display="block";
+
 	document.getElementById("calendar").style.display="none";
 document.getElementById("calendar").style.visibility="false"; 
 document.getElementById("csv").style.display="none";
@@ -1974,11 +1975,6 @@ display	: none;
 	  
       </div>
 <div id='archive' class='archive'>
-	
-	 
-<!--		 <button id='btnarch'   class=btn34 onclick='getval();'>View</button>	 -->
-	 
-	
 </div>
  <textarea id="rest2" class="hideDontTakeUpSpace"  rows=1 cols=40 readonly></textarea> 
 </body>
