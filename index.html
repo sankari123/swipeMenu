@@ -1287,18 +1287,18 @@ document.getElementById("xPort1").style.display="none";
 document.getElementById("xPort1").style.visibility="false";
 document.getElementById("tab").style.display="none";
 document.getElementById("tab").style.visibility="false";
-	
- var pdfTxt="<table><tr height='50px'><td colspan=4>Archive - "+events1[i][1]+"</td></tr>";
+prevyr='';	
+ var pdfTxt="<table class='ven1'><tr height='50px'><td colspan=4>Archive - </td></tr>";
 	pdfTxt+="<tr><td>Date</td><td>Time</td><td>Program Details</td><td>Venue</td></tr>";
 	for (var i = 0; i < events1.length; i++) {
 			
-		if(events1[i][3]!=prevyr)	
-		{
+		if(events1[i][3]!=prevyr  && i!=0)	
+	       {
 			pdfTxt+="<tr height='10px' bgcolor=#fafbfc><td colspan=4>&nbsp;</td></tr>";
 		}	
-		pdfTxt+="<tr><td>"+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]+"</td><td>"+events1[i][4]+"</td><td>"+events1[i][6]+" "+events1[i][7]+"</td><td>"+events1[i][5]+"</td><tr>";
+		pdfTxt+="<tr><td>"+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3]+"</td><td>"+events1[i][4]+"</td><td>&nbsp;&nbsp;"+events1[i][6]+"--"+events1[i][7]+"</td><td>"+events1[i][5]+"</td><tr>";
 		
-		prevyr=events1[i][3];	 
+		prevyr=events1[i][3];	
 		
 	}
 		
