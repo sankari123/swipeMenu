@@ -1122,7 +1122,11 @@ var file_upload='xport1.csv';
  
 	
 	
-var config = {
+	
+	
+function archive()
+{
+	var config = {
     title: "Select a Month", 
     items: [
         { text: "January", value: "1" },
@@ -1143,10 +1147,7 @@ var config = {
     doneButtonLabel: "Done",
     cancelButtonLabel: "Cancel"
 };	
-	
-	
-function archive()
-{
+
 // Show the picker
 window.plugins.listpicker.showPicker(config, 
     function(item) { 
