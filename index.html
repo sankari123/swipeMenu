@@ -1370,8 +1370,25 @@ function ajaxCallFn(url,email)
   xhttp.send(params);
 	
 	}
+var appId, platform = device.platform.toLowerCase();
+
+switch(platform){
+    case "ios":
+    //    appId = "585027354";
+    //    break;
+    case "android":
+        appId = "com.google.android.apps.digigraph";
+        break;
+}
+function rateApp()
+{
+LaunchReview.launch(appId, function(){
+    console.log("Successfully launched store app");
+},function(err){
+    console.log("Error launching store app: " + err);
+});
 	
-	
+}
 </script>
 	<style type="text/css">
 		.nav ul {
@@ -1785,7 +1802,7 @@ display	: none;
  		  
 		   <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Archive</a>
               
-                  <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Rate MMF</a>
+                  <li> <a id="myLink" href="#" onclick="rateApp();" class="ssm-toggle-nav">Rate MMF</a>
           </ul>
        
         </nav>
