@@ -1281,7 +1281,7 @@ prevyr='';
 	       {
 			pdfTxt+="<tr height='10px' bgcolor=#fafbfc><td colspan=4>&nbsp;</td></tr>";
 		}	
-		pdfTxt+="<tr><td>"+events1[i][2]+"/"+events1[i][1]+"/"+substring(events1[i][3],2)+"</td><td>"+events1[i][5]+"</td><td>"+events1[i][6]+"</td><td>"+events1[i][7]+"<tr>";
+		pdfTxt+="<tr><td>"+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3].substring(2, 4)+"</td><td>"+events1[i][5]+"</td><td>"+events1[i][6]+"</td><td>"+events1[i][7]+"<tr>";
 		
 		prevyr=events1[i][3];	
 		
