@@ -1273,15 +1273,15 @@ prevyr='';
 		
 		
 		
-	var pdfTxt="<table border=1 style='font-size: 9px'><tr height='50px'><td colspan=3>Archive -"+selMonth+"</td></tr>";
-	pdfTxt+="<tr><td>Date</td><td>Time</td><td>sdfsdf</td></tr>";
+	var pdfTxt="<table border=1 style='font-size: 9px'><tr height='50px'><td colspan=4>Archive -"+selMonth+"</td></tr>";
+	pdfTxt+="<tr><td>Date</td><td>Time</td><td>sdfsdf</td><td>asdfsf</td></tr>";
 	for (var i = 0; i < events1.length; i++) {
 			
 		if(events1[i][3]!=prevyr  && i!=0)	
 	       {
 			pdfTxt+="<tr height='10px' bgcolor=#fafbfc><td colspan=4>&nbsp;</td></tr>";
 		}	
-		pdfTxt+="<tr><td>"+events1[i][2]+"/"+events1[i][1]+"/"+substring(events1[i][3],2)+"</td><td>"+events1[i][5]+"</td><td>"+events1[i][6]+"</td><td>&nbsp;&nbsp;"+events1[i][7]+"<tr>";
+		pdfTxt+="<tr><td>"+events1[i][2]+"/"+events1[i][1]+"/"+substring(events1[i][3],2)+"</td><td>"+events1[i][5]+"</td><td>"+events1[i][6]+"</td><td>"+events1[i][7]+"<tr>";
 		
 		prevyr=events1[i][3];	
 		
