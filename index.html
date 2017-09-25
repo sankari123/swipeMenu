@@ -1083,9 +1083,11 @@ function authusr()
 	 //alert('in');
 	 x=document.getElementById('usrname').value;
 	 y=document.getElementById('usrpwd').value;
-	 	 
+	 
+	 if(x!='' && y!='')
+	 {
 	x=x.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-	 if( (!validateEmail(x)) || x =='' || y=='') 
+	 if( !validateEmail(x)) 
 	 {
 	 var msg2='Invalid Email ID/Password';
 	 navigator.notification.alert(  msg2,   alertDismissed,  'Login',   'Done'  );
@@ -1113,9 +1115,17 @@ function authusr()
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(params);
 	 }	
- 
+	 }
+	 
+	 else
+	 {
+	 navigator.notification.alert(  'Invalid Email ID/Password',   alertDismissed,  'Login',   'OK'  );
+	 }
 }
-var file_upload='xport1.csv';	
+
+	
+	
+	var file_upload='xport1.csv';	
  
 	
 	
@@ -1244,7 +1254,7 @@ function procValArc(pVar)
 	
 	
 	 
-	alert('len '+events1.length);
+	//alert('len '+events1.length);
 	displayArchive();
 }	
 
@@ -1266,13 +1276,13 @@ document.getElementById("category").style.display="none";
 document.getElementById("category").style.visibility="false";
  	
  
-		alert('in');
+		//alert('in');
 prevyr='';	
 		
 		
 		
 	var pdfTxt="<table border=1 cellpadding=0 cellspacing=0 bgcolor='#fafbfc' style='font-size: 9px'><tr height='50px'><td colspan=4>Archive -"+selMonth+"</td></tr>";
-	pdfTxt+="<tr><td>Date</td><td>Venue</td><td>Program</td><td>asdfsf</td></tr>";
+	pdfTxt+="<tr><td>Date</td><td>Venue</td><td>Program</td><td>Artist</td></tr>";
 	for (var i = 0; i < events1.length; i++) {
 			
 		if(events1[i][3]!=prevyr  && i!=0)	
@@ -1311,8 +1321,10 @@ function forgot_pass()
 	
 function onPrompt(results) {
   //alert( results.input1);
+	if(results.input1!='')
+	{
 	var emailID=results.input1.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-	 if( (!validateEmail(emailID)) || emailID='') 
+	 if( !validateEmail(emailID)) 
 	 { 
 	 var msg2='Invalid Email ID';
 	 navigator.notification.alert(  msg2,   alertDismissed,  'Forgot Password',   'OK'  );
@@ -1326,7 +1338,7 @@ function onPrompt(results) {
 		
 	}
       
- 
+	}
  }	
 	
 	
