@@ -1188,7 +1188,7 @@ function doRequest(url,monSel) {
 	    procValArc(document.getElementById('rest2').value); 
 		 }
 	        else {
-    		 navigator.notification.alert( 'No archive found..!',   alertDismissed,  'Login',   'OK'  );
+    		 navigator.notification.alert( 'No archive found..!',   alertDismissed,  'Archive',   'OK'  );
     		}
 	      
     }
@@ -1315,7 +1315,7 @@ function forgot_pass()
             'Enter mail ID',  // message
             onPrompt,                  // callback to invoke
             'Forgot Password',            // title
-            ['Ok','Exit']              // buttonLabels
+            ['Ok','Cancel']              // buttonLabels
         );
 	}
 	
@@ -1339,6 +1339,12 @@ function onPrompt(results) {
 	}
       
 	}
+	else
+	{
+	var msg2='Invalid Email ID';
+	 navigator.notification.alert(  msg2,   alertDismissed,  'Forgot Password',   'OK'  );
+      
+	 }
  }	
 	
 	
@@ -1779,7 +1785,7 @@ display	: none;
  		  
 		   <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Archive</a>
               
-                  <li><a href="#">Feedback</a></li>
+                  <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Rate MMF</a>
           </ul>
        
         </nav>
