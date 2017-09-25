@@ -1380,7 +1380,7 @@ switch(platform){
         appId = "com.google.android.apps.digigraph";
         break;
 }
-function rateApp()
+function rateApp1()
 {
 LaunchReview.launch(appId, function(){
     console.log("Successfully launched store app");
@@ -1389,6 +1389,11 @@ LaunchReview.launch(appId, function(){
 });
 	
 }
+	
+function rateApp()	
+	{	
+	window.location.replace('market://details?id=com.google.android.apps.digigraph);
+	}
 </script>
 	<style type="text/css">
 		.nav ul {
