@@ -1083,13 +1083,11 @@ function authusr()
 	 //alert('in');
 	 x=document.getElementById('usrname').value;
 	 y=document.getElementById('usrpwd').value;
-	 
-	 
-	 
+	 	 
 	x=x.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-	 if( !validateEmail(x)) 
+	 if( !validateEmail(x)  || x =='' || y=='') 
 	 {
-	 var msg2='Invalid Email ID';
+	 var msg2='Invalid Email ID/Password';
 	 navigator.notification.alert(  msg2,   alertDismissed,  'Login',   'Done'  );
       
 	 }
@@ -1150,7 +1148,7 @@ function archive()
 // Show the picker
 window.plugins.listpicker.showPicker(config, 
     function(item) { 
-     //   alert("You have selected " + item);
+   //   alert("You have selected " + item.text);
 	selMonth= item;
 	var url1 = "http://www.writeacademy.in/MMF/archiveTest.php"; 
 	doRequest(url1,selMonth);
@@ -1273,15 +1271,15 @@ prevyr='';
 		
 		
 		
-	var pdfTxt="<table border=1 style='font-size: 9px'><tr height='50px'><td colspan=4>Archive -"+selMonth+"</td></tr>";
-	pdfTxt+="<tr><td>Date</td><td>Time</td><td>sdfsdf</td><td>asdfsf</td></tr>";
+	var pdfTxt="<table border=1 cellpadding=0 cellspacing=0 bgcolor='#fafbfc' style='font-size: 9px'><tr height='50px'><td colspan=4>Archive -"+selMonth+"</td></tr>";
+	pdfTxt+="<tr><td>Date</td><td>Venue</td><td>Program</td><td>asdfsf</td></tr>";
 	for (var i = 0; i < events1.length; i++) {
 			
 		if(events1[i][3]!=prevyr  && i!=0)	
 	       {
-			pdfTxt+="<tr height='10px' bgcolor=#fafbfc><td colspan=4>&nbsp;</td></tr>";
+			pdfTxt+="<tr height='10px' bgcolor='#fafbfc'><td colspan=4>&nbsp;</td></tr>";
 		}	
-		pdfTxt+="<tr><td>"+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3].substring(2, 4)+"</td><td>"+events1[i][5]+"</td><td>"+events1[i][6]+"</td><td>"+events1[i][7]+"<tr>";
+		pdfTxt+="<tr><td>"+events1[i][2]+"/"+events1[i][1]+"/"+events1[i][3].substring(2, 4)+"</td><td>"+events1[i][5]+"</td><td>"+events1[i][6]+"</td><td>"+events1[i][8]+"<tr>";
 		
 		prevyr=events1[i][3];	
 		
@@ -1314,8 +1312,8 @@ function forgot_pass()
 function onPrompt(results) {
   //alert( results.input1);
 	var emailID=results.input1.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-	 if( !validateEmail(emailID)) 
-	 {
+	 if( !validateEmail(emailID) || emailID='') 
+	 { 
 	 var msg2='Invalid Email ID';
 	 navigator.notification.alert(  msg2,   alertDismissed,  'Forgot Password',   'OK'  );
       
