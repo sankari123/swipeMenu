@@ -12,7 +12,7 @@ nav {
     overflow-y: auto;
     overflow-x: visible;
     transform: translate(-210px,0);
-
+font-weight: bold;
 }
 .ssm-overlay {
 	position: fixed;
