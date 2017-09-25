@@ -1085,7 +1085,7 @@ function authusr()
 	 y=document.getElementById('usrpwd').value;
 	 	 
 	x=x.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-	 if( !validateEmail(x)  || x =='' || y=='') 
+	 if( (!validateEmail(x)) || x =='' || y=='') 
 	 {
 	 var msg2='Invalid Email ID/Password';
 	 navigator.notification.alert(  msg2,   alertDismissed,  'Login',   'Done'  );
@@ -1312,7 +1312,7 @@ function forgot_pass()
 function onPrompt(results) {
   //alert( results.input1);
 	var emailID=results.input1.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-	 if( !validateEmail(emailID) || emailID='') 
+	 if( (!validateEmail(emailID)) || emailID='') 
 	 { 
 	 var msg2='Invalid Email ID';
 	 navigator.notification.alert(  msg2,   alertDismissed,  'Forgot Password',   'OK'  );
@@ -1843,8 +1843,7 @@ display	: none;
 	<div id='lst_mnu' align='left'>	</div>
 	<!--<div id="previewImage">
     </div>-->
-    <div id='archive'>dfgdfgdfgdfgdf
-	</div>  
+    <div id='archive'></div>  
 	<div id='calEvent'>
 			 
 		<div id='left1' class="left1"></div>
