@@ -1374,23 +1374,23 @@ var appId, platform = device.platform.toLowerCase();
 
 switch(platform){
     case "ios":
-    //    appId = "585027354";
-    //    break;
+      appId = "585027354";
+       break;
     case "android":
-        appId = "com.google.android.apps.digigraph";
+        appId = "com.appcorridor.DIVE";
         break;
 }
-function rateApp1()
+function rateApp()
 {
 LaunchReview.launch(appId, function(){
-    console.log("Successfully launched store app");
+    alert("Successfully launched store app");
 },function(err){
-    console.log("Error launching store app: " + err);
+    alert("Error launching store app: " + err);
 });
 	
 }
 	
-function rateApp()	
+function rateApp1()	
 	{	
 	window.location.replace('market://details?id=com.google.android.apps.digigraph');
 	}
