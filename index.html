@@ -11,9 +11,11 @@
        
         <!-- CSS stylesheet for sliding-swipe-menu -->
         <link rel="stylesheet" href="css/slide-and-swipe-menu.css">
-  
+        <link href = "css/jquery-ui.css" rel = "stylesheet">
+        <script src = "js/jquery-1.10.2.js"></script>
+        <script src = "js/jquery-ui.js"></script>
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.js"></script>
  
         <!-- touchSwipe library -->
         <script src="js/jquery.touchSwipe.min.js"></script>
@@ -495,6 +497,8 @@ function procVal(pVar)
 		//multiArr.push([latR[2],latR[0],latR[1],dist]);
 		events.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);
 		venue_arr.push([venue]);
+		artist.push(art);
+		//artist.push(Pdeta);
 		//alert(events.length);
 		//write ajax response to text file
 		
@@ -1788,7 +1792,9 @@ display	: none;
  
 }
 		
-	
+.fake-input { position: relative; width:240px; }
+.fake-input input { border:none: background:#fff; display:block; width: 100%; box-sizing: border-box }
+.fake-input img { position: absolute; top: 2px; right: 5px }	
 
 
 
@@ -1855,7 +1861,13 @@ display	: none;
 	
 	
 	<div id='category' class='category'>
-		 
+		<div class = "ui-widget">
+            <div class="fake-input">
+   <input id = "automplete-1" placeholder="Email ID">
+    <img src="search.png" width=20 />
+</div>      
+         
+      </div> 
 		<font size=1 face='arial'>Browse by Category</font><br><br>
 	   <table width='100%' border=0 cellpadding=0 cellpadding=0 >
 		   <tr><td><button onclick='eventList(1);' class='btn2'><img src='concert.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td></tr>
