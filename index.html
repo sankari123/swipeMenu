@@ -430,7 +430,7 @@ var ajaxResponse;
 var arr_store;
 function ajaxFunction()
 {
-	window.plugins.spinnerDialog.hide();
+	//window.plugins.spinnerDialog.hide();
 	if(connSel=='Y')
 	{	
 	var xhr = new XMLHttpRequest();
@@ -805,6 +805,7 @@ function openCity(evt, cityName) {
 			 
            
 	document.getElementById("defaultOpen").click();
+		window.plugins.spinnerDialog.hide();
 			checkConnection();
 		document.getElementById("category").style.display="block";
 		document.getElementById("category").style.visibility="true";
@@ -1867,13 +1868,10 @@ display	: none;
 	
 	
 	<div id='category' class='category'>
-		<div class = "ui-widget">
-            <div class="fake-input">
-   <input id = "automplete-1" placeholder="Email ID">
-    <img src="search.png" width=20 />
-</div>      
-         
-      </div> 
+                           <div class = "ui-widget">
+          
+         <input id = "automplete-1" placeholder="Email ID" >
+      </div>
 		<font size=1 face='arial'>Browse by Category</font><br><br>
 	   <table width='100%' border=0 cellpadding=0 cellpadding=0 >
 		   <tr><td><button onclick='eventList(1);' class='btn2'><img src='concert.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td></tr>
