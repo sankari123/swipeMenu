@@ -981,7 +981,10 @@ function calAdd()
  //alert(startDate);
 	//	alert(endDate);
 	//	alert(notes);
-    window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror)
+    window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,cal1success,cal1error)
+		var cal1success = function(message) { alert("Success: " + JSON.stringify(message)); };
+  var cal1error = function(message) { alert("Error: " + message); };
+		
   var calsuccess = function(message) {
     navigator.notification.alert("Event added successfully.");
 	  alert("Event added successfully.");
