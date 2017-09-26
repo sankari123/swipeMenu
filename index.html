@@ -36,7 +36,7 @@
 var usrauth ;	
 	usrauth='';	
 function alertDismissed() {
-            alert('ddd');
+            alert('Invalid');
         }	
 function init() {
     	document.addEventListener("deviceready", onDeviceReady, false);
@@ -965,7 +965,7 @@ function calAdd()
 	 
 	 
 	for (var i = 0; i <calEvt1.length-1; i++) {
-		alert(calEvt1[i]);
+	//	alert(calEvt1[i]);
 	// Start date and time of the event
   var startDate = new Date(calEvt1[i]);
   // End date and time of the event 
@@ -983,11 +983,11 @@ function calAdd()
 	//	alert(notes);
     window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calsuccess,calerror)
   var calsuccess = function(message) {
-    navigatore.notification.alert("Event added successfully.");
+    navigator.notification.alert("Event added successfully.");
 	  alert("Event added successfully.");
   };
   var calerror = function(message) { 
-    navigatore.notification.alert("Error occurred while adding the event.");
+    navigator.notification.alert("Error occurred while adding the event.");
   };
 	}
 }	
