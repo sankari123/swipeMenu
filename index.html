@@ -30,6 +30,7 @@
 	
 	 $(document).ready(function() {
                 $('.nav').slideAndSwipe();
+		 
             });
   var optSel;
 var usrauth ;	
@@ -463,6 +464,7 @@ function ajaxFunction()
 var latR;
 var events = new Array();
 var venue_arr = new Array();
+	var artist=[];
 function procVal(pVar)
 {
 //multiArr=[];
@@ -799,7 +801,9 @@ function openCity(evt, cityName) {
 	function category()
 	{
 	//alert('in');
-		
+	var availableTutorials  =artist;
+			 
+           
 	document.getElementById("defaultOpen").click();
 			checkConnection();
 		document.getElementById("category").style.display="block";
@@ -837,7 +841,9 @@ function openCity(evt, cityName) {
 		document.getElementById("panel").style.display="none";
 		document.getElementById("panel").style.visibility="false";
 		 
-	
+	 $( "#automplete-1" ).autocomplete({
+               source: availableTutorials
+            });	
 		 
 		
 	}
