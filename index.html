@@ -715,7 +715,7 @@ function ven_det(v)
 		calEvt = calEvt+events[i][3]+'  '+events[i][1]+"  "+events[i][2]+'&';
 			calEvtDetails=calEvtDetails+events[i][5]+'  '+events[i][8]+'%';
 	
-		ev_lst+="<tr align='center'><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+"<br>";
+		ev_lst+="<tr align='center'><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3].substring(2, 4)+ "&nbsp;&nbsp;"+timeString+"<br>";
 	ev_lst+=events[i][6]+'<br>'+'<br>';
 	ev_lst+=events[i][8]+'<br>';
 	ev_lst+=events[i][7]+'<hr size=2></td></tr>';
@@ -909,7 +909,7 @@ for (var i = 0, len = events.length; i < len; i++)
 			//calArray+=events[i][3]+'/' +events[i][1]+"/"+events[i][2]+'&';
 		//	calArrayDetails+=events[i][5]+'-'+events[i][8]+'-'+'%';
 			
-	ev_lst+="<tr align='center' ><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3]+ "&nbsp;&nbsp;"+timeString+"<br>";
+	ev_lst+="<tr align='center' ><td>"+events[i][2]+"/"+events[i][1]+"/"+events[i][3].substring(2, 4)+ "&nbsp;&nbsp;"+timeString+"<br>";
 			
 			
 	ev_lst+=events[i][5]+'<br>'+'<br>';
