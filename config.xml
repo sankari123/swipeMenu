@@ -52,7 +52,8 @@
         <gap:plugin name="cordova-plugin-calendar" source="npm" />
         <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	<gap:plugin name="cordova-launch-review" source="npm" />
-  <plugin name="cordova-pdf-generator" source="npm" />
+  	<plugin name="cordova-pdf-generator" source="npm" />
+	<plugin name="cordova-plugin-keyboard" source="npm" />
   
   <icon src="icon.png" />
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
