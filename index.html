@@ -1413,6 +1413,13 @@ function rateApp1()
 	{	
 	window.location.replace('market://details?id=com.google.android.apps.digigraph');
 	}
+	
+	function srchArtist()
+  {
+  document.getElementById("autocomplete-container").style.display="block";
+	document.getElementById("autocomplete-container").style.visibility="true";
+  
+  }
 </script>
 	<style type="text/css">
 		.nav ul {
@@ -1842,6 +1849,16 @@ display	: none;
 		</div>
         <!-- jQuery library (served from Google) -->
        
+	<div id="autocomplete-container">  
+  <input type="text" autofocus="true" name="autofocus sample" placeholder="search artist" id="autocomplete-input"></input>
+  <ul id="autocomplete-results">
+  </ul>
+</div>
+  
+    <script  src="js/index.js"></script>
+
+	
+	
         <div class="ssm-overlay ssm-toggle-nav"></div>
 	
 	<div id='mainMenu' class='mainMenu'>	
