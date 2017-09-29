@@ -1,0 +1,119 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+html, body {
+  
+  height: 100%;
+  width: 100%;
+  
+}
+html::-moz-selection, body::-moz-selection {
+  color: #fff;
+  background-color: #0a0f14;
+}
+html::selection, body::selection {
+  color: #fff;
+  background-color: #0a0f14;
+}
+
+#autocomplete-container {
+  width: 300px;
+  margin: 50px auto;
+  display: none;
+}
+#autocomplete-container #autocomplete-input {
+  background: transparent;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 20px 15px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  outline: none;
+  color: black;
+  font-size: 20px;
+}
+#autocomplete-container #autocomplete-input:-moz-placeholder {
+  color: black;
+}
+#autocomplete-container #autocomplete-input::-moz-placeholder {
+  color: black;
+}
+#autocomplete-container #autocomplete-input:-ms-input-placeholder {
+  color: black;
+}
+#autocomplete-container #autocomplete-input::-webkit-input-placeholder {
+  color: black;
+}
+#autocomplete-container #autocomplete-input:focus {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#autocomplete-results {
+  display: none;
+  width: 100%;
+  margin-top: -2px;
+  color: black;
+}
+#autocomplete-results li {
+  width: 100%;
+  padding: 20px 15px;
+  border-right: 2px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  border-left: 2px solid rgba(255, 255, 255, 0.6);
+}
+#autocomplete-results li:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
