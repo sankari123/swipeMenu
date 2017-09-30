@@ -13,7 +13,7 @@ nav {
     overflow-x: visible;
     transform: translate(-210px,0);
      font-weight: bold;
-	color: #ffffff;
+    color: #ffffff;
 }
 .ssm-overlay {
 	position: fixed;
@@ -24,4 +24,5 @@ nav {
 	background-color: rgba(0,0,0,0.2);
     display: none;
     z-index: 1;
+	 color: #ffffff;
 }
