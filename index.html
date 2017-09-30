@@ -368,6 +368,10 @@ var floater = 0;
 	
 }
 function showevents(day,month,year,week,dayofweek) {
+	 $("#det").slideToggle("slow");
+	$("#dl_btn").slideToggle("slow");
+	$("#dl_btn1").slideToggle("slow");
+	
 	document.getElementById("det").style.display="block";
 	document.getElementById("det").style.visibility="true";
 	document.getElementById("dl_btn1").style.display="block";
@@ -689,13 +693,16 @@ var table_string;
 	
 function ven_det(v)
 {
-	
+	 $("#xPort").slideToggle("slow");
+	$("#dl_btn").slideToggle("slow");
+	$("#dl_btn1").slideToggle("slow");
 	k=0;
 	//venue=String(latR[1]);
 	v=v.replace(/_/g, " ");
 	active_page=2;
 	document.getElementById("xPort").style.display="block";
 	document.getElementById("xPort").style.visibility="true";
+	
 	document.getElementById("xPort1").style.display="block";
 	document.getElementById("xPort1").style.visibility="true";
 	
@@ -873,6 +880,9 @@ function eventList(eVal)
 //alert('eval'+eVal);
 active_page=2;
  $("#xPort").slideToggle("slow");
+	 
+	$("#dl_btn").slideToggle("slow");
+	$("#dl_btn1").slideToggle("slow");
 document.getElementById("xPort").style.display="block";
 document.getElementById("xPort").style.visibility="true";
 	
@@ -1856,11 +1866,11 @@ display	: none;
        
         </nav>
         <div id=main>
-            <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor='#0b98b1'><tr height='70px'><td>
+            <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor='#003c67'><tr height='70px'><td>
          <font size=4 ><b>   <a href="#" class="ssm-toggle-nav" style='text-decoration: none;' title="open nav">&#9776;</a></b></font></td><td><b> <font color='white'><b>Madras Music & Miscellany</b></font></td></tr></table>
         </div>
 <div id='backmenu' class='backmenu'>
-		      <table border=0 width='100%' bgcolor='#0b98b1'><tr height='70px'><td>
+		      <table border=0 width='100%' bgcolor='#003c67'><tr height='70px'><td>
            <font size=5 color='white'><b><a href="#"  onclick="category();" style='text-decoration: none;' title="back">&#x003C;</a></font></td><td width=99% align='center'><font color='white'><b><font size=4>Madras Music & Miscellany</b></font></td></tr></table>
 		</div>
         <!-- jQuery library (served from Google) -->
@@ -1879,8 +1889,8 @@ display	: none;
 	
 	<div id='mainMenu' class='mainMenu'>	
 	 
-<table border="0"  bordercolor='#9fcdf7' cellpadding="0" cellspacing="0" width="100%">
-	<tr height='25px'  bgcolor='#003c67'><td align=center>
+<table border="0"  bordercolor='#0b98b1' cellpadding="0" cellspacing="0" width="100%">
+	<tr height='25px'  bgcolor='#0b98b1'><td align=center>
 	<div class="tab">
  
   <button class="tablinks" onclick="openCity(event, 'Tokyo')" id="defaultOpen">Events</button>
