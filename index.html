@@ -1291,6 +1291,8 @@ document.getElementById("archive").style.visibility="true";
 document.getElementById("archive").style.display="block";
 document.getElementById("xPort").style.display="none";
 document.getElementById("xPort").style.visibility="false";
+document.getElementById("lst_mnu").style.display="none";
+document.getElementById("lst_mnu").style.visibility="false";
 document.getElementById("category").style.display="none";
 document.getElementById("category").style.visibility="false";
  	
@@ -1751,6 +1753,7 @@ span {
   display: inline-block;
   vertical-align: middle;
   margin-left: 60px;  /* width of image */
+   font-size: 12px;
 }
 		
 		
@@ -1835,7 +1838,7 @@ display	: none;
  		  
 		   <li> <a id="myLink" href="#" onclick="archive();" class="ssm-toggle-nav">Archive</a>
               
-                  <li> <a id="myLink" href="#" onclick="rateApp();" class="ssm-toggle-nav">Rate MMF</a>
+                  <li> <a id="myLink" href="#" onclick="rateApp();" class="ssm-toggle-nav">Rate MMM</a>
           </ul>
        
         </nav>
@@ -1897,7 +1900,7 @@ display	: none;
           
          <input id = "automplete-1" placeholder="Artist" >
       </div> -->
-		<font size=1 face='arial'>Browse by Category</font><br><br>
+		<!--<font size=1 face='arial'>Browse by Category</font><br><br>-->
 	   <table width='100%' border=0 cellpadding=0 cellpadding=0 >
 		   <tr><td><button onclick='eventList(1);' class='btn2'><img src='concert.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td></tr>
 		   <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
