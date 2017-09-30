@@ -35,6 +35,7 @@
                 $('.nav').slideAndSwipe();
 		 
             });
+	var active_page;
   var optSel;
 var usrauth ;	
 	usrauth='';	
@@ -68,21 +69,18 @@ function onDeviceReady(){
 	document.getElementById("defaultOpen").click();
 	checkConnection();
 	
-	document.addEventListener("backbutton", function() {
-           if(document.getElementById("xPort").style.visibility=="false") {
-                navigator.notification.confirm('Press back again to exit MMM',function(button) {
-                        if (button == 2 || button == 0) {
-                            navigator.app.exitApp();
-                        }
-                      } , 'Exit MMM?' , ['No', 'Yes']
-                );
-                return false;
-
-            } else {
-                history.back();
-            }
-        }, false);
- 
+	document.addEventListener("backbutton", function(e){
+       if(active_page==1){
+           e.preventDefault();
+		   
+		   navigator.notification.confirm("Do you want to exit MMF?", onConfirmExit, "Madras Music & Miscellany", "Yes,No");     
+		   
+           navigator.app.exitApp();
+       }
+       else {
+           navigator.app.backHistory()
+       }
+    }, false);
 	
 	
 }
@@ -393,7 +391,7 @@ var floater = 0;
 	for (var i = 0; i < events.length; i++) {
 	
 	if ((events[i][2] == day) && (events[i][1] == month) && (events[i][3] == year)) {
-			
+			active_page=2;
 			hours=String(events[i][4]);
 			var timeString = hours;
 			var H = +timeString.substr(0, 2);
@@ -554,6 +552,7 @@ var lat2,long2;
 	
 	function venueFilter()
 	{
+		active_page=1;
 		var j;
 		checkConnection();
 		document.getElementById("lst_mnu").style.display="block";
@@ -633,6 +632,7 @@ function calClick()
 	{
 		//alert('optsel'+optSel);
 		optSel=2;
+		active_page=1;
 		//alert('optsel'+optSel);
 		document.getElementById("calendar").style.display="block";
 		document.getElementById("calendar").style.visibility="true";
@@ -703,7 +703,7 @@ function ven_det(v)
 	k=0;
 	//venue=String(latR[1]);
 	v=v.replace(/_/g, " ");
-	
+	active_page=2;
 	document.getElementById("xPort").style.display="block";
 	document.getElementById("xPort").style.visibility="true";
 	document.getElementById("xPort1").style.display="block";
@@ -802,16 +802,19 @@ function openCity(evt, cityName) {
 	if(cityName=='London')
 	{
 	optSel=2;
+		active_page=1;
 	calClick();
 	}
 	else if(cityName=='Paris')
 	{
 	optSel=3;
+		active_page=1;
 	venueFilter();
 	}
 	else if(cityName=='Tokyo')
 	{
 	optSel=1;
+		active_page=1;
 	category();
 	}
 }	
@@ -873,10 +876,12 @@ var calEvt='';
 var calEvtDetails='';
 var calEvt1=[];
 var calEvtDetails1=[];
+	
+	
 function eventList(eVal)
 {
 //alert('eval'+eVal);
-
+active_page=2;
 document.getElementById("xPort").style.display="block";
 document.getElementById("xPort").style.visibility="true";
 	document.getElementById("xPort1").style.display="block";
