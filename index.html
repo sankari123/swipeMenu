@@ -67,10 +67,30 @@ function onDeviceReady(){
 	document.getElementById("dl_btn").style.visibility="false";
 	document.getElementById("defaultOpen").click();
 	checkConnection();
-	document.addEventListener("backbutton", function (e) {
-        e.preventDefault(); 
-	navigator.notification.confirm("Do you want to exit MMM?", onConfirmExit, "Madras Music & Miscellany", "Yes,No");    }, false );
-}
+	
+	document.addEventListener("backbutton", function() {
+           if(document.getElementById("xPort").style.visibility=="false") {
+                navigator.notification.confirm(
+                      'Press back again to exit MMM'
+                    , function(button) {
+                        if (button == 2 || button == 0) {
+                            navigator.app.exitApp();
+                        }
+                      }
+                    , 'Exit MMM?'
+                    , ['No', 'Yes']
+                );
+                return false;
+
+            } else {
+                history.back();
+            }
+        }, false);
+ 
+	
+	
+	
+	 
 function checkConnection() {
      var networkState = navigator.connection.type;
      if(navigator.connection.type == Connection.NONE) {        
