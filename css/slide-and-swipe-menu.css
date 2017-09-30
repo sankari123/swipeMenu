@@ -4,7 +4,7 @@
 nav {
     height: 100%;
     width: 210px;
-    background-color: #bacbd7;
+    background-color: #52aaf4;
     left: 0;
     top: 0;
     z-index: 2;
@@ -12,7 +12,7 @@ nav {
     overflow-y: auto;
     overflow-x: visible;
     transform: translate(-210px,0);
-font-weight: bold;
+     font-weight: bold;
 	color: #ffffff;
 }
 .ssm-overlay {
