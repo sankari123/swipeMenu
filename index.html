@@ -70,15 +70,11 @@ function onDeviceReady(){
 	
 	document.addEventListener("backbutton", function() {
            if(document.getElementById("xPort").style.visibility=="false") {
-                navigator.notification.confirm(
-                      'Press back again to exit MMM'
-                    , function(button) {
+                navigator.notification.confirm('Press back again to exit MMM',function(button) {
                         if (button == 2 || button == 0) {
                             navigator.app.exitApp();
                         }
-                      }
-                    , 'Exit MMM?'
-                    , ['No', 'Yes']
+                      } , 'Exit MMM?' , ['No', 'Yes']
                 );
                 return false;
 
