@@ -69,17 +69,17 @@ function onDeviceReady(){
 	document.getElementById("defaultOpen").click();
 	checkConnection();
 	
-	document.addEventListener("backbutton", function(e){
-       if(active_page==1){
-           e.preventDefault();
-		   
-		   navigator.notification.confirm("Do you want to exit MMF?", onConfirmExit, "Madras Music & Miscellany", "Yes,No");     
-		   
-          // navigator.app.exitApp();
-       }
-       else {
-           navigator.app.backHistory()
-       }
+    var exitApp = false, intval = setInterval(function (){exitApp = false;}, 1000);
+    document.addEventListener("backbutton", function (e){
+        e.preventDefault();
+        if (exitApp) {
+            clearInterval(intval) 
+            (navigator.app && navigator.app.exitApp()) || (device && device.exitApp())
+        }
+        else {
+            exitApp = true
+            history.back(1);
+        } 
     }, false);
 	
 	
