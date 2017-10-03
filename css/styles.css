@@ -21,7 +21,7 @@ body {
 body {
     background-color: transparent;
     font-family: 'Open Sans';
-    color: #333;
+   
     margin: 0;
     padding: 50px 15px;
     text-align: center;
@@ -31,7 +31,7 @@ body {
 }
 
 a {
-    color: #0A4A3C;
+    color: #44bcf9;
 }
 
 h1 {
