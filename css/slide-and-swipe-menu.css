@@ -3,7 +3,7 @@
  */
 nav {
     height: 100%;
-    width: 210px;
+    width: 170px;
     background-color:#0b98b1;
     left: 0;
     top: 0;
@@ -11,7 +11,7 @@ nav {
     position: fixed;
     overflow-y: auto;
     overflow-x: visible;
-    transform: translate(-210px,0);
+    transform: translate(-170px,0);
      font-weight: bold;
     color: #ffffff;
 }
