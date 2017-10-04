@@ -543,6 +543,7 @@ var lat2,long2;
 		active_page=1;
 		var j;
 		checkConnection();
+		 $("#lst_mnu").slideToggle("slow");
 		document.getElementById("lst_mnu").style.display="block";
 		document.getElementById("lst_mnu").style.visibility="true";
 		getLoc();
@@ -621,6 +622,7 @@ function calClick()
 		//alert('optsel'+optSel);
 		optSel=2;
 		active_page=1;
+		 $("#calendar").slideToggle("slow");
 		//alert('optsel'+optSel);
 		document.getElementById("calendar").style.display="block";
 		document.getElementById("calendar").style.visibility="true";
@@ -1296,7 +1298,7 @@ function procValArc(pVar)
 
 function displayArchive()
 {
- 
+  $("#archive").slideToggle("slow");
 document.getElementById("backmenu").style.display="block";
 document.getElementById("backmenu").style.visibility="true";
 document.getElementById("main").style.visibility="false";
