@@ -808,6 +808,7 @@ function openCity(evt, cityName) {
 	{
 	optSel=1;
 		active_page=1;
+		 $("#category").slideToggle("slow");
 	category();
 	}
 }	
@@ -817,7 +818,7 @@ function openCity(evt, cityName) {
 	{
 	//alert('in');
 	var availableTutorials  =artist;
-		 $("#category").slideToggle("slow");
+		// $("#category").slideToggle("slow");
 	//	$("#category").animate({width: 'toggle'});
            
 	document.getElementById("defaultOpen").click();
