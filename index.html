@@ -860,9 +860,16 @@ function openCity(evt, cityName) {
 	{
 	//alert('in');
 	var availableTutorials  =artist;
-		$("#category").slideToggle("slow");
+	//	$("#category").slideToggle("slow");
 	//	$("#category").animate({width: 'toggle'});
-           
+            var options = { right };
+
+  
+  
+    $('#category').toggle(effect, options, duration);
+	  
+		
+		
 	document.getElementById("defaultOpen").click();
 		window.plugins.spinnerDialog.hide();
 			checkConnection();
