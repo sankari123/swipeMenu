@@ -548,8 +548,8 @@ var lat2,long2;
 		active_page=1;
 		var j;
 		checkConnection();
-		 $("#lst_mnu").slideToggle("slow");
-		
+		// $("#lst_mnu").slideToggle("slow");
+			  $('#lst_mnu').toggle('slide','right',500);
 		 
 		
 		document.getElementById("lst_mnu").style.display="block";
@@ -626,8 +626,8 @@ function calClick()
 		//alert('optsel'+optSel);
 		optSel=2;
 		active_page=1;
-		 $("#calendar").slideToggle("slow");
-			 
+		// $("#calendar").slideToggle("slow");
+			  $('#calendar').toggle('slide','right',500);	 
 		document.getElementById("calendar").style.display="block";
 		document.getElementById("calendar").style.visibility="true";
 		document.getElementById("category").style.display="none";
