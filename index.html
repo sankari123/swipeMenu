@@ -659,13 +659,15 @@ function calClick()
 	//	 $("#calendar").slideToggle("slow");
 		
 		
-	//	 var options = { left };
+	 
 
   
   
  //   $('#calendar').toggle(effect, options, duration);
 	   
 		//alert('optsel'+optSel);
+		//$('#myDiv').toggle(effect, options, duration);
+		$('#myDiv').toggle('slide','left',100);
 		document.getElementById("calendar").style.display="block";
 		document.getElementById("calendar").style.visibility="true";
 		document.getElementById("category").style.display="none";
@@ -837,20 +839,20 @@ function openCity(evt, cityName) {
 	if(cityName=='London')
 	{
 	optSel=2;
-		active_page=1;
+	active_page=1;
 	calClick();
 	}
 	else if(cityName=='Paris')
 	{
 	optSel=3;
-		active_page=1;
+	active_page=1;
 	venueFilter();
 	}
 	else if(cityName=='Tokyo')
 	{
 	optSel=1;
-		active_page=1;
-		// $("#category").slideToggle("slow");
+	active_page=1;
+	 
 	category();
 	}
 }	
@@ -861,18 +863,14 @@ function openCity(evt, cityName) {
 	//alert('in');
 	var availableTutorials  =artist;
 	//	$("#category").slideToggle("slow");
-	//	$("#category").animate({width: 'toggle'});
-   //         var options = { right };
-
-  
-  
-//    $('#category').toggle(effect, options, duration);
-	  
+	 
+	  	
 		
 		
 	document.getElementById("defaultOpen").click();
 		window.plugins.spinnerDialog.hide();
 			checkConnection();
+		$('#category').toggle('slide','left',100);
 		document.getElementById("category").style.display="block";
 		document.getElementById("category").style.visibility="true";
 		document.getElementById("main").style.display="block";
