@@ -1463,6 +1463,17 @@ function rateApp1()
 		backbtn=1;
 		category();
 	}
+	
+	function srchArtist()
+	{
+document.getElementById("searchmenu").style.visibility="true";
+document.getElementById("searchmenu").style.display="block";
+document.getElementById("main").style.visibility="false";
+document.getElementById("main").style.display="none";
+document.getElementById("backmenu").style.visibility="false";
+document.getElementById("backmenu").style.display="none";
+
+	}
 </script>
 	<style type="text/css">
 		.nav ul {
@@ -1839,6 +1850,11 @@ span {
    display:none;
     
 }
+.searchmenu
+{
+   display:none;
+    
+}
 		
 		.updFile
 		{
@@ -1886,23 +1902,22 @@ display	: none;
         </nav>
           <div id=main>
             <table border=0 width='100%' cellpadding="0" cellspacing="0"  bgcolor=#0c9db7><tr height='70px'><td style='vertical-align: top;' >&nbsp;
-         <font size=4 color=#ffffff><b>   <a href="#" class="ssm-toggle-nav"  style='text-decoration: none;' title="open nav">&#9776;</a></b></font></td><td width='99%' align='center'><font size=4 color='#ffffff'><b>Madras Music & Miscellany</b></font></td></tr></table>
+         <font size=4 color='#ffffff'><b>   <a href="#" class="ssm-toggle-nav"  style='text-decoration: none;' title="open nav">&#9776;</a></b></font></td><td width='90%' align='center'><font size=4 color='#ffffff'><b>Madras Music & Miscellany</b></font></td><td><button id='artist onclick='srchArtist();'><img src='search.png'></button></td></tr></table>
         </div>
 <div id='backmenu' class='backmenu'>
 	 
 	
 	      <table border=0 width='100%' bgcolor=#0c9db7><tr height='70px'><td style='vertical-align: top;'>&nbsp;
-           <font size=5><b><a href="#" onclick="backSt();" style='text-decoration: none;' title="back"><font color=black>&#x003C;</font></a></b></font></td><td width=99% align='center'><b><font size=4 color='#ffffff'>Madras Music & Miscellany</font></b></td></tr></table> 
+           <font size=5 color='#ffffff'><b><a href="#" onclick="backSt();" style='text-decoration: none;' title="back">&#x003C;</a></b></font></td><td width=99% align='center'><b><font size=4 color='#ffffff'>Madras Music & Miscellany</font></b></td></tr></table> 
 		</div>
         <!-- jQuery library (served from Google) -->
          <div class="ssm-overlay ssm-toggle-nav"></div>
-	<!--<div id="autocomplete-container">  
-  <input type="text" autofocus="true" name="autofocus sample" placeholder="Search Artist" id="autocomplete-input"></input>
-  <ul id="autocomplete-results">
-  </ul>
-</div>
-  
-    <script  src="index.js"></script>-->
+ <div id='searchmenu' class='searchmenu'>
+	 
+	
+	      <table border=0 width='100%' bgcolor=#0c9db7><tr height='70px'><td style='vertical-align: top;'>&nbsp;
+           <font size=5 color='#ffffff'><b><a href="#" onclick="backSt();" style='text-decoration: none;' title="back">&#x003C;</a></b></font></td><td width=99% align='center'><input id="USstate"></td></tr></table> 
+		</div>
 
 	
 	
