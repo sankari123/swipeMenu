@@ -35,16 +35,7 @@ var usrauth ;
 	usrauth='';	
 	
 	
-	//var effect = 'slide';
-  //var duration = 500;
-
-     
-   // var options = { direction: $('.mySelect').val() };
-
-  
-  
- //   $('#myDiv').toggle(effect, options, duration);
-	
+	 
 	
 function alertDismissed() {
             alert('Invalid');
@@ -375,9 +366,9 @@ var floater = 0;
 	
 }
 function showevents(day,month,year,week,dayofweek) {
-//	 $("#det").slideToggle("slow");
-	//$("#dl_btn").slideToggle("slow");
-	//$("#dl_btn1").slideToggle("slow");
+	 $("#det").slideToggle("slow");
+	$("#dl_btn").slideToggle("slow");
+	$("#dl_btn1").slideToggle("slow");
 	
 	
 	
@@ -568,7 +559,7 @@ var lat2,long2;
 		active_page=1;
 		var j;
 		checkConnection();
-		// $("#lst_mnu").slideToggle("slow");
+		 $("#lst_mnu").slideToggle("slow");
 		
 		
 	//	 var options = { right };
@@ -656,7 +647,7 @@ function calClick()
 		//alert('optsel'+optSel);
 		optSel=2;
 		active_page=1;
-	//	 $("#calendar").slideToggle("slow");
+		 $("#calendar").slideToggle("slow");
 		
 		
 	 
@@ -667,7 +658,7 @@ function calClick()
 	   
 		//alert('optsel'+optSel);
 		//$('#myDiv').toggle(effect, options, duration);
-		$('#myDiv').toggle('slide','left',100);
+	//	$('#myDiv').toggle('slide','left',100);
 		document.getElementById("calendar").style.display="block";
 		document.getElementById("calendar").style.visibility="true";
 		document.getElementById("category").style.display="none";
@@ -733,9 +724,9 @@ var table_string;
 	
 function ven_det(v)
 {
-	// $("#xPort").slideToggle("slow");
-////	$("#dl_btn").slideToggle("slow");
-//	$("#dl_btn1").slideToggle("slow");
+	/$("#xPort").slideToggle("slow");
+$("#dl_btn").slideToggle("slow");
+	$("#dl_btn1").slideToggle("slow");
 	k=0;
 	//venue=String(latR[1]);
 	v=v.replace(/_/g, " ");
@@ -862,7 +853,7 @@ function openCity(evt, cityName) {
 	{
 	//alert('in');
 	var availableTutorials  =artist;
-	//	$("#category").slideToggle("slow");
+		$("#category").slideToggle("slow");
 	 
 	  	
 		
@@ -870,7 +861,7 @@ function openCity(evt, cityName) {
 	document.getElementById("defaultOpen").click();
 		window.plugins.spinnerDialog.hide();
 			checkConnection();
-		$('#category').toggle('slide','left',100);
+		//$('#category').toggle('slide','left',100);
 		document.getElementById("category").style.display="block";
 		document.getElementById("category").style.visibility="true";
 		document.getElementById("main").style.display="block";
@@ -924,10 +915,10 @@ function eventList(eVal)
 {
 //alert('eval'+eVal);
 active_page=2;
-// $("#xPort").slideToggle("slow");
+$("#xPort").slideToggle("slow");
 	 
-//	$("#dl_btn").slideToggle("slow");
-//	$("#dl_btn1").slideToggle("slow");
+	$("#dl_btn").slideToggle("slow");
+	$("#dl_btn1").slideToggle("slow");
 document.getElementById("xPort").style.display="block";
 document.getElementById("xPort").style.visibility="true";
 document.getElementById("dl_btn1").style.display="none";
@@ -1347,7 +1338,7 @@ function procValArc(pVar)
 
 function displayArchive()
 {
-//  $("#archive").slideToggle("slow");
+  $("#archive").slideToggle("slow");
 document.getElementById("backmenu").style.display="block";
 document.getElementById("backmenu").style.visibility="true";
 document.getElementById("main").style.visibility="false";
@@ -1976,17 +1967,17 @@ display	: none;
 		<!-- <input type="text" autofocus="true" name="autofocus sample" placeholder="Search Artist" id="autocomplete-input"></input><br><br>-->
 	   <table width='100%' border=0 cellpadding=0 cellpadding=0 >
 		   <tr><td><button onclick='eventList(1);' class='btn2'><img src='concert.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Concerts</span></button></td><td width='7%'><button onclick='eventList(1);' class='btn2'><img src='arrow.png'  width=10px height=10px style="vertical-align:middle"></button><font color='white'>&nbsp;&nbsp;&nbsp;&nbsp;11</font></td></tr>
-		   <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
+		   <tr valign="top"><td colspan=2><hr size=1 color='#ececec'></td></tr>
 		    <tr><td ><button onclick='eventList(2);' class='btn2' ><img src='dance.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Dance</span></button></td><td width='7%'><button onclick='eventList(2);' class='btn2' ><img src='arrow.png'   width=10px height=10px style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
-		    <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
+		    <tr valign="top"><td  colspan=2><hr size=1 color='#ececec'></td></tr>
 		   <tr><td><button onclick='eventList(3);' class='btn2'><img src='drama.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span >Drama</span></button></td><td width='7%'><button onclick='eventList(3);' class='btn2' ><img src='arrow.png'   width=10px height=10px style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
-		   <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
+		   <tr valign="top"><td  colspan=2><hr size=1 color='#ececec'></td></tr>
 		    <tr><td><button onclick='eventList(4);' class='btn2' ><img src='lec-dem.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Lec-Dem</span></button></td><td width='7%'><button onclick='eventList(4);' class='btn2' ><img src='arrow.png'   width=10px height=10px style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
-		    <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
+		    <tr valign="top"><td  colspan=2><hr size=1 color='#ececec'></td></tr>
 		   <tr><td><button onclick='eventList(5);' class='btn2'><img src='harikatha.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Harikatha</span></button></td><td width='7%'><button onclick='eventList(5);' class='btn2' ><img src='arrow.png'  width=10px height=10px  style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
-		   <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
+		   <tr valign="top"><td  colspan=2><hr size=1 color='#ececec'></td></tr>
 		    <tr><td ><button onclick='eventList(6);' class='btn2' ><img src='meetup.png'   style="vertical-align:middle"  bordercolor='FFFFFF'><span>Meetup</span></button></td><td width='7%'><button onclick='eventList(6);' class='btn2' ><img src='arrow.png'  width=10px height=10px style="vertical-align:middle"  bordercolor='FFFFFF'></button>&nbsp;&nbsp;&nbsp;</td></tr>
-		    <tr valign="top"><td><hr size=1 color='#ececec'></td></tr>
+		    <tr valign="top"><td  colspan=2><hr size=1 color='#ececec'></td></tr>
 		   
 		</table>
 			
