@@ -33,6 +33,19 @@
   var optSel;
 var usrauth ;	
 	usrauth='';	
+	
+	
+	var effect = 'slide';
+  var duration = 500;
+
+     
+   // var options = { direction: $('.mySelect').val() };
+
+  
+  
+ //   $('#myDiv').toggle(effect, options, duration);
+	
+	
 function alertDismissed() {
             alert('Invalid');
         }	
@@ -362,9 +375,21 @@ var floater = 0;
 	
 }
 function showevents(day,month,year,week,dayofweek) {
-	 $("#det").slideToggle("slow");
-	$("#dl_btn").slideToggle("slow");
-	$("#dl_btn1").slideToggle("slow");
+//	 $("#det").slideToggle("slow");
+	//$("#dl_btn").slideToggle("slow");
+	//$("#dl_btn1").slideToggle("slow");
+	
+	
+	
+	     
+   var options = { bottom };
+
+  
+  
+    $('#det').toggle(effect, options, duration);
+	  $('#dl_btn').toggle(effect, options, duration);
+	  $('#dl_btn1').toggle(effect, options, duration);
+	
 	
 	document.getElementById("det").style.display="block";
 	document.getElementById("det").style.visibility="true";
@@ -543,7 +568,16 @@ var lat2,long2;
 		active_page=1;
 		var j;
 		checkConnection();
-		 $("#lst_mnu").slideToggle("slow");
+		// $("#lst_mnu").slideToggle("slow");
+		
+		
+		 var options = { right };
+
+  
+  
+    $('#lst_mnu').toggle(effect, options, duration);
+	 
+		
 		document.getElementById("lst_mnu").style.display="block";
 		document.getElementById("lst_mnu").style.visibility="true";
 		getLoc();
@@ -622,7 +656,15 @@ function calClick()
 		//alert('optsel'+optSel);
 		optSel=2;
 		active_page=1;
-		 $("#calendar").slideToggle("slow");
+	//	 $("#calendar").slideToggle("slow");
+		
+		
+		 var options = { left };
+
+  
+  
+    $('#calendar').toggle(effect, options, duration);
+	   
 		//alert('optsel'+optSel);
 		document.getElementById("calendar").style.display="block";
 		document.getElementById("calendar").style.visibility="true";
