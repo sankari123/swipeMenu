@@ -370,18 +370,7 @@ function showevents(day,month,year,week,dayofweek) {
 	$("#dl_btn").slideToggle("slow");
 	$("#dl_btn1").slideToggle("slow");
 	
-	
-	
-	     
-//   var options = { bottom };
 
-  
-  
-   // $('#det').toggle(effect, options, duration);
-	//  $('#dl_btn').toggle(effect, options, duration);
-	//  $('#dl_btn1').toggle(effect, options, duration);
-	
-	
 	document.getElementById("det").style.display="block";
 	document.getElementById("det").style.visibility="true";
 	document.getElementById("dl_btn1").style.display="block";
@@ -561,22 +550,12 @@ var lat2,long2;
 		checkConnection();
 		 $("#lst_mnu").slideToggle("slow");
 		
-		
-	//	 var options = { right };
-
-  
-  
-  //  $('#lst_mnu').toggle(effect, options, duration);
-	 
+		 
 		
 		document.getElementById("lst_mnu").style.display="block";
 		document.getElementById("lst_mnu").style.visibility="true";
 		getLoc();
-		for (var i = 0, len = uniq.length; i < len; i++) {
-	//	 alert(uniq[i]);
-		}
-		// alert(uniq);
-		//lst_mnu.innerHTML='';
+		 
 		
 		document.getElementById("calendar").style.display="none";
 		document.getElementById("calendar").style.visibility="false";
@@ -648,17 +627,7 @@ function calClick()
 		optSel=2;
 		active_page=1;
 		 $("#calendar").slideToggle("slow");
-		
-		
-	 
-
-  
-  
- //   $('#calendar').toggle(effect, options, duration);
-	   
-		//alert('optsel'+optSel);
-		//$('#myDiv').toggle(effect, options, duration);
-	//	$('#myDiv').toggle('slide','left',100);
+			 
 		document.getElementById("calendar").style.display="block";
 		document.getElementById("calendar").style.visibility="true";
 		document.getElementById("category").style.display="none";
@@ -724,7 +693,7 @@ var table_string;
 	
 function ven_det(v)
 {
-	/$("#xPort").slideToggle("slow");
+	$("#xPort").slideToggle("slow");
 $("#dl_btn").slideToggle("slow");
 	$("#dl_btn1").slideToggle("slow");
 	k=0;
