@@ -21,7 +21,9 @@
  	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="Calendar.js"></script>
 	
-	 
+<!--<link class="jsbin" href="css/jquery-ui.css" rel="stylesheet" type="text/css"></link>-->
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script class="jsbin" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>	 
 	
 <script type="text/JavaScript" language="JavaScript">
 	
@@ -509,7 +511,7 @@ function procVal(pVar)
 		//multiArr.push([latR[2],latR[0],latR[1],dist]);
 		events.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);
 		venue_arr.push([venue]);
-		artist.push(art);
+		artist.push([art]);
 		//artist.push(Pdeta);
 		//alert(events.length);
 		//write ajax response to text file
@@ -1459,7 +1461,7 @@ function rateApp1()
 		category();
 	}
 	
-	function srchArtist()
+	function srchArtist1()
 	{
 document.getElementById("searchmenu").style.visibility="true";
 document.getElementById("searchmenu").style.display="block";
@@ -1469,8 +1471,74 @@ document.getElementById("backmenu").style.visibility="false";
 document.getElementById("backmenu").style.display="none";
 
 	}
+	
+var wordlist=new Array();
+wordlist= remove_duplicates_safe(artist);
+wordlist.sort();
+function monkeyPatchAutocomplete() {
+
+          // Don't really need to save the old fn, 
+          // but I could chain if I wanted to
+          var oldFn = $.ui.autocomplete.prototype._renderItem;
+
+          $.ui.autocomplete.prototype._renderItem = function( ul, item) {
+              var re = new RegExp("^" + this.term, "i") ;
+              var t = item.label.replace(re,"<span style='color:white;'>" + this.term + "</span>");
+              return $( "<li></li>" )
+                  .data( "item.autocomplete", item )
+                  .append( "<a>" + t + "</a>" )
+                  .appendTo( ul );
+ };
+ }
+function srchArtist()
+{
+
+monkeyPatchAutocomplete();
+
+          $("#input1").autocomplete({
+              // The source option can be an array of terms.  In this case, if
+              // the typed characters appear in any position in a term, then the
+              // term is included in the autocomplete list.
+              // The source option can also be a function that performs the search,
+              // and calls a response function with the matched entries.
+              source: function(req, responseFn) {
+                  addMessage("search on: '" + req.term + "'<br/>");
+                  var re = $.ui.autocomplete.escapeRegex(req.term);
+				  var matcher = new RegExp( "^" + re, "i" );
+				    
+                  var a = $.grep( wordlist, function(item,index){
+                      //addMessage("&nbsp;&nbsp;sniffing: '" + item + "'<br/>");
+                      return matcher.test(item);
+                  });
+                  addMessage("Result: " + a.length + " items<br/>");
+                  responseFn( a );
+              },
+
+              select: function(value, data){
+                  if (typeof data == "undefined") {
+                      addMessage('You selected: ' + value + "<br/>");
+					  document.getElementById('reslt').value=data.item.value;
+                  }else {
+                      addMessage('You selected: ' + data.item.value + "<br/>");
+					   document.getElementById('reslt').value=data.item.value;
+                  }
+              }
+          });	
+	
+}
+
+ function addMessage(msg){
+     //   $('#msgs').append(msg);
+  }
+	
+	
 </script>
 	<style type="text/css">
+		
+		 .ui-widget { color: gray;font-size: 0.8em; line-height:0.6em; }
+    .ui-widget .ui-widget { font-size: 0.7em; }
+		
+		
 		.nav ul {
           margin: 0;
 	  color:#cfddfa;
@@ -1903,7 +1971,7 @@ display	: none;
 	 
 	
 	      <table border=0 width='100%' bgcolor=#0c9db7><tr height='70px'><td style='vertical-align: top;'>&nbsp;
-           <a href="#" onclick="backSt();" style='text-decoration: none;' title="back">&#x003C;</a></td><td width=99% align='center'><b><font size=4 color='#ffffff'>Madras Music & Miscellany</font></b></td></tr></table> 
+ <font size=4 color='#ffffff'><a href="#" onclick="backSt();" style='text-decoration: none;' title="back">&#x003C;</a></font></td><td width=99% align='center'><b><font size=3 color='#ffffff'>Madras Music & Miscellany</font></b></td></tr></table> 
 		</div>
         <!-- jQuery library (served from Google) -->
          <div class="ssm-overlay ssm-toggle-nav"></div>
@@ -1911,7 +1979,10 @@ display	: none;
 	 
 	
 	      <table border=0 width='100%' bgcolor=#0c9db7><tr height='70px'><td style='vertical-align: top;'>&nbsp;
-           <font size=5 color='#ffffff'><b><a href="#" onclick="backSt();" style='text-decoration: none;' title="back">&#x003C;</a></b></font></td><td width=99% align='center'><input id="USstate"></td></tr></table> 
+           <font size=4 color='#ffffff'><b><a href="#" onclick="backSt();" style='text-decoration: none;' title="back">&#x003C;</a></b></font></td><td width=99% align='center'> <form action="jquery" id="form1">
+        <input type="text" id="input1"/>
+
+      </form><input id='reslt' style='color :blue;' ></td></tr></table> 
 		</div>
 
 	
