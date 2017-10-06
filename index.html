@@ -823,7 +823,7 @@ var backbtn ;
 	function category()
 	{
 	//alert('in');
-	var availableTutorials  =artist;
+	//var availableTutorials  =artist;
 	 
 	 
 //	document.getElementById("defaultOpen").click();
@@ -1492,7 +1492,13 @@ function monkeyPatchAutocomplete() {
  }
 function srchArtist()
 {
-
+document.getElementById("searchmenu").style.visibility="true";
+document.getElementById("searchmenu").style.display="block";
+document.getElementById("main").style.visibility="false";
+document.getElementById("main").style.display="none";
+document.getElementById("backmenu").style.visibility="false";
+document.getElementById("backmenu").style.display="none";
+	
 monkeyPatchAutocomplete();
 
           $("#input1").autocomplete({
