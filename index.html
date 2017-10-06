@@ -784,7 +784,7 @@ function printData()
 			});
 			
 });	
-
+document.getElementById("defaultOpen").click();
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -831,8 +831,8 @@ var backbtn ;
 			checkConnection();
 		  if(backbtn!=1)
 	   	{
-			//alert('in');
-	  	  $('#category').toggle('slide','left',500);
+		  $("#category").slideToggle("slow");
+	  	//  $('#category').toggle('slide','left',500);
 	   	} 
 		else
 		{
@@ -881,7 +881,7 @@ var backbtn ;
 		 
 		
 	}
-	document.getElementById("defaultOpen").click();
+	
 var calEvt='';
 var calEvtDetails='';
 var calEvt1=[];
