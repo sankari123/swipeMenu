@@ -545,18 +545,17 @@ var lat2,long2;
 	
 	function venueFilter()
 	{
-		active_page=1;
 		var j;
 		checkConnection();
-		 // $("#lst_mnu").slideToggle("slow");
-		//	  $('#lst_mnu').toggle('slide','right',500);
-		 
-		//$('#lst_mnu').toggle('slide','right',500);
-		 
+		 $('#lst_mnu').toggle('slide','left',500);	 
 		document.getElementById("lst_mnu").style.display="block";
 		document.getElementById("lst_mnu").style.visibility="true";
-		//getLoc();
-		 
+		getLoc();
+		for (var i = 0, len = uniq.length; i < len; i++) {
+	//	 alert(uniq[i]);
+		}
+		// alert(uniq);
+		//lst_mnu.innerHTML='';
 		
 		document.getElementById("calendar").style.display="none";
 		document.getElementById("calendar").style.visibility="false";
@@ -622,6 +621,8 @@ im_htm+="<tr height='120px'> <td style='width: 100px; height: 50px; border: 0px 
 document.getElementById('lst_mnu').innerHTML=im_htm+"</table>" ;
 	
 	}
+	
+	
 function calClick()
 	{
 		//alert('optsel'+optSel);
