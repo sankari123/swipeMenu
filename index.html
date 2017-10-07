@@ -474,7 +474,7 @@ function ajaxFunction()
 var latR;
 var events = new Array();
 var venue_arr = new Array();
-	var artist=[];
+	var artist=new Array();
 function procVal(pVar)
 {
 //multiArr=[];
@@ -509,7 +509,7 @@ function procVal(pVar)
 		//multiArr.push([latR[2],latR[0],latR[1],dist]);
 		events.push(["",String(eMon),String(eDat),String(eYr),pTim,venue,pnam,Pdeta,art,pLatLong]);
 		venue_arr.push([venue]);
-		artist.push(art);
+		artist.push([art]);
 		//artist.push(Pdeta);
 		//alert(events.length);
 		//write ajax response to text file
@@ -547,7 +547,7 @@ var lat2,long2;
 	{
 		var j;
 		checkConnection();
-		 $('#lst_mnu').toggle('slide','left',500);	 
+		 $('#lst_mnu').toggle('slide','right',500);	 
 		document.getElementById("lst_mnu").style.display="block";
 		document.getElementById("lst_mnu").style.visibility="true";
 		getLoc();
