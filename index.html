@@ -1531,6 +1531,9 @@ monkeyPatchAutocomplete();
   }
 </script>
 	<style type="text/css">
+		 .ui-widget { color: gray;font-size: 0.8em; line-height:0.6em; }
+    .ui-widget .ui-widget { font-size: 0.7em; }
+		
 		.nav ul {
           margin: 0;
 	  color:#cfddfa;
@@ -1924,7 +1927,11 @@ span {
 display	: none;
  
 }
-		
+.searchmenu
+{
+   display:none;
+    
+}		
 .fake-input { position: relative; width:240px; }
 .fake-input input { border:none: background:#fff; display:block; width: 100%; box-sizing: border-box }
 .fake-input img { position: absolute; top: 2px; right: 5px }	
