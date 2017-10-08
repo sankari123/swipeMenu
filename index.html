@@ -551,7 +551,8 @@ var lat2,long2;
 	{
 		var j;
 		//checkConnection();
-		 $('#lst_mnu').toggle('slide','right',500);	 
+		// $('#lst_mnu').toggle('slide','right',500);	
+		 $("#lst_mnu").slideToggle("slow");
 		document.getElementById("lst_mnu").style.display="block";
 		document.getElementById("lst_mnu").style.visibility="true";
 		//getLoc();
@@ -628,8 +629,9 @@ function calClick()
 		//alert('optsel'+optSel);
 		optSel=2;
 		active_page=1;
-		// $("#calendar").slideToggle("slow");
-			  $('#calendar').toggle('slide','right',500);	 
+		 $("#calendar").slideToggle("slow");
+		 
+		//	  $('#calendar').toggle('slide','right',500);	 
 		document.getElementById("calendar").style.display="block";
 		document.getElementById("calendar").style.visibility="true";
 		document.getElementById("category").style.display="none";
@@ -831,7 +833,8 @@ var backbtn ;
 		  if(backbtn!=1)
 	   	{
 			//alert('in');
-	  	//  $('#category').toggle('slide','left',500);
+	  	// $('#category').toggle('slide','left',500);
+			 $("#category").slideToggle("slow");
 	   	} 
 		else
 		{
