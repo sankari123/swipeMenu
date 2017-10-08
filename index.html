@@ -67,8 +67,8 @@ function onDeviceReady(){
 	window.plugins.spinnerDialog.show(null, "Loading Events... Please wait!");
 	document.getElementById("dl_btn").style.display="none";
 	document.getElementById("dl_btn").style.visibility="false";
-//	document.getElementById("defaultOpen").click();
-	category();
+	document.getElementById("defaultOpen").click();
+//	category();
 	checkConnection();
 	
    document.addEventListener("backbutton", function (e) {
@@ -550,16 +550,12 @@ var lat2,long2;
 	function venueFilter()
 	{
 		var j;
-		checkConnection();
+		//checkConnection();
 		 $('#lst_mnu').toggle('slide','right',500);	 
 		document.getElementById("lst_mnu").style.display="block";
 		document.getElementById("lst_mnu").style.visibility="true";
-		getLoc();
-		for (var i = 0, len = uniq.length; i < len; i++) {
-	//	 alert(uniq[i]);
-		}
-		// alert(uniq);
-		//lst_mnu.innerHTML='';
+		//getLoc();
+		 
 		
 		document.getElementById("calendar").style.display="none";
 		document.getElementById("calendar").style.visibility="false";
