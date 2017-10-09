@@ -68,7 +68,7 @@ function onDeviceReady(){
 	window.plugins.spinnerDialog.show(null, "Loading Events... Please wait!");
 	document.getElementById("dl_btn").style.display="none";
 	document.getElementById("dl_btn").style.visibility="false";
-	
+	document.getElementById("defaultOpen").click();
 //	category();
 	checkConnection();
 	
@@ -814,8 +814,8 @@ function openCity(evt, cityName) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+//    document.getElementById(cityName).style.display = "block";
+//    evt.currentTarget.className += " active";
 	
 	
 	if(cityName=='London')
@@ -886,16 +886,16 @@ var backbtn ;
  	//document.getElementById("defaultOpen").click();
 		//window.plugins.spinnerDialog.hide();
 			checkConnection();
-		  if(backbtn!=1)
-	   	{
+	//	  if(backbtn!=1)
+	  // 	{
 			//alert('in');
 	  	// $('#category').toggle('slide','left',500);
-			 $("#category").slideToggle("slow");
-	   	} 
-		else
-		{
-		//alert('back');
-		}
+	//		 $("#category").slideToggle("slow");
+	  // 	} 
+	//	else
+	//	{
+	//	//alert('back');
+	//	}
 		
 		document.getElementById("category").style.display="block";
 		document.getElementById("category").style.visibility="true";
@@ -939,7 +939,7 @@ var backbtn ;
 		 
 		
 	}
-document.getElementById("defaultOpen").click();
+
 var calEvt='';
 var calEvtDetails='';
 var calEvt1=[];
