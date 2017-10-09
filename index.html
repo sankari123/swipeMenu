@@ -559,9 +559,13 @@ var lat2,long2;
 		//getLoc();
 		
 		
-		$("#venue").attr("disabled", false);
-		 $("#defaultOpen").attr("disabled", true);
-		$("#cal").attr("disabled", true);
+		 
+			
+		$("#venue").attr("disabled", true);
+		$("#defaultOpen").attr("disabled", false);
+		$("#cal").attr("disabled", false);
+		
+		
 		document.getElementById("dl_btn1").style.display="none";
 		document.getElementById("dl_btn1").style.visibility="false";
 		document.getElementById("calendar").style.display="none";
@@ -635,9 +639,13 @@ function calClick()
 		optSel=2;
 		active_page=1;
 		 $("#calendar").slideToggle("slow");
-		 $("#cal").attr("disabled", false);
-		 $("#defaultOpen").attr("disabled", true);
-		 $("#venue").attr("disabled", true);
+		
+		
+		
+		   $("#cal").attr("disabled", true);
+		$("#defaultOpen").attr("disabled", false);
+		$("#venue").attr("disabled", false);
+		
 		
 		//	  $('#calendar').toggle('slide','right',500);	 
 		document.getElementById("calendar").style.display="block";
@@ -795,8 +803,44 @@ function printData()
 			});
 			
 });	
-
+	
 function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+	
+	
+	if(cityName=='London')
+	{
+	optSel=2;
+	active_page=1;
+	calClick();
+	}
+	else if(cityName=='Paris')
+	{
+	optSel=3;
+	active_page=1;
+	venueFilter();
+	}
+	else if(cityName=='Tokyo')
+	{
+	optSel=1;
+	active_page=1;
+	category();
+	}
+	
+}
+	
+
+function openCity1(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -834,9 +878,9 @@ var backbtn ;
 	{
 	//alert('in');
 	var availableTutorials  =artist;
-	 $("#defaultOpen").attr("disabled", false);
-		$("#cal").attr("disabled", true);
-		$("#venue").attr("disabled", true);
+	        $("#defaultOpen").attr("disabled", true);
+		$("#cal").attr("disabled", false);
+		$("#venue").attr("disabled", false);
 		
 	 
  	//document.getElementById("defaultOpen").click();
