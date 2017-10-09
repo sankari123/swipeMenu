@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
+	
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 <title><center><font face=verdana size=12>Madras Music & Miscellany</font></center></title>
 <meta charset="utf-8">
@@ -556,7 +557,11 @@ var lat2,long2;
 		document.getElementById("lst_mnu").style.display="block";
 		document.getElementById("lst_mnu").style.visibility="true";
 		//getLoc();
-		 
+		
+		
+		$("#venue").attr("disabled", false);
+		 $("#defaultOpen").attr("disabled", true);
+		$("#cal").attr("disabled", true);
 		document.getElementById("dl_btn1").style.display="none";
 		document.getElementById("dl_btn1").style.visibility="false";
 		document.getElementById("calendar").style.display="none";
@@ -630,7 +635,10 @@ function calClick()
 		optSel=2;
 		active_page=1;
 		 $("#calendar").slideToggle("slow");
-		 
+		 $("#cal").attr("disabled", false);
+		 $("#defaultOpen").attr("disabled", true);
+		 $("#venue").attr("disabled", true);
+		
 		//	  $('#calendar').toggle('slide','right',500);	 
 		document.getElementById("calendar").style.display="block";
 		document.getElementById("calendar").style.visibility="true";
@@ -826,9 +834,12 @@ var backbtn ;
 	{
 	//alert('in');
 	var availableTutorials  =artist;
+	 $("#defaultOpen").attr("disabled", false);
+		$("#cal").attr("disabled", true);
+		$("#venue").attr("disabled", true);
+		
 	 
-	 
- 	document.getElementById("defaultOpen").click();
+ 	//document.getElementById("defaultOpen").click();
 		//window.plugins.spinnerDialog.hide();
 			checkConnection();
 		  if(backbtn!=1)
@@ -884,7 +895,7 @@ var backbtn ;
 		 
 		
 	}
-	document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen").click();
 var calEvt='';
 var calEvtDetails='';
 var calEvt1=[];
@@ -1996,8 +2007,8 @@ display	: none;
 	<div class="tab">
  
   <button class="tablinks" onclick="openCity(event, 'Tokyo')" id="defaultOpen">Events</button>
-  <button class="tablinks" onclick="openCity(event, 'London')">Calendar</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Venue</button>
+  <button class="tablinks" onclick="openCity(event, 'London')" id='cal'>Calendar</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')" id='venue'>Venue</button>
 		
 </div>
 		</td></tr></table>
