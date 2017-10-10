@@ -1560,7 +1560,7 @@ monkeyPatchAutocomplete();
               // The source option can also be a function that performs the search,
               // and calls a response function with the matched entries.
               source: function(req, responseFn) {
-                  addMessage("search on: '" + req.term + "'<br/>");
+              //    addMessage("search on: '" + req.term + "'<br/>");
                   var re = $.ui.autocomplete.escapeRegex(req.term);
 				  var matcher = new RegExp( "^" + re, "i" );
 				    
@@ -1574,10 +1574,10 @@ monkeyPatchAutocomplete();
 
               select: function(value, data){
                   if (typeof data == "undefined") {
-                      addMessage('You selected: ' + value + "<br/>");
+                     // addMessage('You selected: ' + value + "<br/>");
 					  document.getElementById('reslt').value=data.item.value;
                   }else {
-                      addMessage('You selected: ' + data.item.value + "<br/>");
+                    //  addMessage('You selected: ' + data.item.value + "<br/>");
 					   document.getElementById('reslt').value=data.item.value;
                   }
               }
