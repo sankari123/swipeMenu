@@ -524,7 +524,7 @@ function procVal(pVar)
 	//testing();
 	uniq = remove_duplicates_safe(venue_arr);
 //	uniq = uniq.map(function(e) {  var result = {};    result['text'] =e[0];  result['value'] =e[0];   return result;});
- alert(venue_arr);
+ //alert(venue_arr);
 }
 	
 
@@ -1455,7 +1455,7 @@ function rateApp1()
 	window.location.replace('market://details?id=com.google.android.apps.digigraph');
 	}
 	
-	function srchArtist()
+	function srchArtist2()
   {
   document.getElementById("autocomplete-container").style.display="block";
 	document.getElementById("autocomplete-container").style.visibility="true";
@@ -1471,11 +1471,7 @@ function rateApp1()
 	//var artist=new Array();
 
 function monkeyPatchAutocomplete() {
-		alert(artist);
-	var wordlist=new Array();
-	wordlist= remove_duplicates_safe(artist);
-	wordlist.sort();
-	alert(wordlist);
+		
 
           // Don't really need to save the old fn, 
           // but I could chain if I wanted to
@@ -1490,6 +1486,9 @@ function monkeyPatchAutocomplete() {
                   .appendTo( ul );
  };
  }
+	
+var wordlist=new Array();
+	
 function srchArtist()
 {
 document.getElementById("searchmenu").style.visibility="true";
@@ -1498,7 +1497,11 @@ document.getElementById("main").style.visibility="false";
 document.getElementById("main").style.display="none";
 document.getElementById("backmenu").style.visibility="false";
 document.getElementById("backmenu").style.display="none";
+//alert(artist);
 	
+	wordlist= remove_duplicates_safe(artist);
+	wordlist.sort();
+	alert(wordlist);	
 monkeyPatchAutocomplete();
 
           $("#input1").autocomplete({
